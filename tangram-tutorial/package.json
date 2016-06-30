@@ -21,8 +21,7 @@
     "express": "^4.12.4",
     "react": "^15.1.0",
     "react-bootstrap": "^0.29.5",
-    "react-dom": "^15.1.0",
-    "react-favicon": "0.0.4"
+    "react-dom": "^15.1.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "^2.0.0",

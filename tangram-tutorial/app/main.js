@@ -1,7 +1,9 @@
 require("./Assets/style.scss")
+require("./Assets/bootstrap.css")
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 
 var App = require('./App.js');
 
-// React.render(<App/>, document.getElementById('body'))
+ReactDOM.render(<App/>, document.getElementById('workspace'))
