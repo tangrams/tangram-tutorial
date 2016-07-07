@@ -5,7 +5,6 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -105,7 +104,6 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
   font-size: 1em;
 }
 button,
@@ -1077,15 +1075,9 @@ th {
           box-sizing: border-box;
 }
 html {
-  font-size: 10px;
-
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
   background-color: #fff;
 }
 input,
@@ -5993,11 +5985,8 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
   font-style: normal;
   font-weight: normal;
-  line-height: 1.42857143;
   text-align: left;
   text-align: start;
   text-decoration: none;
@@ -6112,8 +6101,6 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
   font-style: normal;
   font-weight: normal;
   line-height: 1.42857143;
@@ -6381,8 +6368,6 @@ button.close {
 .carousel-control .icon-next {
   width: 20px;
   height: 20px;
-  font-family: serif;
-  line-height: 1;
 }
 .carousel-control .icon-prev:before {
   content: '\2039';
