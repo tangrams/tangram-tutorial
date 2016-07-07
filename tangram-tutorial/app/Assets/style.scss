@@ -38,5 +38,28 @@ body {
 
 .title {
 	padding-top: 100px;
-	padding-bottom: 100px;
+}
+
+.row {
+	padding-top: 20px;
+}
+
+iframe {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.col-md-8 {
+	padding-bottom: 10px !important;
+}
+
+/* Code blocks */
+
+.alert-message {
+	color: #8a6d3b;
+    background-color: #fcf8e3;
+	padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #faebcc;
+    border-radius: 4px;
 }

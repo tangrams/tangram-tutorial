@@ -3,14 +3,14 @@
 
 # A data source
 sources:
-    Mapzen:
+    _mapzen:
         type: TopoJSON
         url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
 
 # Data interpretation rules
 layers:
     earth:
-        data: { source: Mapzen }
+        data: { source: _mapzen }
         # Styling rules
         draw:
             polygons:
