@@ -1,13 +1,16 @@
+# This is a simple Tangram scene file.
+# It is written in a language called YAML.
+
 # A data source
 sources:
-    mapzen:
+    Mapzen:
         type: TopoJSON
         url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
 
 # Data interpretation rules
 layers:
     earth:
-        data: { source: mapzen }
+        data: { source: Mapzen }
         # Styling rules
         draw:
             polygons:
