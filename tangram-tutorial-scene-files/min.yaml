@@ -1,0 +1,14 @@
+# A data source
+sources:
+    mapzen:
+        type: TopoJSON
+        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+
+# Data interpretation rules
+layers:
+    earth:
+        data: { source: mapzen }
+        # Styling rules
+        draw:
+            polygons:
+                color: darkgreen
