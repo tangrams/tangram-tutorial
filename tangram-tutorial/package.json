@@ -19,6 +19,8 @@
     "compression": "^1.5.0",
     "cors": "^2.7.1",
     "express": "^4.12.4",
+    "html-loader": "^0.4.3",
+    "markdown-loader": "^0.1.7",
     "react": "^15.1.0",
     "react-bootstrap": "^0.29.5",
     "react-dom": "^15.1.0"

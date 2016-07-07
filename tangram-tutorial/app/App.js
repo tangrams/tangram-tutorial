@@ -9,15 +9,18 @@ import Col from 'react-bootstrap/lib/Col';
 import Row from 'react-bootstrap/lib/Row';
 
 
-module.exports = React.createClass({
-  displayName: 'App',
+import markdownFile from './Markdown/intro.md';
 
-  render: function () {
+module.exports = React.createClass({
+  render () {
     return (
          <Grid fluid>
             <Row className="show-grid">
                 <Col md={2}></Col>
-                <Col md={8} className='center title' >Tangram Tutorial</Col>
+                <Col md={8} className='center title' >
+                    Tangram Tutorial
+                    <div dangerouslySetInnerHTML={{ __html: markdownFile}} />
+                </Col>
                 <Col md={2}></Col>
             </Row>
             <Row className="show-grid">
