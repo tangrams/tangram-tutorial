@@ -5,16 +5,16 @@
 # Note that 'sources' is a key word to represent this REQUIRED top-level element
 sources:
     _mapzen:
-        type: TopoJSON
-        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+        type: GeoJSON
+        url: https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries.geojson
 
 # Data interpretation rules.
 # Note that 'layers' is a key word to represent this REQUIRED top-level element
 layers:
-    _earth:
+    _countryLayer:
         data:
             source: _mapzen
-            layer: earth
+            layer: countries
         # Styling rules
         draw:
             polygons:
