@@ -5,11 +5,11 @@ sources:
 
 layers:
     # The layer name could be anything. Could be 'country' or 'layer1'
-    _countryLayer: # TODO: try changing this layer name. The map should still render correctly
+    _countryLayer: # ~~TODO~~ try changing this layer name. The map should still render correctly
         data:
             source: _mapzen
             # Here we specify the name of the layer in our data source. Should match a layer within the gejson file we are importing
-            layer: countries # TODO: try changing this string. The map should NOT render
+            layer: countries # ~~TODO~~ try changing this string. The map should NOT render
         draw:
             polygons:
                 order: 0
