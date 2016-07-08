@@ -1,4 +1,3 @@
-/* Geojson source: https://github.com/johan/world.geo.json */
 {
   "countries": {
     "type": "FeatureCollection",

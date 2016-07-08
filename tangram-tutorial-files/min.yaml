@@ -9,8 +9,10 @@ sources:
 
 # Data interpretation rules
 layers:
-    earth:
-        data: { source: _mapzen }
+    _earth:
+        data:
+            source: _mapzen
+            layer: earth
         # Styling rules
         draw:
             polygons:
