@@ -8,14 +8,18 @@ import TangramPlay from './Components/TangramPlay.react';
 import intro from './Markdown/intro.md';
 import min from './Markdown/min.md';
 import min2 from './Markdown/min2.md';
+import min3 from './Markdown/min3.md';
 import tiles from './Markdown/tiles.md';
 import conclusion from './Markdown/conclusion.md';
 
-let baseurl = 'https://precog.mapzen.com/tangrams/tangram-play/tangram-tutorial/?scene=';
+let tangramplayurl = 'https://precog.mapzen.com/tangrams/tangram-play/tangram-tutorial/?scene=';
+let tutorialurl = 'https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/'
+let baseurl = tangramplayurl + tutorialurl;
 
 let examples = {
-    first: baseurl + 'https%3A%2F%2Fcdn.rawgit.com%2Ftangrams%2Ftangram-sandbox%2F1d60a85ed384150d8a98c26fa30f5a4123c1224f%2Fstyles%2Fgrain-area.yaml#4/-7.28/-77.21/tutorial',
-    min: baseurl + 'https://tangrams.github.io/tangram-tutorial/tangram-tutorial-scene-files/min.yaml'
+    min: baseurl + 'min.yaml',
+    layers: baseurl + 'layers.yaml',
+    layers2: baseurl + 'layers2.yaml' + '&lines=12'
 }
 
 module.exports = React.createClass({
@@ -37,6 +41,9 @@ module.exports = React.createClass({
                     <div dangerouslySetInnerHTML={{ __html: min }} />
                     <TangramPlay url={examples.min} />
                     <div dangerouslySetInnerHTML={{ __html: min2 }} />
+                    <TangramPlay url={examples.layers} />
+                    <div dangerouslySetInnerHTML={{ __html: min3 }} />
+                    <TangramPlay url={examples.layers2} />
                 </Col>
                 <Col md={2}></Col>
             </Row>
