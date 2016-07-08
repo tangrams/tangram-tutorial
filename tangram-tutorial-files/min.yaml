@@ -1,13 +1,15 @@
 # This is a simple Tangram scene file.
 # It is written in a language called YAML.
 
-# A data source
+# A data source.
+# Note that 'sources' is a key word to represent this REQUIRED top-level element
 sources:
     _mapzen:
         type: TopoJSON
         url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
 
-# Data interpretation rules
+# Data interpretation rules.
+# Note that 'layers' is a key word to represent this REQUIRED top-level element
 layers:
     _earth:
         data:
