@@ -38,10 +38,17 @@ target='&#95;blank'>https://tangrams.github.io/tangram-tutorial/tangram-tutorial
 An explanation of the GeoJSON and TopoJSON standards is beyond the scope of this tutorial. For good resources check out:
 </div>
 
-Note that we are specifying what layer name to match against on the highlighted line 12 in the next example:
+Note that we are specifying what layer name to match against on the highlighted line 12 in the next example. Try editing the Tangram scene file yourself on lines 8 and 12.
 
 <pre><code class="language-yaml">&#95;countryLayer:
         data:
             source: &#95;mapzen
-            layer: countries # matching to the 'countries' layer in the geojson
+            layer: countries # matching to the 'countries' layer in the geojson file
 </pre></code>
+
+TODO:
+
+* how do i know they are polygons?
+* filter other things that are not 'properties' - like id in this example
+* include something about inheritance
+* order doesn't seem to matter within a group. why do we use order:
