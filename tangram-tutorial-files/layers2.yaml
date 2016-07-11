@@ -11,6 +11,6 @@ layers:
             # Here we specify the name of the layer in our data source. Should match a layer within the gejson file we are importing
             layer: countries # ~~TODO~~ try changing this string. The map should NOT render
         draw:
-            polygons:
-                order: 0
+            _countryStyle:
+                style: polygons
                 color: darkgreen

@@ -9,6 +9,6 @@ layers:
             source: _mapzen # We're specifying which source contains the data for this layer. Has to match a source we declare in the sources block
             layer: countries
         draw: # REQUIRED parameter where we specify styling rules for this layer
-            polygons:
-                order: 0
+            _countryStyle:
+                style: polygons
                 color: darkgreen

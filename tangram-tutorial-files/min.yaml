@@ -17,5 +17,6 @@ layers:
             layer: countries
         # Styling rules
         draw:
-            polygons:
+            _countryStyle:
+                style: polygons
                 color: darkgreen
