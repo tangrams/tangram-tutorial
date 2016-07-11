@@ -2,7 +2,7 @@ What else is going on here? How are we styling the countries layer? We are speci
 
 <pre><code class="language-yaml">draw:
     &#95;countryStyle: # We're giving this draw group a name '&#95;countryStyle'
-        style: polygons # Tangram comes with a prebuilt set of styles for different data types: points, polygons, lines, and text
+        style: polygons # Tangram comes with a prebuilt set of styles for different data types: points, polygons, lines, text, and raster
         color: darkgreen # The color of the layer we are drawing
 </pre></code>
 
@@ -13,7 +13,8 @@ How do we know what style to apply to what data? Well our geojson file contains 
 	"type": "Feature",
 	"id": "ARG",
 	"properties": {
-		"name": "Argentina"
+		"name": "Argentina",
+        [...more properties...]
 	},
 	"geometry": {
 		"type": "MultiPolygon",

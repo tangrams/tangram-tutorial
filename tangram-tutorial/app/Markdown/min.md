@@ -9,5 +9,5 @@ To create a map, the scene file requires only:
 * styling rules (how the data should look on the map)
 
 <div class='alert-message'>
-We'll be using a special embedded version of Tangram to instantly view the results of our scene file. Take a look below!
+We'll be using a special app that embeds Tangram code on the right and a Leaflet/Tangram map on the left to instantly view the results of our scene file. Take a look below!
 </div>

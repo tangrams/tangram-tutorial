@@ -32,17 +32,17 @@ module.exports = React.createClass({
     return (
          <Grid fluid>
             <Row className="show-grid">
-                <Col md={2}></Col>
-                <Col md={8}>
+                <Col md={1}></Col>
+                <Col md={10}>
                     <h1 className='title'>Tangram Tutorial</h1><br></br><br></br>
                     <div dangerouslySetInnerHTML={{ __html: intro }} />
                 </Col>
-                <Col md={2}></Col>
+                <Col md={1}></Col>
             </Row>
 
             <Row className="show-grid">
-                <Col md={2}></Col>
-                <Col md={8}>
+                <Col md={1}></Col>
+                <Col md={10}>
                     <div dangerouslySetInnerHTML={{ __html: min }} />
                     <TangramPlay url={examples.min} />
                     <div dangerouslySetInnerHTML={{ __html: min2 }} />
@@ -53,24 +53,24 @@ module.exports = React.createClass({
                     <TangramPlay url={examples.layers3} />
                     <div dangerouslySetInnerHTML={{ __html: min5 }} />
                 </Col>
-                <Col md={2}></Col>
+                <Col md={1}></Col>
             </Row>
 
             <Row className="show-grid">
-                <Col md={2}></Col>
-                <Col md={8}>
+                <Col md={1}></Col>
+                <Col md={10}>
                     <div dangerouslySetInnerHTML={{ __html: filters }} />
                 </Col>
-                <Col md={2}></Col>
+                <Col md={1}></Col>
             </Row>
 
             <Row className="show-grid">
-                <Col md={2}></Col>
-                <Col md={8}>
+                <Col md={1}></Col>
+                <Col md={10}>
                     <div dangerouslySetInnerHTML={{ __html: tiles }} />
                     <div dangerouslySetInnerHTML={{ __html: conclusion }} />
                 </Col>
-                <Col md={2}></Col>
+                <Col md={1}></Col>
             </Row>
          </Grid>
 

@@ -6,7 +6,7 @@
 sources:
     _mapzen:
         type: GeoJSON
-        url: https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries.geojson
+        url: https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries-data.geojson
 
 # Data interpretation rules.
 # Note that 'layers' is a key word to represent this REQUIRED top-level element

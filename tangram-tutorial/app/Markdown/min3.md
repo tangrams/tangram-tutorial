@@ -10,7 +10,8 @@ target='&#95;blank'>https://tangrams.github.io/tangram-tutorial/tangram-tutorial
 				"type": "Feature",
 				"id": "ARG",
 				"properties": {
-					"name": "Argentina"
+					"name": "Argentina",
+					[...more properties...]
 				},
 				"geometry": {
 					"type": "MultiPolygon",
@@ -21,7 +22,8 @@ target='&#95;blank'>https://tangrams.github.io/tangram-tutorial/tangram-tutorial
 				"type": "Feature",
 				"id": "AUS",
 				"properties": {
-					"name": "Australia"
+					"name": "Australia",
+					[...more properties...]
 				},
 				"geometry": {
 					"type": "MultiPolygon",
@@ -35,7 +37,7 @@ target='&#95;blank'>https://tangrams.github.io/tangram-tutorial/tangram-tutorial
 </pre></code>
 
 <div class='alert-message'>
-An explanation of the GeoJSON and TopoJSON standards is beyond the scope of this tutorial. For good resources check out:
+An explanation of the GeoJSON and TopoJSON standards is beyond the scope of this tutorial. For good resources check out: [http://www.macwright.org/2015/03/23/geojson-second-bite.html](http://www.macwright.org/2015/03/23/geojson-second-bite.html)
 </div>
 
 Note that we are specifying what layer name to match against on the highlighted line 12 in the next example. Try editing the Tangram scene file yourself on lines 8 and 12.
