@@ -45,10 +45,3 @@ Note that we are specifying what layer name to match against on the highlighted 
             source: &#95;mapzen
             layer: countries # matching to the 'countries' layer in the geojson file
 </pre></code>
-
-TODO:
-
-* how do i know they are polygons?
-* filter other things that are not 'properties' - like id in this example
-* include something about inheritance
-* order doesn't seem to matter within a group. why do we use order:

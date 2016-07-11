@@ -10,5 +10,5 @@ layers:
             layer: countries
         draw:
             _countryStyle:
-                style: polygons # ~~TODO~~ Try changing to 'lines' or 'points'. The map should render nothing.
+                style: polygons # ~~TODO~~ Try changing to 'lines' or 'points'
                 color: darkgreen
