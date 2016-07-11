@@ -1,0 +1,21 @@
+sources:
+    _mapzen:
+        type: GeoJSON
+        url: https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries-data.geojson
+
+layers:
+    _countryLayer:
+        data:
+            source: _mapzen
+            layer: countries
+        draw:
+            _countryStyle:
+                style: polygons
+                color: darkgreen
+                order: 0
+            _bordersStyle: # A new style name for our borders
+                style: lines
+                color: white
+                width: 20000m # REQUIRED We need to declare a width for the lines, which can be in meters or pixel units
+                # width: 2px # ~~TODO~~ Try uncommenting the meters width for the pixels width
+                order: 1
