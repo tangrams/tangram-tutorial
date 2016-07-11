@@ -12,6 +12,8 @@ import min3 from './Markdown/min3.md';
 import min4 from './Markdown/min4.md';
 import min5 from './Markdown/min5.md';
 import filters from './Markdown/filters.md';
+import styling from './Markdown/styling.md';
+import styling2 from './Markdown/styling2.md';
 
 import tiles from './Markdown/tiles.md';
 import conclusion from './Markdown/conclusion.md';
@@ -24,7 +26,9 @@ let examples = {
     min: baseurl + 'min.yaml',
     layers: baseurl + 'layers.yaml',
     layers2: baseurl + 'layers2.yaml' + '&lines=12',
-    layers3: baseurl + 'layers3.yaml' + '&lines=13'
+    layers3: baseurl + 'layers3.yaml' + '&lines=13',
+    styling: baseurl + 'styling.yaml' + '&lines=18-19',
+    styling2: baseurl + 'styling2.yaml' + '&lines=15'
 }
 
 module.exports = React.createClass({
@@ -59,7 +63,19 @@ module.exports = React.createClass({
             <Row className="show-grid">
                 <Col md={1}></Col>
                 <Col md={10}>
+                    <div dangerouslySetInnerHTML={{ __html: styling }} />
+                    <TangramPlay url={examples.styling} />
+                    <div dangerouslySetInnerHTML={{ __html: styling2 }} />
+                    <TangramPlay url={examples.styling2} />
+                </Col>
+                <Col md={1}></Col>
+            </Row>
+
+            <Row className="show-grid">
+                <Col md={1}></Col>
+                <Col md={10}>
                     <div dangerouslySetInnerHTML={{ __html: filters }} />
+
                 </Col>
                 <Col md={1}></Col>
             </Row>

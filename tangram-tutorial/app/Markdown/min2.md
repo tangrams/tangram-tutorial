@@ -1,4 +1,4 @@
-Let's unpack this example. First of all, note that our `sources` and `layers` blocks are required elements for all valid Tangram scene files. Try uncommenting them out with `#` to see what happens. You should see the map on the left go black.
+Let's unpack this example. First of all, note that our `sources` and `layers` blocks are required elements for all valid Tangram scene files. Try commenting them out with `#` to see what happens. You should see the map on the left go black.
 
 #### Data sources
 
