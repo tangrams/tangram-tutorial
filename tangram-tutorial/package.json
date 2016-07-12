@@ -7,7 +7,7 @@
     "dev-server": "nodemon server/index.js --watch server",
     "dev-web": "webpack-dev-server --config ./webpack-dev.config.js --hot --progress --colors --content-base build --history-api-fallback",
     "dev": "nodemon server/index.js --watch server & webpack-dev-server --config ./webpack-dev.config.js --hot --progress --colors --content-base build --history-api-fallback",
-    "build": "rm build/*; webpack --config ./webpack-prod.config.js --progress --colors",
+    "build": "rm build/*; webpack --config ./webpack-prod.config.js --progress --colors --history-api-fallback",
     "start": "node server/index.js",
     "test": "karma start",
     "testing": "karma start --single-run=false"
