@@ -1,6 +1,6 @@
 Let's unpack this example. First of all, note that our `sources` and `layers` blocks are required elements for all valid Tangram scene files. Try commenting them out with `#` to see what happens. You should see the map on the left go black.
 
-#### Data sources
+### Data sources
 
 Let's talk about the `sources` block first. As the word indicates, this is the place where we define our data sources and tell the Tangram engine where to get its vector tiles from. The block takes only one type of parameter, a <strong>source name</strong>.
 
@@ -34,7 +34,3 @@ Each source name in turn requires two pieces of information:
 * a `url`: the data source's url
 
 <br>
-
-#### Data interpretation and styling
-
-So how will we be using the data we just imported? Let's start by unpacking what we've written in the `layers` block. Vector tiles typically contain top-level structures which can be thought of as “layers” – inside a GeoJSON file, these would be the FeatureCollection objects. Inside a Tangram scene file, the layers object allows you to split the data by layer, by matching against the layer name.

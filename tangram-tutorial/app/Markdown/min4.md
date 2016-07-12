@@ -1,27 +1,49 @@
-What else is going on here? How are we styling the countries layer? We are specifying how to display the countries layer within the `draw` element.
+Now let's actually take a look at our data source, in this case
+<a href='https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries-data.geojson'
+target='&#95;blank'>https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries-data.geojson</a>. This is just a simple geojson file that represents every country in the world as a polygon or multipolygon. This code shows a small part of the file (note replacements where we've simplified the file with `[...]`):
 
-<pre><code class="language-yaml">draw:
-    &#95;countryStyle: # We're giving this draw group a name '&#95;countryStyle'
-        style: polygons # Tangram comes with a prebuilt set of styles for different data types: points, polygons, lines, text, and raster
-        color: darkgreen # The color of the layer we are drawing
-</pre></code>
-
-How do we know what style to apply to what data? Well our geojson file contains some clues. Take another look at the file:
-
-<pre><code class="language-json">[...]
-{
-	"type": "Feature",
-	"id": "ARG",
-	"properties": {
-		"name": "Argentina",
-        [...more properties...]
-	},
-	"geometry": {
-		"type": "MultiPolygon",
-		"coordinates": [...coordinates...]
+<pre><code class="language-json">{
+	"countries": {
+		"type": "FeatureCollection",
+		"features": [
+			{
+				"type": "Feature",
+				"id": "ARG",
+				"properties": {
+					"name": "Argentina",
+					[...more properties...]
+				},
+				"geometry": {
+					"type": "MultiPolygon",
+					"coordinates": [...coordinates...]
+				}
+			},
+			{
+				"type": "Feature",
+				"id": "AUS",
+				"properties": {
+					"name": "Australia",
+					[...more properties...]
+				},
+				"geometry": {
+					"type": "MultiPolygon",
+					"coordinates": [...coordinates...]
+				}
+			},
+			[...other countries...]
+		]
 	}
 }
-[...]
 </pre></code>
 
-Each country is composed of a geometry which in this case is of type `MultiPolygon` but following the geojson specs could be a `Point`, `LineString`, `Polygon`, `MultiPoint`, or `MultiLineString`. Since each country is a multipolygon, we're styling the 'countries' layer with a `polygon` style. Try changing the styles in the following scene file to see what happens:
+<div class='alert-message'>
+An explanation of the GeoJSON and TopoJSON standards is beyond the scope of this tutorial. For a good resource check out: [http://www.macwright.org/2015/03/23/geojson-second-bite.html](http://www.macwright.org/2015/03/23/geojson-second-bite.html)
+</div>
+
+Note that we are specifying what layer name to match against on the highlighted line 12 in the next example. Try editing the Tangram scene file yourself on lines 8 and 12.
+
+<pre><code class="language-yaml">&#95;countryLayer:
+        data:
+            source: &#95;mapzen
+            layer: countries # matching to the 'countries' layer in the geojson file
+</pre></code>

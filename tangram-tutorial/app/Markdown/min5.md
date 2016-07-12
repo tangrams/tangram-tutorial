@@ -1,5 +1,27 @@
-Tangram did not interpret the data correctly when using a `text` or `raster` style because the data is not encoded as any of these. As a consequence, the map renders nothing at all. For `lines` we need to add an extra element we'll go into in a bit. On the other hand when we use `points` Tangram is rendering the vertices (or points) of each polygon in our 'country' layer.
+What else is going on here? How are we styling the countries layer? We are specifying how to display the countries layer within the `draw` element.
 
-<div class='alert-message'>
-The TopoJSON and MVT (Mapbox Vector Tiles) are structured in a similar way to GeoJSON files, so these geometric properties still apply. Raster files are different and we will cover them later on in the tutorial.
-</div>
+<pre><code class="language-yaml">draw:
+    &#95;countryStyle: # We're giving this draw group a name '&#95;countryStyle'
+        style: polygons # Tangram comes with a prebuilt set of styles for different data types: points, polygons, lines, text, and raster
+        color: darkgreen # The color of the layer we are drawing
+</pre></code>
+
+How do we know what style to apply to what data? Well our geojson file contains some clues. Take another look at the file:
+
+<pre><code class="language-json">[...]
+{
+	"type": "Feature",
+	"id": "ARG",
+	"properties": {
+		"name": "Argentina",
+        [...more properties...]
+	},
+	"geometry": {
+		"type": "MultiPolygon",
+		"coordinates": [...coordinates...]
+	}
+}
+[...]
+</pre></code>
+
+Each country is composed of a geometry which in this case is of type `MultiPolygon` but following the geojson specs could be a `Point`, `LineString`, `Polygon`, `MultiPoint`, or `MultiLineString`. Since each country is a multipolygon, we're styling the 'countries' layer with a `polygon` style. Try changing the styles in the following scene file to see what happens:

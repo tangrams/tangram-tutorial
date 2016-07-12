@@ -1,10 +1,10 @@
 require("./Assets/style.scss")
 require("./Assets/bootstrap.css")
 
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var App = require('./App.js');
+import App from './App.react';
 
 ReactDOM.render(<App/>, document.getElementById('workspace'))
 
