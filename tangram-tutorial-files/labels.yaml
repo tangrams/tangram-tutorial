@@ -2,6 +2,7 @@ sources:
     _mapzen:
         type: GeoJSON
         url: https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries-data.geojson
+        generate_label_centroids: true
 
 layers:
     _countryLayer:
@@ -18,9 +19,16 @@ layers:
                 color: white
                 width: 20000m
                 order: 1
+
+    _textLayer:
+        data:
+            source: _mapzen
+            layer: countries
+        filter:
+            label_placement: yes
+        draw:
             _labelStyle:
                 style: text
-                anchor: center
                 text_source: name
                 color: white
                 font:
