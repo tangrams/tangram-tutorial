@@ -28,7 +28,8 @@ let examples = {
     layers2: baseurl + 'layers2.yaml' + '&lines=12',
     layers3: baseurl + 'layers3.yaml' + '&lines=13',
     styling: baseurl + 'styling.yaml' + '&lines=18-19',
-    styling2: baseurl + 'styling2.yaml' + '&lines=15'
+    styling2: baseurl + 'styling2.yaml' + '&lines=15',
+    filters: baseurl + filters.yaml
 }
 
 module.exports = React.createClass({
@@ -75,7 +76,7 @@ module.exports = React.createClass({
                 <Col md={1}></Col>
                 <Col md={10}>
                     <div dangerouslySetInnerHTML={{ __html: filters }} />
-
+                    <TangramPlay url={examples.filters} />
                 </Col>
                 <Col md={1}></Col>
             </Row>
