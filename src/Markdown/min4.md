@@ -1,6 +1,6 @@
 Now let's actually take a look at our data source, in this case
-<a href='https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries-data.geojson'
-target='&#95;blank'>https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries-data.geojson</a>. This is just a simple geojson file that represents every country in the world as a polygon or multipolygon. This code shows a small part of the file (note replacements where we've simplified the file with `[...]`):
+<a href='https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson'
+target='&#95;blank'>https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson</a>. This is just a simple geojson file that represents every country in the world as a polygon or multipolygon. This code shows a small part of the file (note replacements where we've simplified the file with `[...]`):
 
 <pre><code class="language-json">{
 	"countries": {

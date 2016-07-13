@@ -1,7 +1,7 @@
 sources:
     _mapzen: # We're using this source on line 9. If we change the source name, we have to change it on line 9
         type: GeoJSON
-        url: https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries-data.geojson
+        url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson
 
 layers:
     _countryLayer: # REQUIRED layer name
