@@ -1,4 +1,7 @@
+import 'babel-polyfill';
+
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router'
 
 import Main from './Components/Main.react';
@@ -9,9 +12,7 @@ import Tutorial3 from './Components/Tutorial/Tutorial3Styling.react';
 import Tutorial4 from './Components/Tutorial/Tutorial4Filters.react';
 import TutorialConclusion from './Components/Tutorial/TutorialConclusion.react';
 
-module.exports = React.createClass({
-    render () {
-        return (
+let routes = (
             <Router history={browserHistory}>
                 <Route path="/" component={Main}>
                     <Route path="/intro" component={Tutorial1}/>
@@ -22,5 +23,9 @@ module.exports = React.createClass({
                     <Route path="/conclusion" component={TutorialConclusion}/>
                 </Route>
             </Router>
-        )}
-});
+);
+
+ReactDOM.render(
+    routes,
+    document.getElementById('app')
+)
