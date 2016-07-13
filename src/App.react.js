@@ -15,12 +15,12 @@ import TutorialConclusion from './Components/Tutorial/TutorialConclusion.react';
 let routes = (
             <Router history={browserHistory}>
                 <Route path="/" component={Main}>
-                    <Route path="/intro" component={Tutorial1}/>
-                    <Route path="/minimum-map/min" component={Tutorial21}/>
-                    <Route path="/minimum-map/data" component={Tutorial22}/>
-                    <Route path="/styling" component={Tutorial3}/>
-                    <Route path="/filters" component={Tutorial4}/>
-                    <Route path="/conclusion" component={TutorialConclusion}/>
+                    <Route path="intro" component={Tutorial1}/>
+                    <Route path="minimum-map/min" component={Tutorial21}/>
+                    <Route path="minimum-map/data" component={Tutorial22}/>
+                    <Route path="styling" component={Tutorial3}/>
+                    <Route path="filters" component={Tutorial4}/>
+                    <Route path="conclusion" component={TutorialConclusion}/>
                 </Route>
             </Router>
 );
