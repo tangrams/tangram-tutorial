@@ -1,7 +1,7 @@
 sources:
     _mapzen:
         type: GeoJSON
-        url: https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries-data.geojson
+        url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson
         generate_label_centroids: true
 
 layers:
