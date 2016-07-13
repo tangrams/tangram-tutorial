@@ -10,6 +10,9 @@ import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 
 export default class Main extends React.Component {
   render () {
+      require('../Assets/css/bootstrap.css');
+      require('../Assets/css/style.scss');
+
      return (
       <Grid className='test'>
         <Row className='row-menu'>
