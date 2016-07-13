@@ -7,7 +7,7 @@ Let's talk about the `sources` block first. As the word indicates, this is the p
 <pre><code class="language-yaml">sources:
     &#95;mapzen: # A source name
         type: GeoJSON
-        url: https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries.geojson
+        url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries.geojson
 </code></pre>
 
 The source name is important because you will need to use it elsewhere in the Tangram scene file. Think of it as a variable name that you can refer to again and again throughout the scene file. The `sources` block can take any number of source names, and each of those can be named anyway you'd like.
@@ -18,7 +18,7 @@ The source name is important because you will need to use it elsewhere in the Ta
         url: http://a.tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg
     &#95;mapzen: # Another source name
         type: GeoJSON
-        url: https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries.geojson
+        url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries.geojson
 </code></pre>
 
 <div class='alert-message'>For this tutorial, non-required variable names will be prepended with a `_` to avoid confusion with reserved keywords.
