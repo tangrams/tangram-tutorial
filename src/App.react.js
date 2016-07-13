@@ -2,7 +2,7 @@ import 'babel-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, hashHistory} from 'react-router'
+import { Router, Route, browserHistory, hashHistory } from 'react-router'
 
 import Main from './Components/Main.react';
 import Tutorial1 from './Components/Tutorial/Tutorial1Intro.react';
