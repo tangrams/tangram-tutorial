@@ -49,7 +49,7 @@ gulp.task('webpack-dev-server', function(callback) {
         contentBase: path.join(__dirname, 'www'),
         quiet: false,
         noInfo: false,
-        publicPath: '/dist/',
+        publicPath: '/tangram-tutorial/tangram-tutorial/dist/',
         stats: { colors: true },
         historyApiFallback: true
     });
