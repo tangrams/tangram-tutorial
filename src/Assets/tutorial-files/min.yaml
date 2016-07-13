@@ -1,0 +1,22 @@
+# This is a simple Tangram scene file.
+# It is written in a language called YAML.
+
+# A data source.
+# Note that 'sources' is a key word to represent this REQUIRED top-level element
+sources:
+    _mapzen:
+        type: GeoJSON
+        url: https://tangrams.github.io/tangram-tutorial/tangram-tutorial-files/countries-data.geojson
+
+# Data interpretation rules.
+# Note that 'layers' is a key word to represent this REQUIRED top-level element
+layers:
+    _countryLayer:
+        data:
+            source: _mapzen
+            layer: countries
+        # Styling rules
+        draw:
+            _countryStyle:
+                style: polygons
+                color: darkgreen
