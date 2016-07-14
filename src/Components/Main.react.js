@@ -13,37 +13,43 @@ export default class Main extends React.Component {
       require('../Assets/css/bootstrap.css');
       require('../Assets/css/style.scss');
 
+//className='full-height row-content'
+//className='full-column-height'
      return (
-      <Grid className='test'>
-        <Row className='row-menu'>
-            <Col md={2}>
+      <Grid className='grid-container'>
+        <Row>
+            <Col md={2} className='sidebar'>
+                <Row className='sidebar-title'>
+                    <div className='sidebar-title-logo'>Mapzen</div>
+                </Row>
+                <Row className='sidebar-toc'>
+                    <ListGroup fill>
+                        <Panel collapsible defaultExpanded header="Intro" onClick={() => {this.context.router.push('/intro')}}>
+                        </Panel>
+                        <Panel collapsible defaultExpanded header="A Basic Map">
+                            <ListGroupItem><Link to="/minimum-map/min">A minimum map</Link></ListGroupItem>
+                            <ListGroupItem><Link to="/minimum-map/data">Data interpretation and styling</Link></ListGroupItem>
+                         </Panel>
+                         <Panel collapsible defaultExpanded header="Styling" onClick={() => {this.context.router.push('/styling')}}>
+                         </Panel>
+                         <Panel collapsible defaultExpanded header="Filters" onClick={() => {this.context.router.push('/filters')}}>
+                         </Panel>
+                         <Panel collapsible defaultExpanded header="Conclusion" onClick={() => {this.context.router.push('/conclusion')}}>
+                         </Panel>
+                    </ListGroup>
+                </Row>
             </Col>
-            <Col md={10}>
-                <h1 className='title'>Tangram Tutorial</h1><br></br><br></br>
-            </Col>
-        </Row>
-
-        <Row className='full-height row-content'>
-            <Col md={2} className='full-column-height'>
-                <ListGroup fill>
-                    <Panel bsStyle="primary" collapsible defaultExpanded header="Intro" onClick={() => {this.context.router.push('/intro')}}>
-                    </Panel>
-                    <Panel bsStyle="primary" collapsible defaultExpanded header="A Basic Map">
-                        <ListGroupItem><Link to="/minimum-map/min">A minimum map</Link></ListGroupItem>
-                        <ListGroupItem><Link to="/minimum-map/data">Data interpretation and styling</Link></ListGroupItem>
-                     </Panel>
-                     <Panel bsStyle="primary" collapsible defaultExpanded header="Styling" onClick={() => {this.context.router.push('/styling')}}>
-                     </Panel>
-                     <Panel bsStyle="primary" collapsible defaultExpanded header="Filters" onClick={() => {this.context.router.push('/filters')}}>
-                     </Panel>
-                     <Panel bsStyle="primary" collapsible defaultExpanded header="Conclusion" onClick={() => {this.context.router.push('/conclusion')}}>
-                     </Panel>
-                </ListGroup>
-            </Col>
-            <Col md={10} className='style-column'>
-                <Grid className='content'>
-                    {this.props.children}
-                </Grid>
+            <Col md={10} className='content'>
+                <Row className='menu-bar'>
+                    <div className='title'>Tangram Tutorial</div>
+                </Row>
+                <Row className='content-child'>
+                    <Col md={12}>
+                        <Grid>
+                            {this.props.children}
+                        </Grid>
+                    </Col>
+                </Row>
             </Col>
         </Row>
     </Grid>
