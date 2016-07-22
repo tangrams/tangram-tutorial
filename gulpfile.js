@@ -25,6 +25,11 @@ gulp.task('webpack:build', function(callback) {
     buildConfig.debug = false;
     buildConfig.plugins.push(new webpack.optimize.UglifyJsPlugin());
     buildConfig.plugins.push(new CompressionPlugin());
+    buildConfig.plugins.push(new webpack.DefinePlugin({
+      'process.env':{
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }));
 
     webpack(buildConfig, function(err, stats) {
         if(err) throw new gutil.PluginError('webpack:build', err);
