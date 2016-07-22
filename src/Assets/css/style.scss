@@ -84,18 +84,15 @@ iframe {
 
 .sidebar-title {
 	height: 70px;
-	background-color: #1c262f;
-	color: white;
-	// text-align: center;
-    justify-content: center;
+	justify-content: center;
+    text-align: center;
 	display: flex;
-	flex-direction: column;
-	font-size: 36px;
 }
 
 .sidebar-title-logo {
-	padding-left: 40px;
-	// margin: auto;
+	vertical-align: middle;
+	height: 60px;
+	margin: auto;
 }
 
 .sidebar-toc {

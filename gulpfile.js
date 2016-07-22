@@ -43,6 +43,7 @@ gulp.task('dev-server', ['webpack-dev-server']);
 
 gulp.task('webpack-dev-server', function(callback) {
 
+    webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
     var compiler = webpack(webpackConfig);
 
     var server = new WebpackDevServer(compiler, {
@@ -51,7 +52,9 @@ gulp.task('webpack-dev-server', function(callback) {
         noInfo: false,
         publicPath: '/dist/',
         stats: { colors: true },
-        historyApiFallback: true
+        historyApiFallback: true,
+        hot: true,
+        inline: true
     });
 
     server.listen(8080, '0.0.0.0', function(err) {
