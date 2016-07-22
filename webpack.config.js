@@ -10,7 +10,6 @@ module.exports = {
     context: path.join(__dirname, 'src'),
     entry: {
         app: ["./App.react.js"]
-        // path.join(__dirname, './src/App.react.js')
     },
     output: {
         path: path.join(__dirname, 'dist'),
@@ -44,10 +43,3 @@ module.exports = {
     },
     plugins: []
 };
-
-/*entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    path.join(__dirname, './src/App.react.js')
-],
-*/
