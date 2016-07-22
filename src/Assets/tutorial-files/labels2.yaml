@@ -29,6 +29,6 @@ layers:
                 style: text
                 text_source: name
                 font:
-                    size: 18px
+                    size: 16px
         filter:
             label_placement: yes # We need this filter in order to display only one label at the center of each country polygon
