@@ -53,4 +53,14 @@ All valid GeoJSON and TopoJSON files have a type member with the name "propertie
 
 [section]
 
-Oh no! Take a close look at the map - what's going on with all the repeated labels (zoom in closer if you can't see them)?
+Oh no! Take a close look at the map - what's going on with all the repeated labels (zoom in closer if you can't see them)? This is where we go back to the magic sauce `generate_label_centroids: true` on line 5.
+
+For each point that Tangram has generated at the centroid of each polygon, it has also created a `{"label_placement" : "yes"}` property. This is how we'll filter for just those points within our `_labelStyle` style. To do so we need something called a `filter` block - which we'll go into later. For now, just note the additional lines 33-34 that filter just the points at the centroid of each polygon.
+
+<div class='alert-message'>
+If the feature in question is a multipolygon, the centroid point will be added to the largest polygon in the group.
+</div>
+
+[section]
+
+Tangram is powerful because it let's you customize the drawing style of your layers to suit your needs. There are many more parameters you can use to customize your labels. Take a look at a few below:

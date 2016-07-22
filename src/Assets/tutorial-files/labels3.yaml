@@ -3,7 +3,6 @@ sources:
         type: GeoJSON
         url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson
         generate_label_centroids: true
-        max_zoom: 15
 
 layers:
     _countryLayer:
@@ -29,8 +28,20 @@ layers:
             _labelStyle:
                 style: text
                 text_source: name
+                align: center # Zoom out and see what happens when you set 'left', 'center' or 'right'
+                offset: [0px, 10px] # Moves the point 10 pixels down in screen-space. Try [0px, -10px] to move up. And [40px, 0px] to move right.
+                text_wrap: 10 # Sets a maximum line length of 10 characters.
+                collide: true # Tangram does the hard work of calculating when labels should disappear if the map becomes too cluttered. Default is true, but try setting this to false and zoom out.
                 font:
-                    size: 18px
-                    fill: yellow # The label color can be set with a 'fill' parameter
+                    family: Georgia #
+                    size: 16px
+                    fill: palegreen # The label color can be set with a 'fill' parameter. Change the color!
+                    stroke: # You can set a stroke (outline) color and width for the font
+                        color: black
+                        width: 4px
+                    style: italic # Currently only style supported is italic. Remove this for normal font
+                    transform: uppercase # Options for font styles are 'uppercase', 'lowercase', and 'capitalize'(which only sets first letter to uppercase)
+                    weight: bold # Can be one of 'lighter', 'normal', 'bold', or 'bolder'. Integers may be any CSS-style font weight from 100-900
+                    #weight: 400
         filter:
             label_placement: yes
