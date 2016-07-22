@@ -34,6 +34,7 @@ export default class Main extends React.Component {
                              <ListGroupItem><Link to="/styling/lines">Styling with Lines</Link></ListGroupItem>
                              <ListGroupItem><Link to="/styling/order">Layer Order</Link></ListGroupItem>
                              <ListGroupItem><Link to="/styling/labels">Labels</Link></ListGroupItem>
+                             <ListGroupItem><Link to="/styling/text">Customizing Text</Link></ListGroupItem>
                          </Panel>
                          <Panel collapsible defaultExpanded header="Filters" onClick={() => {this.context.router.push('/filters')}}>
                          </Panel>
