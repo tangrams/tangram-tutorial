@@ -7,15 +7,15 @@ let baseurl = tangramplayurl + tutorialurl;
 
 let examples = {
     min: baseurl + 'min.yaml',
-    layers: baseurl + 'layers.yaml' + '&lines=2&#44;4',
-    layers2: baseurl + 'layers2.yaml' + '&lines=12',
-    layers3: baseurl + 'layers3.yaml' + '&lines=13-13',
+    layers: baseurl + 'layers.yaml' + '&lines=2,9',
+    layers2: baseurl + 'layers2.yaml' + '&lines=8,12',
+    layers3: baseurl + 'layers3.yaml' + '&lines=13',
     styling: baseurl + 'styling.yaml' + '&lines=18-19',
-    styling2: baseurl + 'styling2.yaml' + '&lines=15-15',
-    styling3: baseurl + 'labels.yaml',
+    styling2: baseurl + 'styling2.yaml' + '&lines=15,20',
+    styling3: baseurl + 'labels.yaml' + '&lines=28-35',
     styling4: baseurl + 'labels2.yaml' + '&lines=33-34',
-    styling5: baseurl + 'labels3.yaml',
+    styling5: baseurl + 'labels3.yaml' + '&lines=28-45',
     filters: baseurl + 'filters.yaml' + '&lines=11-17'
-}
+};
 
 export default examples;
