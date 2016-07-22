@@ -8,7 +8,7 @@ layers:
     _countryLayer: # ~~TODO~~ try changing this layer name. The map should still render correctly
         data:
             source: _mapzen
-            # Here we specify the name of the layer in our data source. Should match a layer within the gejson file we are importing
+            # Here we specify the name of the layer in our data source. Should match a layer within the geojson file we are importing
             layer: countries # ~~TODO~~ try changing this string. The map should NOT render
         draw:
             _countryStyle:
