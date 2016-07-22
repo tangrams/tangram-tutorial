@@ -33,7 +33,7 @@ layers:
                 text_wrap: 10 # Sets a maximum line length of 10 characters.
                 collide: true # Tangram does the hard work of calculating when labels should disappear if the map becomes too cluttered. Default is true, but try setting this to false and zoom out.
                 font:
-                    family: Georgia #
+                    family: Georgia # Family can be any typeface available to the operating system. Meaning, you can import font families in your CSS and Tangram will be able to use them.
                     size: 16px
                     fill: palegreen # The label color can be set with a 'fill' parameter. Change the color!
                     stroke: # You can set a stroke (outline) color and width for the font
