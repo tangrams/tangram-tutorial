@@ -27,12 +27,12 @@ export default class Main extends React.Component {
                         <Panel collapsible defaultExpanded header="Intro" onClick={() => {this.context.router.push('/intro')}}>
                         </Panel>
                         <Panel collapsible defaultExpanded header="A Basic Map">
-                            <ListGroupItem><Link to="/minimum-map/min">A minimum map</Link></ListGroupItem>
+                            <ListGroupItem><Link to="/minimum-map/min">A Minimum Map</Link></ListGroupItem>
                             <ListGroupItem><Link to="/minimum-map/data">Layers and Data Import</Link></ListGroupItem>
                          </Panel>
                          <Panel collapsible defaultExpanded header="Styling">
-                             <ListGroupItem><Link to="/styling/lines">Lines</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/styling/order">Order</Link></ListGroupItem>
+                             <ListGroupItem><Link to="/styling/lines">Styling with Lines</Link></ListGroupItem>
+                             <ListGroupItem><Link to="/styling/order">Layer Order</Link></ListGroupItem>
                              <ListGroupItem><Link to="/styling/labels">Labels</Link></ListGroupItem>
                          </Panel>
                          <Panel collapsible defaultExpanded header="Filters" onClick={() => {this.context.router.push('/filters')}}>
