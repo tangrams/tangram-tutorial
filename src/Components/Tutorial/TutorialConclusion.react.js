@@ -5,8 +5,8 @@ var React = require('react');
 import Row from 'react-bootstrap/lib/Row';
 import TangramPlay from '../TangramPlay.react';
 
-import tiles from '../../Markdown/tiles.md';
-import conclusion from '../../Markdown/conclusion.md';
+import tiles from '../../Assets/markdown/tiles.md';
+import conclusion from '../../Assets/markdown/conclusion.md';
 
 import examples from './links';
 

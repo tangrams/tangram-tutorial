@@ -4,20 +4,37 @@ var React = require('react');
 
 import Row from 'react-bootstrap/lib/Row';
 import TangramPlay from '../TangramPlay.react';
-
-import styling from '../../Markdown/styling.md';
-import styling2 from '../../Markdown/styling2.md';
-
 import examples from './links';
 
-export default class Tutorial3 extends React.Component {
+import styling from '../../Assets/markdown/styling.md';
+var sections = styling.split('[section]');
+
+export class Tutorial31 extends React.Component {
   render () {
     return (
         <Row className="show-grid">
-            <div dangerouslySetInnerHTML={{ __html: styling }} />
+            <div dangerouslySetInnerHTML={{ __html: sections[0] }} />
             <TangramPlay url={examples.styling} />
-            <div dangerouslySetInnerHTML={{ __html: styling2 }} />
+        </Row>
+        )}
+}
+
+export class Tutorial32 extends React.Component {
+  render () {
+    return (
+        <Row className="show-grid">
+            <div dangerouslySetInnerHTML={{ __html: sections[1] }} />
             <TangramPlay url={examples.styling2} />
+        </Row>
+        )}
+}
+
+export class Tutorial33 extends React.Component {
+  render () {
+    return (
+        <Row className="show-grid">
+            <div dangerouslySetInnerHTML={{ __html: sections[2] }} />
+            <TangramPlay url={examples.styling3} />
         </Row>
         )}
 }

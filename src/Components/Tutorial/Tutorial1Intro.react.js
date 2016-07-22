@@ -3,7 +3,7 @@ var React = require('react');
 
 import Row from 'react-bootstrap/lib/Row';
 
-import intro from '../../Markdown/intro.md';
+import intro from '../../Assets/markdown/intro.md';
 
 export default class Tutorial1 extends React.Component {
   render () {

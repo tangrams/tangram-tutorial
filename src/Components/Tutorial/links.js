@@ -9,6 +9,7 @@ let examples = {
     layers3: baseurl + 'layers3.yaml' + '&lines=13',
     styling: baseurl + 'styling.yaml' + '&lines=18-19',
     styling2: baseurl + 'styling2.yaml' + '&lines=15',
+    styling3: baseurl + 'labels.yaml',
     filters: baseurl + 'filters.yaml' + '&lines=11-17'
 }
 
