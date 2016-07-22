@@ -25,6 +25,7 @@ gulp.task('webpack:build', function(callback) {
     buildConfig.debug = false;
     buildConfig.plugins.push(new webpack.optimize.UglifyJsPlugin());
     buildConfig.plugins.push(new CompressionPlugin());
+    // This is so react loads the minified version
     buildConfig.plugins.push(new webpack.DefinePlugin({
       'process.env':{
         'NODE_ENV': JSON.stringify('production')
@@ -48,8 +49,10 @@ gulp.task('dev-server', ['webpack-dev-server']);
 
 gulp.task('webpack-dev-server', function(callback) {
 
+    // The next two lines are for hot loading
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
     webpackConfig.entry.app.unshift('webpack-dev-server/client?http://localhost:8080', 'webpack/hot/dev-server');
+
     var compiler = webpack(webpackConfig);
 
     var server = new WebpackDevServer(compiler, {
