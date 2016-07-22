@@ -3,6 +3,7 @@ sources:
         type: GeoJSON
         url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson
         generate_label_centroids: true
+        max_zoom: 15
 
 layers:
     _countryLayer:
@@ -30,5 +31,6 @@ layers:
                 text_source: name
                 font:
                     size: 18px
+                    fill: yellow # The label color can be set with a 'fill' parameter
         filter:
-            label_placement: yes # We need this filter in order to display only one label at the center of each country polygon
+            label_placement: yes

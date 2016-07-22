@@ -13,6 +13,8 @@ let examples = {
     styling: baseurl + 'styling.yaml' + '&lines=18-19',
     styling2: baseurl + 'styling2.yaml' + '&lines=15-15',
     styling3: baseurl + 'labels.yaml',
+    styling4: baseurl + 'labels2.yaml',
+    styling5: baseurl + 'labels3.yaml',
     filters: baseurl + 'filters.yaml' + '&lines=11-17'
 }
 

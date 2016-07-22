@@ -26,8 +26,10 @@ layers:
             layer: countries
         draw:
             _labelStyle:
-                style: text
-                text_source: name
-                color: white
+                style: text # The style has to be 'text' in order to render a label
+                text_source: name # ~~~ TODO ~~~ Uncomment each 'text_source' one at a time to experiment with different labels
+                # text_source: capital
+                # text_source: languages
                 font:
-                    size: 18px
+                    size: 16px # ~~~ TODO ~~~ Try out different font sizes
+                    # size: 40px
