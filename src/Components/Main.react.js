@@ -20,7 +20,7 @@ export default class Main extends React.Component {
         <Row>
             <Col md={2} className='sidebar'>
                 <Row className='sidebar-title'>
-                    <div className='sidebar-title-logo'>Mapzen</div>
+                    <img className='sidebar-title-logo' src={require('../Assets/images/logo.png')} />
                 </Row>
                 <Row className='sidebar-toc'>
                     <ListGroup fill>
@@ -59,6 +59,9 @@ export default class Main extends React.Component {
     </Grid>
     )}
 }
+
+//                     <div className='sidebar-title-logo'>Mapzen</div>
+//webpack-dev-server --hot --inline
 
 Main.contextTypes = {
   router: React.PropTypes.object.isRequired

@@ -8,21 +8,22 @@ module.exports = {
     debug: true,
     devtool: 'source-map',
     context: path.join(__dirname, 'src'),
-    entry: {
-        app: './App.react.js',
-        // chat: './chat-app.js'
-    },
+    entry: [
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/dev-server',
+        path.join(__dirname, './src/App.react.js')
+    ],
     output: {
         path: path.join(__dirname, 'dist'),
         publicPath: '/dist/',
-        filename: '[name].bundle.js'
+        filename: 'app.bundle.js'
     },
     module: {
         loaders: [
             {
                 test: /src(\/|\\).*\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel'
+                loaders: ['react-hot', 'babel']
             },
             {
                 test: /src(\/|\\).*\.css$/,
@@ -33,8 +34,12 @@ module.exports = {
                 loader: 'style!css!sass'
             },
             {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader?limit=8192'
+            },
+            {
                 test: /\.md$/,
-                loader: "html!markdown?gfm=false"
+                loader: 'html!markdown?gfm=false'
             }
         ]
     },
