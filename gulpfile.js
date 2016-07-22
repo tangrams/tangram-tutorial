@@ -44,6 +44,7 @@ gulp.task('dev-server', ['webpack-dev-server']);
 gulp.task('webpack-dev-server', function(callback) {
 
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
+    webpackConfig.entry.app.unshift('webpack-dev-server/client?http://localhost:8080', 'webpack/hot/dev-server');
     var compiler = webpack(webpackConfig);
 
     var server = new WebpackDevServer(compiler, {
