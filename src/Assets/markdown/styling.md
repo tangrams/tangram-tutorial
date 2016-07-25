@@ -48,7 +48,7 @@ Second, we need to add another layer name with details for how to draw those lab
 Essentially anything within the `properties` section can be used as a valid `text_source` as long as it is a string. If we use `text_source: name` as in the example below, Tangram will match the `name` property in the geojson and serve that as a label.
 
 <div class='alert-message'>
-All valid GeoJSON and TopoJSON files have a type member with the name "properties" - it's not something particular to the GeoJSON file we are using in this example.
+All valid GeoJSON and TopoJSON files have a type member with the name "properties" - it's not something particular to the GeoJSON file we are using in this example. Mapbox Vector Tiles also have a "properties" member.
 </div>
 
 [section]

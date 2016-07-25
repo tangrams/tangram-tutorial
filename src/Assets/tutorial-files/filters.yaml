@@ -8,13 +8,6 @@ layers:
         data:
             source: _mapzen
             layer: countries
-        filter: # ~~~ TODO ~~~ Uncomment each filter one at a time
-            continentName: Asia # Here we are matching all the data that has a property 'continentName' as 'Asia'
-            # name: Brazil # Matching all the data that has the property 'name' as 'Brazil'
-            # currencyCode: [USD, EUR] # Here we are matching a list! Notice the brackets '[]'
-            # population: { min: 20000000 } # Matching all countries with a population over 20 million
-            # areaInSqKm: { max: 2500000 } # Matchin all countries with less than 2.5 million square kilometers in area
-            # ~~~ TODO ~~~ Try uncommenting two filters at a time. Tangram will filter that meets BOTH conditions.
         draw:
             _countryStyle:
                 style: polygons
@@ -25,3 +18,15 @@ layers:
                 color: white
                 width: 20000m
                 order: 1
+        filter: # ~~~ TODO ~~~ Uncomment each filter one at a time
+            continentName: Asia # Here we are matching all the data that has a property 'continentName' as 'Asia'
+            # name: Brazil # Matching all the data that has the property 'name' as 'Brazil'
+            # currencyCode: [USD, EUR] # Here we are matching a list, it's equivalent to the logical operator OR in programming. Notice the brackets '[]'
+            # population: { min: 20000000 } # Matching all countries with a population over 20 million
+            # areaInSqKm: { max: 2500000 } # Matching all countries with less than 2.5 million square kilometers in area
+            # ~~~ TODO ~~~ Try uncommenting two filters at a time. Tangram will filter that meets BOTH conditions.
+
+
+
+filter:
+            function() { return feature.population > 10000000 }
