@@ -17,7 +17,9 @@ let examples = {
     styling5: baseurl + 'labels3.yaml' + '&lines=28-45',
     filters: baseurl + 'filters.yaml' + '&lines=21-27',
     filters2: baseurl + 'filters2.yaml' + '&lines=21-28',
-    filters3: baseurl + 'filters3.yaml' + '&lines=21-24'
+    filters3: baseurl + 'filters3.yaml' + '&lines=21-27',
+    vector: baseurl + 'vector.yaml',
+    raster: baseurl + 'raster.yaml'
 };
 
 export default examples;
