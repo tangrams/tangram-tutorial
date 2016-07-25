@@ -8,12 +8,34 @@ import examples from './links';
 
 import filters from '../../Assets/markdown/filters.md';
 
-export default class Tutorial4 extends React.Component {
+var sections = filters.split('[section]');
+
+export class Tutorial41 extends React.Component {
   render () {
     return (
         <Row className="show-grid">
-            <div dangerouslySetInnerHTML={{ __html: filters }} />
+            <div dangerouslySetInnerHTML={{ __html: sections[0] }} />
             <TangramPlay url={examples.filters} />
+        </Row>
+        )}
+}
+
+export class Tutorial42 extends React.Component {
+  render () {
+    return (
+        <Row className="show-grid">
+            <div dangerouslySetInnerHTML={{ __html: sections[1] }} />
+            <TangramPlay url={examples.filters2} />
+        </Row>
+        )}
+}
+
+export class Tutorial43 extends React.Component {
+  render () {
+    return (
+        <Row className="show-grid">
+            <div dangerouslySetInnerHTML={{ __html: sections[2] }} />
+            <TangramPlay url={examples.filters3} />
         </Row>
         )}
 }

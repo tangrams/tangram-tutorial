@@ -1,0 +1,11 @@
+sources:
+    stamen-terrain:
+        type: Raster
+        url: http://a.tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg
+
+layers:
+    terrain:
+        data: { source: stamen-terrain }
+        draw:
+            raster:
+                order: 0 # draw on bottom
