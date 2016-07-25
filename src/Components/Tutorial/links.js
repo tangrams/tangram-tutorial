@@ -15,7 +15,9 @@ let examples = {
     styling3: baseurl + 'labels.yaml' + '&lines=28-35',
     styling4: baseurl + 'labels2.yaml' + '&lines=33-34',
     styling5: baseurl + 'labels3.yaml' + '&lines=28-45',
-    filters: baseurl + 'filters.yaml' + '&lines=11-17'
+    filters: baseurl + 'filters.yaml' + '&lines=21-27',
+    filters2: baseurl + 'filters2.yaml' + '&lines=21-28',
+    filters3: baseurl + 'filters3.yaml' + '&lines=21-24'
 };
 
 export default examples;

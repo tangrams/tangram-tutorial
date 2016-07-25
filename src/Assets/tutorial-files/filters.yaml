@@ -25,8 +25,3 @@ layers:
             # population: { min: 20000000 } # Matching all countries with a population over 20 million
             # areaInSqKm: { max: 2500000 } # Matching all countries with less than 2.5 million square kilometers in area
             # ~~~ TODO ~~~ Try uncommenting two filters at a time. Tangram will filter that meets BOTH conditions.
-
-
-
-filter:
-            function() { return feature.population > 10000000 }
