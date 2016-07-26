@@ -1,13 +1,23 @@
 sources:
     _mapzen:
         type: TopoJSON
-        url: https://vector.mapzen.com/osm/earth/{z}/{x}/{y}.topojson # We are importing just the earth layer
+        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson # We are importing from the Mapzen Vector Tile service
 
+# With this ordering of layers, landlocked bodies of water disappear from the map
 layers:
     _earthLayer:
-        data: # Notice we removed 'layer: earth' from this section
+        data:
             source: _mapzen
+            layer: earth
         draw:
             polygons:
-                order: 0
+                order: 1 # Try making this 0 to make the lakes and rivers reappear
                 color: '#555'
+    _waterLayer:
+        data:
+            source: _mapzen
+            layer: water
+        draw:
+            polygons:
+                order: 0 # Try making this 1 to make the lakes and rivers reappear
+                color: '#ddd'
