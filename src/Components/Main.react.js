@@ -13,8 +13,6 @@ export default class Main extends React.Component {
       require('../Assets/css/bootstrap.css');
       require('../Assets/css/style.scss');
 
-//className='full-height row-content'
-//className='full-column-height'
      return (
       <Grid className='grid-container'>
         <Row>
@@ -36,13 +34,14 @@ export default class Main extends React.Component {
                              <ListGroupItem><Link to="/styling/labels">Labels</Link></ListGroupItem>
                              <ListGroupItem><Link to="/styling/text">Customizing Text</Link></ListGroupItem>
                          </Panel>
-                         <Panel collapsible defaultExpanded header="Filters">
+                         <Panel collapsible defaultExpanded header="Data Filters">
                              <ListGroupItem><Link to="/filters/features">Feature Filters</Link></ListGroupItem>
                              <ListGroupItem><Link to="/filters/booleans">Boolean Filters</Link></ListGroupItem>
                              <ListGroupItem><Link to="/filters/functions">Function Filters</Link></ListGroupItem>
                          </Panel>
                          <Panel collapsible defaultExpanded header="Vector & Raster Tiles">
                              <ListGroupItem><Link to="/tiles/vector">What are Vector Tiles?</Link></ListGroupItem>
+                             <ListGroupItem><Link to="/tiles/syntax">URL Syntax</Link></ListGroupItem>
                              <ListGroupItem><Link to="/tiles/raster">Raster Tiles</Link></ListGroupItem>
                          </Panel>
                          <Panel collapsible defaultExpanded header="Conclusion" onClick={() => {this.context.router.push('/conclusion')}}>
@@ -66,9 +65,6 @@ export default class Main extends React.Component {
     </Grid>
     )}
 }
-
-//                     <div className='sidebar-title-logo'>Mapzen</div>
-//webpack-dev-server --hot --inline
 
 Main.contextTypes = {
   router: React.PropTypes.object.isRequired
