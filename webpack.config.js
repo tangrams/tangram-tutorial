@@ -33,7 +33,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'url-loader?limit=8192'
+                loader: 'url-loader'
             },
             {
                 test: /\.md$/,
