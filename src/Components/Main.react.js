@@ -43,6 +43,7 @@ export default class Main extends React.Component {
                          </Panel>
                          <Panel collapsible defaultExpanded header="Vector & Raster Tiles">
                              <ListGroupItem><Link to="/tiles/vector">What are Vector Tiles?</Link></ListGroupItem>
+                             <ListGroupItem><Link to="/tiles/layers">Vector Tile Layers</Link></ListGroupItem>
                              <ListGroupItem><Link to="/tiles/syntax">URL Syntax</Link></ListGroupItem>
                              <ListGroupItem><Link to="/tiles/raster">Raster Tiles</Link></ListGroupItem>
                          </Panel>

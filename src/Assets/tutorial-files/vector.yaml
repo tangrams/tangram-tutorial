@@ -7,7 +7,7 @@ layers:
     _earthLayer:
         data:
             source: _mapzen
-            layer: earth
+            layer: earth # This is one layer in the Mapzen Vector Tile service
         draw:
             polygons:
                 order: 0
@@ -15,7 +15,7 @@ layers:
     _waterLayer:
         data:
             source: _mapzen
-            layer: water
+            layer: water # This is another layer provided in the Mapzen Vector Tile service
         draw:
             polygons:
                 order: 1
