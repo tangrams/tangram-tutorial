@@ -11,8 +11,8 @@ layers:
         draw:
             _countryStyle:
                 style: polygons
-                color: darkgreen
+                color: darkgreen # ~~~ TODO ~~~ Uncomment each color format one at a time
                 # color: '#ff00ff'
                 # color: hsl(180, 100%, 100%)
                 # color: [1.0, 0.2, 0.3, 0.5]
-                # color: function() { return [$zoom, .5, .5]; }
+                # color: function() { return [($zoom/10) , 0.5, 0.5]; } # In this function our red channel is being determined by the current map's zoom level divided by 10
