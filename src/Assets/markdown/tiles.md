@@ -14,7 +14,7 @@ Simply put, vector tiles are squares of math. Instead of a web server sending yo
 
 [section]
 
-How to draw the tile is up to the vector-friendly visualization tool (usually SVG, Canvas, WebGL, or Tangram) in the web browser. Buildings and roads can be rendered in different ways (or not at all) once the vector tile is downloaded — no need to head back to the server and fetch a different set of tiles if you want to filter the output. There’s no need to re-render millions of tiles if you change your mind about the style of a road or the color of a building.
+How to draw the tile is up to the vector-friendly visualization tool (usually SVG, Canvas, WebGL, or Tangram) in the web browser. Buildings and roads can be rendered in different ways (or not at all) once the vector tile is downloaded — no need to head back to the server and fetch a different set of tiles if you want to filter the output. This means that there’s no need to re-render millions of tiles if you change your mind about the style of a road or the color of a building.
 
 ### A simple map using vector tiles
 
@@ -22,9 +22,11 @@ With that in mind let's take a look at a simple map we can build with the Mapzen
 
 [section]
 
-How did we get the earth and water layer?
+How did we get the earth and water layer? They're conveniently included in the Mapzen Vector Tile service, which pulls in data from OpenStreetMap and many more open data projects. The tile service provides map data organized into several thematic layers, each of which is name, for example: `buildings`, `landuse`, and `water`. We'll go into all the available layers in the next section of this tutorial.
 
-TODO: talk about OSM layers stuff we're feeding
+<div class='alert-message'>
+For a full listing of the data sources in the Mapzen Vector Tile service check out [data sources](https://mapzen.com/documentation/vector-tiles/data-sources/).
+</div>
 
 ### A reminder about order
 
@@ -69,6 +71,25 @@ One last comment about URLs. We've been using a special app in this tutorial tha
 
 <div class='alert-message'>
 If you're curious, here is what a single sample TopoJSON tile looks like: `https://vector.mapzen.com/osm/all/16/19293/24641.topojson?api_key=vector-tiles-xxxxxxx`
+</div>
+
+[section]
+
+## Vector Tile Layers
+
+As we've already explored, the Mapzen Vector Tile service conveniently includes data about the world in the form of data layers. In the previous section we built a map with two of these layers: `earth` and `water`. What are the rest? The service includes a total of 9 layers: `boundaries`, `buildings`, `landuse`, `places`, `pois`, `roads`, `transit`, `earth`, and `water`. Let's talk about each of these in more detail.
+
+### Boundaries and Barriers
+
+This layer includes all of those things you would expect to be boundaries as well as a few other goodies: OpenStreetMap administrative boundaries (national borders, provinces, regions, municipalities, cities), Natural Earth boundaries (such as maritime boundaries), and even a few details at high zoom levels like the fence lines around some petting zoos. They keywords you should remember for this layer are:
+
+* Layer name: `boundaries`
+* Geometry types: `lines`
+
+<div class='alert-message'>
+For each layer, we will provide a 'layer name' and 'geometry types'. Recall that the layer name is what we have been using as `layer: countries` and `layer: earth` in some of the previous examples. It's the way we tell Tangram what data source to use for a particular drawing style within a `layer` block.
+<br><br>
+We've also been using a few different geometry types in previous examples: `lines`, `polygons`, and `text`. Remember when we styled the [countries](/#/minimum-map/data) we used `style: polygons`, when we styled our country [borders](/#/styling/lines) we used `style: lines` and for [labels](/#/styling/labels) we used `style: text`.
 </div>
 
 [section]
