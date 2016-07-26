@@ -15,12 +15,26 @@ export class Tutorial51 extends React.Component {
     return (
         <Row className="show-grid">
             <div dangerouslySetInnerHTML={{ __html: sections[0] }} />
+            <img width="60%" src={require('../../Assets/images/vectortiles.gif')} />
+            <div dangerouslySetInnerHTML={{ __html: sections[1] }} />
             <TangramPlay url={examples.vector} />
+            <div dangerouslySetInnerHTML={{ __html: sections[2] }} />
         </Row>
         )}
 }
 
 export class Tutorial52 extends React.Component {
+  render () {
+    return (
+        <Row className="show-grid">
+            <div dangerouslySetInnerHTML={{ __html: sections[3] }} />
+            <div dangerouslySetInnerHTML={{ __html: sections[4] }} />
+        </Row>
+        )}
+}
+
+
+export class Tutorial53 extends React.Component {
   render () {
     return (
         <Row className="show-grid">
