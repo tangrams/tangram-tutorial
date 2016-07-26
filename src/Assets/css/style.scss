@@ -74,11 +74,12 @@ iframe {
 	display: flex;
 	margin-left: 0;
 	margin-right: 0;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .sidebar-title-logo {
 	vertical-align: middle;
-	height: 60px;
 	margin: auto;
 }
 
@@ -149,10 +150,9 @@ pre {
 	display: block;
     margin-left: auto;
     margin-right: auto;
-	max-width: 500px;
 }
 
-// overflow-y: scroll;
-// height: 100%;
-// z-index: 10000;
-// position: fixed;
+.no-margin {
+	margin-top: 0;
+	margin-bottom: 0;
+}
