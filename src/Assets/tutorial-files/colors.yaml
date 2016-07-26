@@ -11,7 +11,8 @@ layers:
         draw:
             _countryStyle:
                 style: polygons
-                color: darkgreen # ~~~ TODO ~~~ Uncomment each color format one at a time
+                # ~~~ TODO ~~~ Uncomment each color format one at a time
+                color: darkgreen
                 # color: '#ff00ff'
                 # color: hsl(180, 100%, 100%)
                 # color: [1.0, 0.2, 0.3, 0.5]
