@@ -16,13 +16,17 @@ How to draw the tile is up to the vector-friendly visualization tool (usually SV
 
 ### A simple map using vector tiles
 
-With that in mind let's take a look at a simple map we can build with the Mapzen Vector Tile service:
+With that in mind let's take a look at a simple map we can build with the Mapzen Vector Tile service and see how simple it is to obtain the data we need to color oceans:
 
 [section]
 
 How did we get the earth and water layer?
 
 TODO: talk about OSM layers stuff we're feeding
+
+### A reminder about order
+
+Remember that layer order matters when we're styling a map. Take a look at what happens if we revert the water and earth layer orders. If we place the earth layer (order 1) on top of the water layer (order 0) then we wouldn't get any landlocked bodies of water like lakes and rivers!
 
 [section]
 
@@ -48,15 +52,15 @@ In reality you can also replace the `all` in the url with any number of layers o
 
 or
 
-`https://vector.mapzen.com/osm/earth,water/{z}/{x}/{y}.topojson`
+`https://vector.mapzen.com/osm/earth,water/{z}/{x}/{y}.topojson`   
 
-
-Importantly, though, if you only import one layer, you must leave out the `data: layer` filter. Take a look at the example below:
+<br>
+Importantly, though, if you only import one layer, you must leave out the `data: layer` filter. Otherwise you can apply the data filter as usual. Take a look at the two examples below:
 
 [section]
 
 <div class='alert-message'>
-If you're curious, here is what a sample TopoJSON tile looks like: `https://vector.mapzen.com/osm/all/16/19293/24641.topojson?api_key=vector-tiles-xxxxxxx`
+If you're curious, here is what a single sample TopoJSON tile looks like: `https://vector.mapzen.com/osm/all/16/19293/24641.topojson?api_key=vector-tiles-xxxxxxx`
 </div>
 
 [section]

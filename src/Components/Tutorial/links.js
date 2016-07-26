@@ -18,7 +18,10 @@ let examples = {
     filters: baseurl + 'filters.yaml' + '&lines=21-27',
     filters2: baseurl + 'filters2.yaml' + '&lines=21-28',
     filters3: baseurl + 'filters3.yaml' + '&lines=21-27',
-    vector: baseurl + 'vector.yaml',
+    vector: baseurl + 'vector.yaml' + '&lines=4',
+    vector2: baseurl + 'vector2.yaml' + '&lines=14,22',
+    vector3: baseurl + 'vector2.yaml' + '&lines=4,8',
+    vector4: baseurl + 'vector3.yaml' + '&lines=4',
     raster: baseurl + 'raster.yaml'
 };
 

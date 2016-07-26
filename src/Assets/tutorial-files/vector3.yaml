@@ -1,22 +1,13 @@
 sources:
     _mapzen:
         type: TopoJSON
-        url: https://vector.mapzen.com/osm/earth,water/{z}/{x}/{y}.topojson # We are importing just two layers
+        url: https://vector.mapzen.com/osm/earth/{z}/{x}/{y}.topojson # We are importing just the earth layer
 
 layers:
     _earthLayer:
-        data:
+        data: # Notice we removed 'layer: earth' from this section
             source: _mapzen
-            layer: earth
         draw:
             polygons:
                 order: 0
                 color: '#555'
-    _waterLayer:
-        data:
-            source: _mapzen
-            layer: water
-        draw:
-            polygons:
-                order: 1
-                color: '#ddd'
