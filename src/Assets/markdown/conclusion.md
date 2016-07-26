@@ -8,6 +8,8 @@ Tangram is available in two delicious flavors: [Tangram JS](https://github.com/t
 
 The syntax and parameters for the two libraries are (mostly) the same so everything you've learned in this tutorial apply to both platforms.
 
+[section]
+
 We've built two tutorials specifically geared towards helping you deploy a map on each platform:
 
 * [Tangram JS Tutorial: Web](https://mapzen.com/documentation/tangram/walkthrough/)
@@ -20,3 +22,7 @@ Remember to get an API key if you'd like to use the Mapzen Vector Tile service. 
 ### A few more helpful resources
 
 If you'd like to learn more, we suggest you get started with these additional examples and demos:
+
+### Tangram Play
+
+To access the embedded Tangram app that we've been using in this tutorial head over to: [Tangram Play](https://mapzen.com/tangram/play/).

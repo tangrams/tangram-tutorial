@@ -159,3 +159,18 @@ pre {
 	margin-top: 0;
 	margin-bottom: 0;
 }
+
+.image-row {
+	flex-direction: row;
+    display: flex;
+	text-align: center;
+    justify-content: center;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.image-row img {
+	height: 100%;
+	margin-left: 20px;
+	margin-right: 20px;
+}
