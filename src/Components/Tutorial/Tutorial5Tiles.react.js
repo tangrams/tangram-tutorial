@@ -16,9 +16,9 @@ export class Tutorial51 extends React.Component {
     return (
         <Row className="show-grid">
             <div dangerouslySetInnerHTML={{ __html: sections[0] }} />
-            <Image src={require('../../Assets/images/oceans.png')} responsive />
+            <Image width="60%" src={require('../../Assets/images/oceans.png')} responsive />
             <div dangerouslySetInnerHTML={{ __html: sections[1] }} />
-            <Image src={require('../../Assets/images/vectortiles.gif')} responsive />
+            <Image width="60%" src={require('../../Assets/images/vectortiles.gif')} responsive />
             <div dangerouslySetInnerHTML={{ __html: sections[2] }} />
             <TangramPlay url={examples.vector} />
             <div dangerouslySetInnerHTML={{ __html: sections[3] }} />
