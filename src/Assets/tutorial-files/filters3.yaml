@@ -22,6 +22,6 @@ layers:
             function() { return feature.continentName === 'Europe' } # Matching all countries with a continentName of Europe
             # function() { return feature.continentName === 'Asia' && feature.population >= 100000000 } # Matching all countries with a continentName of Asia and with a population over 100M
             # function() { return feature.languages && feature.languages.indexOf('es') !== -1 } # Matching all countries that have a property called language and for which Spanish, 'es', is one of the languages.
-            any:
-                - function() { return feature.continentName === 'Europe' }
-                - function() { return feature.continentName === 'South America' }
+            # any: # To use more than one filter you need to use a boolean filter block
+                # - function() { return feature.continentName === 'Europe' }
+                # - function() { return feature.continentName === 'South America' }
