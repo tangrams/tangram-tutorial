@@ -146,10 +146,12 @@ pre {
 }
 
 /* Content */
-.container img {
+.content-child img {
 	display: block;
     margin-left: auto;
     margin-right: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .no-margin {
