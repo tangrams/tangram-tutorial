@@ -59,6 +59,12 @@ Importantly, though, if you only import one layer, you must leave out the `data:
 
 [section]
 
+### API keys
+
+One last comment about URLs. We've been using a special app in this tutorial that let's us embed Tangram and scene file code in one single view. If you go on to deploy a Tangram scene file on your own, you will need an API key. API keys come in the pattern: `vector-tiles-xxxxxxx` and can be obtained here: [https://mapzen.com/developers/sign_in](https://mapzen.com/developers/sign_in). A full URL pattern would look something like this, where you should replace `xxxxxxx` with your particular API key:
+
+`https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-xxxxxxx`
+
 <div class='alert-message'>
 If you're curious, here is what a single sample TopoJSON tile looks like: `https://vector.mapzen.com/osm/all/16/19293/24641.topojson?api_key=vector-tiles-xxxxxxx`
 </div>

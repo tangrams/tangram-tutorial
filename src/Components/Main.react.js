@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/lib/Row';
 import Panel from 'react-bootstrap/lib/Panel';
 import ListGroup from 'react-bootstrap/lib/ListGroup';
 import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
+import Image from 'react-bootstrap/lib/Image';
 
 export default class Main extends React.Component {
   render () {
@@ -18,7 +19,7 @@ export default class Main extends React.Component {
         <Row>
             <Col md={2} className='sidebar'>
                 <Row className='sidebar-title'>
-                    <img className='sidebar-title-logo' src={require('../Assets/images/logo.png')} />
+                    <Image className='sidebar-title-logo' src={require('../Assets/images/logo.png')} responsive />
                 </Row>
                 <Row className='sidebar-toc'>
                     <ListGroup fill>
@@ -31,6 +32,7 @@ export default class Main extends React.Component {
                          <Panel collapsible defaultExpanded header="Styling">
                              <ListGroupItem><Link to="/styling/lines">Styling with Lines</Link></ListGroupItem>
                              <ListGroupItem><Link to="/styling/order">Layer Order</Link></ListGroupItem>
+                             <ListGroupItem><Link to="/styling/colors">Colors</Link></ListGroupItem>
                              <ListGroupItem><Link to="/styling/labels">Labels</Link></ListGroupItem>
                              <ListGroupItem><Link to="/styling/text">Customizing Text</Link></ListGroupItem>
                          </Panel>
