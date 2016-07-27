@@ -37,13 +37,17 @@ layers:
             polygons:
                 order: 2
                 color: '#808080'
-    # One more new layer to display roads
     _roadsLayer:
         data:
             source: _mapzen
-            layer: roads # Layer name is 'roads'
+            layer: roads
         draw:
-            lines: # Layer geometry type is 'lines'
+            lines:
                 order: 4
                 color: '#8374E4'
-                width: 8m # Recall that we need to add a 'width' to line geometry types. It can be in meters 'm' or pixels 'px'
+                width: 8m
+        # ~~~ TODO ~~~ Try replacing the 'any' filter with a 'not' filter
+        filter: # We're filtering to only show 'ferry' and 'highway' roads
+            any: # Logically equivalent to OR
+                - kind: ferry
+                - kind: highway

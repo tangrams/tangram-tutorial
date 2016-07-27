@@ -19,7 +19,8 @@ layers:
                 width: 20000m
                 order: 1
         filter: # ~~~ TODO ~~~ Uncomment the not, any, and all filters one at a time
-            not: { continentName: [South America, North America] } # Matches logical operand NOT
+            not:
+                continentName: [South America, North America] # Matches logical operand NOT
             # any: # Matches logical operand OR.
                 # - name: China
                 # - name: Argentina
