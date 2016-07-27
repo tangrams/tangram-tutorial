@@ -9,33 +9,36 @@ layers:
             source: _mapzen
             layer: earth
         draw:
-            polygons:
+            _earthStyle:
+                style: polygons
                 order: 0
                 color: '#ddeeee'
-
     _waterLayer:
         data:
             source: _mapzen
             layer: water
         draw:
-            polygons:
-                order: 3
+            _waterStyle:
+                style: polygons
+                order: 1
                 color: '#88bbee'
     _landuseLayer:
         data:
             source: _mapzen
             layer: landuse
         draw:
-            polygons:
-                order: 1
+            _landuseStyle:
+                style: polygons
+                order: 2
                 color: '#aaffaa'
     _buildingsLayer:
         data:
             source: _mapzen
             layer: buildings
         draw:
-            polygons:
-                order: 2
+            _buildingsStyle:
+                style: polygons
+                order: 3
                 color: '#808080'
     # One more new layer to display roads
     _roadsLayer:
@@ -43,7 +46,8 @@ layers:
             source: _mapzen
             layer: roads # Layer name is 'roads'
         draw:
-            lines: # Layer geometry type is 'lines'
+            _roadsStyle:
+                style: lines # Layer geometry type is 'lines'
                 order: 4
                 color: '#8374E4'
                 width: 8m # Recall that we need to add a 'width' to line geometry types. It can be in meters 'm' or pixels 'px'

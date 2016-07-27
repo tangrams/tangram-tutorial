@@ -9,7 +9,8 @@ layers:
             source: _mapzen
             layer: earth
         draw:
-            polygons:
+            _earthStyle:
+                style: polygons
                 order: function() { return feature.sort_key; }
                 color: '#ddeeee'
 
@@ -18,7 +19,8 @@ layers:
             source: _mapzen
             layer: water
         draw:
-            polygons:
+            _waterStyle:
+                style: polygons
                 order: function() { return feature.sort_key; }
                 color: '#88bbee'
     _landuseLayer:
@@ -26,7 +28,8 @@ layers:
             source: _mapzen
             layer: landuse
         draw:
-            polygons:
+            _landuseStyle:
+                style: polygons
                 order: function() { return feature.sort_key; }
                 color: '#aaffaa'
     _buildingsLayer:
@@ -34,7 +37,8 @@ layers:
             source: _mapzen
             layer: buildings
         draw:
-            polygons:
+            _buildingsStyle:
+                style: polygons
                 order: function() { return feature.sort_key; }
                 color: '#808080'
     _roadsLayer:
@@ -42,7 +46,8 @@ layers:
             source: _mapzen
             layer: roads
         draw:
-            lines:
+            _roadsStyle:
+                style: lines
                 order: function() { return feature.sort_key; }
                 color: '#8374E4'
                 width: 8m
@@ -50,7 +55,8 @@ layers:
             filter:
                 kind: highway
             draw:
-                lines:
+                _highwayStyle:
+                    style: lines
                     order: function() { return feature.sort_key; }
                     color: '#cc6666'
                     width: 12m

@@ -213,6 +213,24 @@ In addition, to facilitate data visualization overlays and underlays, the follow
 
 [section]
 
+## Naming shortcuts to make your life easier
+
+Tangram provides a few syntax short cuts that can save you time and make your code clearer. Let's look at two of these.
+
+Remember how we have been declaring layers so far? We've used the `layer` parameter to specify what layer within the data source to apply a particular style to.
+
+<pre><code class="language-yaml">layers:
+    &#95;earthLayer:
+        data:
+            source: &#95;mapzen
+            layer: earth
+</pre></code>
+
+If no `layer` parameter is specified, Tangram will try to match the layer within the data source to the "layer name". The next example clarifies how the short hand works:
+
+
+[section]
+
 ### URL syntax
 
 Notice that our source URL looks a little different than the GeoJSON and TopoJSON we've been using so far. It's because we're linking directly to the Mapzen Vector Tile service, which provides vector tiles in a variety of formats. The following three sources are equivalent in the data that they provide; what's different is the encoding format of that data.
@@ -238,7 +256,7 @@ or
 `https://vector.mapzen.com/osm/earth,water/{z}/{x}/{y}.topojson`   
 
 <br>
-Importantly, though, if you only import one layer, you must leave out the `data: layer` filter. Otherwise you can apply the data filter as usual. Take a look at the two examples below:
+Importantly, though, if you only import one layer, you must leave out the `data: layer` filter. Otherwise you can apply the data filter as usual. Take a look at the two examples below (notice we're applying the two tips from the previous sections):
 
 [section]
 

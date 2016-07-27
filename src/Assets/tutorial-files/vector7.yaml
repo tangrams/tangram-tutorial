@@ -9,40 +9,44 @@ layers:
             source: _mapzen
             layer: earth
         draw:
-            polygons:
+            _earthStyle:
+                style: polygons
                 order: 0
                 color: '#ddeeee'
-
     _waterLayer:
         data:
             source: _mapzen
             layer: water
         draw:
-            polygons:
-                order: 3
+            _waterStyle:
+                style: polygons
+                order: 1
                 color: '#88bbee'
     _landuseLayer:
         data:
             source: _mapzen
             layer: landuse
         draw:
-            polygons:
-                order: 1
+            _landuseStyle:
+                style: polygons
+                order: 2
                 color: '#aaffaa'
     _buildingsLayer:
         data:
             source: _mapzen
             layer: buildings
         draw:
-            polygons:
-                order: 2
+            _buildingsStyle:
+                style: polygons
+                order: 3
                 color: '#808080'
     _roadsLayer:
         data:
             source: _mapzen
             layer: roads
         draw:
-            lines:
+            _roadsStyle:
+                style: lines
                 order: 4
                 color: '#8374E4'
                 width: 8m

@@ -89,6 +89,15 @@ export class Tutorial57 extends React.Component {
     return (
         <Row className="show-grid">
             <div dangerouslySetInnerHTML={{ __html: sections[14] }} />
+        </Row>
+        )}
+}
+
+export class Tutorial58 extends React.Component {
+  render () {
+    return (
+        <Row className="show-grid">
+            <div dangerouslySetInnerHTML={{ __html: sections[14] }} />
             <TangramPlay url={examples.url1} />
             <TangramPlay url={examples.url2} />
             <div dangerouslySetInnerHTML={{ __html: sections[15] }} />

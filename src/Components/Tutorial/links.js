@@ -2,9 +2,6 @@ let tangramplayurl = 'https://precog.mapzen.com/tangrams/tangram-play/tangram-tu
 let tutorialurl = 'https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/'
 let baseurl = tangramplayurl + tutorialurl;
 
-// Symbol to add consequtive lines is: 9-11
-// Symbol to add multiple non-consecutive lines is: 9%2C11
-
 let examples = {
     min: baseurl + 'min.yaml',
     layers: baseurl + 'layers.yaml' + '&lines=2,9',
@@ -30,6 +27,8 @@ let examples = {
     vector9: baseurl + 'vector9.yaml' + '&lines=13,22,30,38,46,54' + '#14/40.7180/-74.0020',
     url1: baseurl + 'url1.yaml' + '&lines=4,8',
     url2: baseurl + 'url2.yaml' + '&lines=4',
+    shorthand: baseurl + 'shorthand.yaml',
+    shorthand2: baseurl + 'shorthand2.yaml',
     raster: baseurl + 'raster.yaml'
 };
 

@@ -1,11 +1,14 @@
 sources:
-    stamen-terrain:
-        type: Raster
-        url: http://a.tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg
+    _stamen-terrain:
+        type: Raster # We have to indictate a different type for raster sources
+        url: http://a.tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg # Notice it's loading a .jpg
 
 layers:
-    terrain:
-        data: { source: stamen-terrain }
+    _terrainLayer: # We can again apply any layer name we want
+        data:
+            source: _stamen-terrain
+            # But this time since raster data is loaded as an image, no need to declare a 'layer' parameter
         draw:
-            raster:
+            _terainStyle:
+                style: raster # Remember Tangram comes with a prebuilt set of styles for different data types: points, polygons, lines, text, and raster. For raster sources we need to use the 'raster' keyword
                 order: 0 # draw on bottom

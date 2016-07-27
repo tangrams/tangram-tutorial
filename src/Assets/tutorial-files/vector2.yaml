@@ -10,7 +10,8 @@ layers:
             source: _mapzen
             layer: earth
         draw:
-            polygons:
+            _earthStyle:
+                style: polygons
                 order: 1 # Try making this 0 to make the lakes and rivers reappear
                 color: '#ddeeee'
     _waterLayer:
@@ -18,6 +19,7 @@ layers:
             source: _mapzen
             layer: water
         draw:
-            polygons:
+            _waterStyle:
+                style: polygons
                 order: 0 # Try making this 1 to make the lakes and rivers reappear
                 color: '#88bbee'

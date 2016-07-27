@@ -4,7 +4,7 @@ Tangram maps are styled using a custom styling syntax inside of a <strong>scene 
 
 Why YAML? Well, YAML is a data format similar in many ways to JSON, but it has some unique features which we thought made it more friendly and easy to use for our purposes.
 
-Im this tutorial, you will become familiar with the syntax, rules, and capabilities of the Tangram rendering engine, meaning you'll be able to write valid YAML documents that contain the rules required to style 2D and 3D maps.
+In this tutorial, you will become familiar with the syntax, rules, and capabilities of the Tangram rendering engine, meaning you'll be able to write valid YAML documents that contain the rules required to style 2D and 3D maps.
 
 <div class='alert-message'>
 Yellow call-outs like this are meant to draw your attention to an important idea or distinction you should keep in mind.
