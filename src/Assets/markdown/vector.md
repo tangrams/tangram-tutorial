@@ -281,7 +281,7 @@ or
 `https://vector.mapzen.com/osm/earth,water/{z}/{x}/{y}.topojson`   
 
 <br>
-Importantly, though, if you only import one layer, you must leave out the `data: layer` filter. Otherwise you can apply the data filter as usual. Take a look at the two examples below (notice we're applying the two tips from the previous sections):
+Importantly, though, if you only import one layer, you must leave out the `data: layer` filter. Otherwise you can apply the data filter as usual. Take a look at the two examples below:
 
 [section]
 

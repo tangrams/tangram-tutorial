@@ -7,9 +7,9 @@ import Image from 'react-bootstrap/lib/Image';
 import TangramPlay from '../TangramPlay.react';
 import examples from './links';
 
-import tiles from '../../Assets/markdown/tiles.md';
+import vector from '../../Assets/markdown/vector.md';
 
-var sections = tiles.split('[section]');
+var sections = vector.split('[section]');
 
 export class Tutorial51 extends React.Component {
   render () {
