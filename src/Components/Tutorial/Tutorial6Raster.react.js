@@ -17,6 +17,7 @@ export class Tutorial61 extends React.Component {
         <Row className="show-grid">
             <div dangerouslySetInnerHTML={{ __html: sections[0] }} />
             <TangramPlay url={examples.raster} />
+            <div dangerouslySetInnerHTML={{ __html: sections[1] }} />
         </Row>
         )}
 }

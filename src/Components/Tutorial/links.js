@@ -30,7 +30,8 @@ let examples = {
     shorthand: baseurl + 'shorthand.yaml',
     shorthand2: baseurl + 'shorthand2.yaml',
     shorthand3: baseurl + 'shorthand3.yaml',
-    raster: baseurl + 'raster.yaml'
+    raster: baseurl + 'raster.yaml',
+    raster2: baseurl + 'raster2.yaml' + '&lines=5'
 };
 
 export default examples;
