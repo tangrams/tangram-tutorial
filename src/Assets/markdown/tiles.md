@@ -134,11 +134,11 @@ Again, this layer has a `kinds` property that lets you filter how to draw differ
 
 Let's add a `filter` block to see how this property might be useful for us. In this next example we'll only show `ferry` and `highway` roads:
 
+[section]
+
 <div class='alert-message'>
 To improve performance, some road segments are merged at low and mid-zooms. To facilitate this, certain properties are dropped at those zooms. The exact zoom varies per feature class (major roads keep this properties over a wider range, minor roads drop them starting at zoom 14).
 </div>
-
-[section]
 
 But now what if we wanted to color only the highways or only the ferry lines in a certain color? How do we do that in the current syntax? The answer is that you need to declare a sublayer - which is the topic of our next section.
 
@@ -154,7 +154,6 @@ layers:
         data:
             source: &#95;mapzen
             layer: countries
-        # Requirement 3: Styling rules
         draw:
             &#95;countryStyle:
                 style: polygons
@@ -163,21 +162,28 @@ layers:
 
 In reality Tangram allows you to declare any number of sublayers below '&#95;countryLayer'.
 
+<pre><code class="language-yaml">
 layers:
-    &#95;countryLayer:
+    &#95;earthLayer:
         data:
-            source:
-        filter: ...
+            source: &#95;mapzen
+            layer: earth
         draw: ...
-        sublayer:
-            filter: ...
+        filter: ...
+        &#95;sublayer1:
             draw: ...
-        sublayer2:
             filter: ...
+        &#95;sublayer2:
             draw: ...
-            subsublayer:
-                filter: ...
+            filter: ...
+            &#95;subsublayer:
                 draw: ...
+                filter: ...
+</pre></code>
+
+The only parameter you do not need to include in a sublayer is the `data` block. This is unnecessary, because the the data in the parent layer (in the example above '&#95;earthLayer') applies to the sublayers.
+
+With that in mind, let's add a sublayer to specifically color the roads with a kind property of `highway` in a different color:
 
 [section]
 

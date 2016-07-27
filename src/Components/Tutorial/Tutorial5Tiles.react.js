@@ -63,6 +63,14 @@ export class Tutorial54 extends React.Component {
         )}
 }
 
+export class Tutorial55 extends React.Component {
+  render () {
+    return (
+        <Row className="show-grid">
+            <div dangerouslySetInnerHTML={{ __html: sections[11] }} />
+        </Row>
+        )}
+}
 
 export class Tutorial58 extends React.Component {
   render () {
