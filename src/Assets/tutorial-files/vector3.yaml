@@ -19,7 +19,7 @@ layers:
             layer: water
         draw:
             polygons:
-                order: 1
+                order: 2
                 color: '#88bbee'
     _landuseLayer: # We're adding a 'landuse' layer
         data:
@@ -27,5 +27,5 @@ layers:
             layer: landuse # The layer name is 'landuse'
         draw:
             polygons: # The geometry of this layer is 'polygons'
-                order: 2
+                order: 1
                 color: '#aaffaa'

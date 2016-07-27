@@ -19,7 +19,7 @@ layers:
             layer: water
         draw:
             polygons:
-                order: 1
+                order: 2
                 color: '#88bbee'
     _landuseLayer:
         data:
@@ -27,11 +27,11 @@ layers:
             layer: landuse
         draw:
             polygons:
-                order: 2
+                order: 1
                 color: '#aaffaa'
         # A filter block let's us filter what kind of landuse values to display
         filter: # ~~TODO~~ Try uncommenting each kind filter one at a time
-            kind: zoo # If you zoom to New York City, you'll just spot the Central Park Zoo and Bronx Zoo
+            kind: park # If you zoom to New York City, for example, you'll just see parks!
             # kind: [zoo, hospital, industrial, park] # As a list we can display many more landuse values
             # not: # With boolean filters we can make more complex queries
                 # kind: [park, garden, land, library]

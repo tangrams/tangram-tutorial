@@ -34,47 +34,6 @@ Remember that layer order matters when we're styling a map. Take a look at what 
 
 [section]
 
-### URL syntax
-
-Notice that our source URL looks a little different than the GeoJSON and TopoJSON we've been using so far. It's because we're linking directly to the Mapzen Vector Tile service, which provides vector tiles in a variety of formats. The following three sources are equivalent in the data that they provide; what's different is the encoding format of that data.
-
-`http://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson` TopoJSON format
-
-`http://vector.mapzen.com/osm/all/{z}/{x}/{y}.json` GeoJSON format
-
-`http://vector.mapzen.com/osm/all/{z}/{x}/{y}.mvt` Mapbox Vector Tiles format
-
-<div class='alert-message'>
-We recommend TopoJSON format for desktop web development, and MVT format for native mobile development. The Mapzen server gzips tiles automatically, so the TopoJSON file format is comparable in file size to MVT over the wire, and it’s much friendlier to debug.
-</div>
-
-### Sourcing Individual Layers
-
-In reality you can also replace the `all` in the url with any number of layers of your choice. Layer names filter the geometry that is delivered: buildings and roads and water are but a few examples. Multiple layer names can be combined in the URL, such as roads and water:
-
-`https://vector.mapzen.com/osm/earth/{z}/{x}/{y}.topojson`
-
-or
-
-`https://vector.mapzen.com/osm/earth,water/{z}/{x}/{y}.topojson`   
-
-<br>
-Importantly, though, if you only import one layer, you must leave out the `data: layer` filter. Otherwise you can apply the data filter as usual. Take a look at the two examples below:
-
-[section]
-
-### API keys
-
-One last comment about URLs. We've been using a special app in this tutorial that let's us embed Tangram and scene file code in one single view. If you go on to deploy a Tangram scene file on your own, you will need an API key. API keys come in the pattern: `vector-tiles-xxxxxxx` and can be obtained here: [https://mapzen.com/developers/sign_in](https://mapzen.com/developers/sign_in). A full URL pattern would look something like this, where you should replace `xxxxxxx` with your particular API key:
-
-`https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-xxxxxxx`
-
-<div class='alert-message'>
-If you're curious, here is what a single sample TopoJSON tile looks like: `https://vector.mapzen.com/osm/all/16/19293/24641.topojson?api_key=vector-tiles-xxxxxxx`
-</div>
-
-[section]
-
 ## Vector Tile Layers
 
 As we've already explored, the Mapzen Vector Tile service conveniently includes data about the world in the form of data layers. In the previous section we built a map with two of these layers: `earth` and `water`. What are the rest? The service includes a total of 9 layers: `boundaries`, `buildings`, `landuse`, `places`, `pois`, `roads`, `transit`, `earth`, and `water`. Let's work on building up our previous map example to see how we can use and combine more layers.
@@ -130,12 +89,20 @@ In this map we're coloring in light green all the polygons captured in the `land
 The `landuse` layer comes with a property called `kind` that let's us specify different types of `landuse` values. Take a look at this next example to see how you can use a `filter` block to filter by kind. For a full list of `kind` values check out: [https://mapzen.com/documentation/vector-tiles/layers/#landuse](https://mapzen.com/documentation/vector-tiles/layers/#landuse).
 
 <div class='alert-message'>
-If you're curious, in terms of the specific data Tangram is sourcing, the layer includes OpenStreetMap data at higher zoom levels, and Natural Earth data at lower zoom levels.
+Each layer has specific properties like `kind` that are useful for different purposes. We'll be mentioning a few properties for each layer in this tutorial, but a full list of properties per layer are avilable on the mapzen docs: [https://mapzen.com/documentation/vector-tiles/layers/](https://mapzen.com/documentation/vector-tiles/layers/).
 </div>
 
 [section]
 
+We've used the `draw: polygons` geometry because we're drawing the actual areas of landuse. The `points` geometry will be useful later ahead when we draw labels.
+
 One last point about the `landuse` layer: notice that if you zoom out at some point the green polygons become unnoticeable. Tangram is doing some work behind the scenes to decide what appropriate features to display at different zoom levels.
+
+<div class='alert-message'>
+In terms of the specific data Tangram is sourcing, the `landuse` layer includes OpenStreetMap data at higher zoom levels, and Natural Earth data at lower zoom levels.
+</div>
+
+[section]
 
 ### Buildings layer
 
@@ -144,19 +111,66 @@ Let's keep adding layers! The next one we'll talk about is the `buildings` layer
 * Layer name: `buildings`
 * Geometry types: `points` and `polygons`
 
+As the names suggests, this layer provides building footprint data (in the form of polygons) and addresses (in the form of points). The building data starts at zoom level 13 by including huge buildings, and progressively adding all buildings at zoom 16+. Address points are available at zoom 16+; they are suitable for display at zoom level 17 and higher.
+
+Look at the next example to see just how easy it is to draw building data:
+
 [section]
 
-### Boundaries and Barriers
+### Roads and transportation layer
 
-This layer includes all of those things you would expect to be boundaries as well as a few other goodies: OpenStreetMap administrative boundaries (national borders, provinces, regions, municipalities, cities), Natural Earth boundaries (such as maritime boundaries), and even a few details at high zoom levels like the fence lines around some petting zoos. They keywords you should remember for this layer are:
+Let's work on one last layer before going into a section on Tangram tips.
 
-* Layer name: `boundaries`
+The `roads` layer is super useful and provides exactly what you might imagine: highways, major roads, minor roads, paths, railways, ferries, and ski pistes. Keywords to remember here are:
+
+* Layer name: `roads`
 * Geometry types: `lines`
 
+Again, this layer has a `kinds` property that lets you filter how to draw different types of roads. The `kinds` property for this layer can take on values of: `aerialway`, `exit`, `ferry`, `highway`, `major_road`, `minor_road`, `path`, `piste`, `racetrack`, or `rail`.
+
 [section]
 
--What is included in the vector tiles? How to explain difference with Mapbox?
-    * Renamed many things from OSM. Based off of.
-    * POI: minutely feed - tile build queue. Hours/Days. Check Rob with most current up to date.
-    * Mapbox Vector Tiles - MVT smaller payload. Have to do some more processing on client side. Protocol buffers.
--Can I she sample of the {x},{y}
+<div class='alert-message'>
+To improve performance, some road segments are merged at low and mid-zooms. To facilitate this, certain properties are dropped at those zooms. The exact zoom varies per feature class (major roads keep this properties over a wider range, minor roads drop them starting at zoom 14).
+</div>
+
+[section]
+
+### URL syntax
+
+Notice that our source URL looks a little different than the GeoJSON and TopoJSON we've been using so far. It's because we're linking directly to the Mapzen Vector Tile service, which provides vector tiles in a variety of formats. The following three sources are equivalent in the data that they provide; what's different is the encoding format of that data.
+
+`http://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson` TopoJSON format
+
+`http://vector.mapzen.com/osm/all/{z}/{x}/{y}.json` GeoJSON format
+
+`http://vector.mapzen.com/osm/all/{z}/{x}/{y}.mvt` Mapbox Vector Tiles format
+
+<div class='alert-message'>
+We recommend TopoJSON format for desktop web development, and MVT format for native mobile development. The Mapzen server gzips tiles automatically, so the TopoJSON file format is comparable in file size to MVT over the wire, and it’s much friendlier to debug.
+</div>
+
+### Sourcing Individual Layers
+
+In reality you can also replace the `all` in the url with any number of layers of your choice. Layer names filter the geometry that is delivered: buildings and roads and water are but a few examples. Multiple layer names can be combined in the URL, such as roads and water:
+
+`https://vector.mapzen.com/osm/earth/{z}/{x}/{y}.topojson`
+
+or
+
+`https://vector.mapzen.com/osm/earth,water/{z}/{x}/{y}.topojson`   
+
+<br>
+Importantly, though, if you only import one layer, you must leave out the `data: layer` filter. Otherwise you can apply the data filter as usual. Take a look at the two examples below:
+
+[section]
+
+### API keys
+
+One last comment about URLs. We've been using a special app in this tutorial that let's us embed Tangram and scene file code in one single view. If you go on to deploy a Tangram scene file on your own, you will need an API key. API keys come in the pattern: `vector-tiles-xxxxxxx` and can be obtained here: [https://mapzen.com/developers/sign_in](https://mapzen.com/developers/sign_in). A full URL pattern would look something like this, where you should replace `xxxxxxx` with your particular API key:
+
+`https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-xxxxxxx`
+
+<div class='alert-message'>
+If you're curious, here is what a single sample TopoJSON tile looks like: `https://vector.mapzen.com/osm/all/16/19293/24641.topojson?api_key=vector-tiles-xxxxxxx`
+</div>

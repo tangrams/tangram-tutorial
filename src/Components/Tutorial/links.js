@@ -23,6 +23,8 @@ let examples = {
     vector2: baseurl + 'vector2.yaml' + '&lines=14,22',
     vector3: baseurl + 'vector3.yaml' + '&lines=24-31' + '#6/39.130/-118.224',
     vector4: baseurl + 'vector4.yaml' + '&lines=32-37' + '#13/40.8125/-73.9282',
+    vector5: baseurl + 'vector5.yaml' + '&lines=32-39' + '#14/40.7180/-74.0020',
+    vector6: baseurl + 'vector6.yaml' + '&lines=40-49' + '#14/40.7180/-74.0020',
     url1: baseurl + 'url1.yaml' + '&lines=4,8',
     url2: baseurl + 'url2.yaml' + '&lines=4',
     raster: baseurl + 'raster.yaml'
