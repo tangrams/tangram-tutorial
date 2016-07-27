@@ -29,6 +29,7 @@ let examples = {
     url2: baseurl + 'url2.yaml' + '&lines=4',
     shorthand: baseurl + 'shorthand.yaml',
     shorthand2: baseurl + 'shorthand2.yaml',
+    shorthand3: baseurl + 'shorthand3.yaml',
     raster: baseurl + 'raster.yaml'
 };
 

@@ -8,13 +8,13 @@ layers:
         data:
             source: _mapzen
         draw:
-            polygons:
+            polygons: # Instead of a 'style:' parameter we just have a geometry type
                 order: 0
                 color: '#ddeeee'
     water:
         data:
             source: _mapzen
         draw:
-            polygons:
+            polygons: # Instead of a 'style:' parameter we just have a geometry type
                 order: 1
                 color: '#88bbee'
