@@ -113,7 +113,7 @@ Let's try adding a `landuse` layer to our code. This layer is used to describe t
 The keywords to remember for this layer are:
 
 * Layer name: `landuse`
-* Geometry types: `point` and `polygon`
+* Geometry types: `points` and `polygons`
 
 <div class='alert-message'>
 For each layer, we will provide a 'layer name' and 'geometry types'. Recall that the layer name is what we have been using as `layer: countries` and `layer: earth` in some of the previous examples. It's the way we tell Tangram what data source to use for a particular drawing style within a `layer` block.
@@ -121,9 +121,28 @@ For each layer, we will provide a 'layer name' and 'geometry types'. Recall that
 We've also been using a few different geometry types in previous examples: `lines`, `polygons`, and `text`. Remember when we styled the [countries](/#/minimum-map/data) we used `style: polygons`, when we styled our country [borders](/#/styling/lines) we used `style: lines` and for [labels](/#/styling/labels) we used `style: text`.
 </div>
 
+For this next example, try zooming in on the map to see the green areas representing `landuse`.
+
 [section]
 
+In this map we're coloring in light green all the polygons captured in the `landuse` layer. What if we only want to display some types of landuse areas and not all of them? That's where we can go back to our data `filter` blocks.
+
+The `landuse` layer comes with a property called `kind` that let's us specify different types of `landuse` values. Take a look at this next example to see how you can use a `filter` block to filter by kind. For a full list of `kind` values check out: [https://mapzen.com/documentation/vector-tiles/layers/#landuse](https://mapzen.com/documentation/vector-tiles/layers/#landuse).
+
+<div class='alert-message'>
 If you're curious, in terms of the specific data Tangram is sourcing, the layer includes OpenStreetMap data at higher zoom levels, and Natural Earth data at lower zoom levels.
+</div>
+
+[section]
+
+One last point about the `landuse` layer: notice that if you zoom out at some point the green polygons become unnoticeable. Tangram is doing some work behind the scenes to decide what appropriate features to display at different zoom levels.
+
+### Buildings layer
+
+Let's keep adding layers! The next one we'll talk about is the `buildings` layer and here are the keywords to remember are:
+
+* Layer name: `buildings`
+* Geometry types: `points` and `polygons`
 
 [section]
 

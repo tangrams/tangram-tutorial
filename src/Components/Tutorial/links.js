@@ -21,10 +21,13 @@ let examples = {
     filters3: baseurl + 'filters3.yaml' + '&lines=21-27',
     vector: baseurl + 'vector.yaml' + '&lines=4,10,18',
     vector2: baseurl + 'vector2.yaml' + '&lines=14,22',
-    vector3: baseurl + 'vector3.yaml' + '&lines=24-31',
+    vector3: baseurl + 'vector3.yaml' + '&lines=24-31' + '#6/39.130/-118.224',
+    vector4: baseurl + 'vector4.yaml' + '&lines=32-37' + '#13/40.8125/-73.9282',
     url1: baseurl + 'url1.yaml' + '&lines=4,8',
     url2: baseurl + 'url2.yaml' + '&lines=4',
     raster: baseurl + 'raster.yaml'
 };
 
 export default examples;
+
+console.log(examples.vector3);
