@@ -4,50 +4,40 @@ sources:
         url:  https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
 
 layers:
-    _earthLayer:
+    earth:
         data:
             source: _mapzen
-            layer: earth
         draw:
-            _earthStyle:
-                style: polygons
+            polygons:
                 order: function() { return feature.sort_key; }
                 color: '#ddeeee'
 
-    _waterLayer:
+    water:
         data:
             source: _mapzen
-            layer: water
         draw:
-            _waterStyle:
-                style: polygons
+            polygons:
                 order: function() { return feature.sort_key; }
                 color: '#88bbee'
-    _landuseLayer:
+    landuse:
         data:
             source: _mapzen
-            layer: landuse
         draw:
-            _landuseStyle:
-                style: polygons
+            polygons:
                 order: function() { return feature.sort_key; }
                 color: '#aaffaa'
-    _buildingsLayer:
+    buildings:
         data:
             source: _mapzen
-            layer: buildings
         draw:
-            _buildingsStyle:
-                style: polygons
+            polygons:
                 order: function() { return feature.sort_key; }
                 color: '#808080'
-    _roadsLayer:
+    roads:
         data:
             source: _mapzen
-            layer: roads
         draw:
-            _roadsStyle:
-                style: lines
+            lines:
                 order: function() { return feature.sort_key; }
                 color: '#8374E4'
                 width: 8m
@@ -55,8 +45,7 @@ layers:
             filter:
                 kind: highway
             draw:
-                _highwayStyle:
-                    style: lines
-                    order: 500 # We need to set a manual order for this sublayer for now
+                lines:
+                    order: function() { return feature.sort_key; }
                     color: '#cc6666'
                     width: 12m
