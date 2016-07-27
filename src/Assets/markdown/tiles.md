@@ -148,8 +148,7 @@ But now what if we wanted to color only the highways or only the ferry lines in 
 
 Sublayer is a feature that we haven't spoken about in previous sections, but becomes especially useful when using the Mapzen Vector Tile service. Recall that we need at least one layer and some styling rules to create a minimum map. We've been declaring layers like so ('&#95;countryLayer' is our layer name):
 
-<pre><code class="language-yaml">
-layers:
+<pre><code class="language-yaml">layers:
     &#95;countryLayer:
         data:
             source: &#95;mapzen
@@ -162,12 +161,11 @@ layers:
 
 In reality Tangram allows you to declare any number of sublayers below '&#95;countryLayer'.
 
-<pre><code class="language-yaml">
-layers:
-    &#95;earthLayer:
+<pre><code class="language-yaml">layers:
+    &#95;roadsLayer:
         data:
             source: &#95;mapzen
-            layer: earth
+            layer: roads
         draw: ...
         filter: ...
         &#95;sublayer1:
@@ -181,9 +179,28 @@ layers:
                 filter: ...
 </pre></code>
 
-The only parameter you do not need to include in a sublayer is the `data` block. This is unnecessary, because the the data in the parent layer (in the example above '&#95;earthLayer') applies to the sublayers.
+The only parameter you do not need to include in a sublayer is the `data` block. This is unnecessary, because the the data in the parent layer (in the example above '&#95;roadsLayer') applies to the sublayers.
 
 With that in mind, let's add a sublayer to specifically color the roads with a kind property of `highway` in a different color:
+
+[section]
+
+## Let Tangram handle Order
+
+Wow! At this point we've used five layers from the Mapzen Vector Tile service: `earth`, `water`, `landuse`, `buildings`, and `roads`. Hopefully you've been getting the hang of how the layers work and how much useful data they provide.
+
+At this point, it's useful to introduce a handy feature that Tangram provides to help you get the layer order right.
+
+Ordering of features - which ones draw “on top of” other features - can be an important feature of display maps. To help out with this, we export a sort_key property on some features which suggests in what order the features should appear. Lower numbers mean that features should appear “towards the back” and higher numbers mean “towards the front”. These numbers are consistent across layers. The layers which include sort_key on their features are: `boundaries`, `buildings`, `earth`, `landuse`, `roads`, `transit` and `water`.
+
+[section]
+
+In addition, to facilitate data visualization overlays and underlays, the following order ranges are suggested for your own scene files:
+
+* `0-9`: Under everything. Tip: disable `earth` layer.
+* `190-199`: Under `water`. Above `earth` and most `landuse`.
+* `290-299`: Under `roads`. Above `borders`, `water`, `landuse`, and `earth`. Your classic “underlay”.
+* `490-499`: Over all lines and polygons features. Under map labels (icons and text), under UI elements (like routeline and search result pins). Your classic raster map overlay.
 
 [section]
 

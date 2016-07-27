@@ -47,6 +47,7 @@ export default class Main extends React.Component {
                              <ListGroupItem><Link to="/tiles/buildings">Buildings Layer</Link></ListGroupItem>
                              <ListGroupItem><Link to="/tiles/roads">Roads Layer</Link></ListGroupItem>
                              <ListGroupItem><Link to="/tiles/sublayers">Sublayers</Link></ListGroupItem>
+                             <ListGroupItem><Link to="/tiles/layerorder">Layer Order</Link></ListGroupItem>
                              <ListGroupItem><Link to="/tiles/syntax">URL Syntax</Link></ListGroupItem>
                          </Panel>
                          <Panel collapsible defaultExpanded header="Raster Tiles">
