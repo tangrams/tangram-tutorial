@@ -41,11 +41,15 @@ export default class Main extends React.Component {
                              <ListGroupItem><Link to="/filters/booleans">Boolean Filters</Link></ListGroupItem>
                              <ListGroupItem><Link to="/filters/functions">Function Filters</Link></ListGroupItem>
                          </Panel>
-                         <Panel collapsible defaultExpanded header="Vector & Raster Tiles">
+                         <Panel collapsible defaultExpanded header="Vector Tiles">
                              <ListGroupItem><Link to="/tiles/vector">What are Vector Tiles?</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/tiles/layers">Vector Tile Layers</Link></ListGroupItem>
+                             <ListGroupItem><Link to="/tiles/landuse">Landuse Layer</Link></ListGroupItem>
+                             <ListGroupItem><Link to="/tiles/buildings">Buildings Layer</Link></ListGroupItem>
+                             <ListGroupItem><Link to="/tiles/roads">Roads Layer</Link></ListGroupItem>
                              <ListGroupItem><Link to="/tiles/syntax">URL Syntax</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/tiles/raster">Raster Tiles</Link></ListGroupItem>
+                         </Panel>
+                         <Panel collapsible defaultExpanded header="Raster Tiles">
+                            <ListGroupItem><Link to="/tiles/raster">Raster Tiles</Link></ListGroupItem>
                          </Panel>
                          <Panel collapsible defaultExpanded header="Conclusion" onClick={() => {this.context.router.push('/conclusion')}}>
                          </Panel>

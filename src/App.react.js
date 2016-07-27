@@ -27,9 +27,11 @@ let routes = (
             <Route path="/filters/booleans" component={Tutorial42}/>
             <Route path="/filters/functions" component={Tutorial43}/>
             <Route path="/tiles/vector" component={Tutorial51}/>
-            <Route path="/tiles/layers" component={Tutorial54}/>
-            <Route path="/tiles/syntax" component={Tutorial52}/>
-            <Route path="/tiles/raster" component={Tutorial53}/>
+            <Route path="/tiles/landuse" component={Tutorial52}/>
+            <Route path="/tiles/buildings" component={Tutorial53}/>
+            <Route path="/tiles/roads" component={Tutorial54}/>
+            <Route path="/tiles/syntax" component={Tutorial51}/>
+            <Route path="/tiles/raster" component={Tutorial51}/>
             <Route path="/conclusion" component={TutorialConclusion}/>
         </Route>
     </Router>

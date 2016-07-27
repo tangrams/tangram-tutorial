@@ -32,20 +32,20 @@ export class Tutorial52 extends React.Component {
     return (
         <Row className="show-grid">
             <div dangerouslySetInnerHTML={{ __html: sections[4] }} />
-            <TangramPlay url={examples.url1} />
-            <TangramPlay url={examples.url2} />
+            <TangramPlay url={examples.vector3} />
             <div dangerouslySetInnerHTML={{ __html: sections[5] }} />
+            <TangramPlay url={examples.vector4} />
+            <div dangerouslySetInnerHTML={{ __html: sections[6] }} />
         </Row>
         )}
 }
-
 
 export class Tutorial53 extends React.Component {
   render () {
     return (
         <Row className="show-grid">
             <div dangerouslySetInnerHTML={{ __html: sections[7] }} />
-            <TangramPlay url={examples.raster} />
+            <TangramPlay url={examples.vector5} />
         </Row>
         )}
 }
@@ -54,11 +54,22 @@ export class Tutorial54 extends React.Component {
   render () {
     return (
         <Row className="show-grid">
-            <div dangerouslySetInnerHTML={{ __html: sections[6] }} />
-            <TangramPlay url={examples.vector3} />
-            <div dangerouslySetInnerHTML={{ __html: sections[7] }} />
-            <TangramPlay url={examples.vector4} />
             <div dangerouslySetInnerHTML={{ __html: sections[8] }} />
+            <TangramPlay url={examples.vector6} />
+            <div dangerouslySetInnerHTML={{ __html: sections[9] }} />
+        </Row>
+        )}
+}
+
+
+export class Tutorial58 extends React.Component {
+  render () {
+    return (
+        <Row className="show-grid">
+            <div dangerouslySetInnerHTML={{ __html: sections[4] }} />
+            <TangramPlay url={examples.url1} />
+            <TangramPlay url={examples.url2} />
+            <div dangerouslySetInnerHTML={{ __html: sections[5] }} />
         </Row>
         )}
 }
