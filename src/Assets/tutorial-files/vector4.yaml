@@ -9,25 +9,27 @@ layers:
             source: _mapzen
             layer: earth
         draw:
-            polygons:
+            _earthStyle:
+                style: polygons
                 order: 0
                 color: '#ddeeee'
-
     _waterLayer:
         data:
             source: _mapzen
             layer: water
         draw:
-            polygons:
-                order: 2
+            _waterStyle:
+                style: polygons
+                order: 1
                 color: '#88bbee'
     _landuseLayer:
         data:
             source: _mapzen
             layer: landuse
         draw:
-            polygons:
-                order: 1
+            _landuseStyle:
+                style: polygons
+                order: 2
                 color: '#aaffaa'
         # A filter block let's us filter what kind of landuse values to display
         filter: # ~~TODO~~ Try uncommenting each kind filter one at a time
