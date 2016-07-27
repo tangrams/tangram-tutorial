@@ -1,0 +1,14 @@
+sources:
+    _stamen-terrain:
+        type: Raster
+        url: http://a.tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg
+        max_zoom: 10 # For this particular raster tile source the maximum zoom level is 10
+
+layers:
+    _terrainLayer:
+        data:
+            source: _stamen-terrain
+        draw:
+            _terainStyle:
+                style: raster
+                order: 0
