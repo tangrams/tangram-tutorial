@@ -126,13 +126,58 @@ The `roads` layer is super useful and provides exactly what you might imagine: h
 * Layer name: `roads`
 * Geometry types: `lines`
 
-Again, this layer has a `kinds` property that lets you filter how to draw different types of roads. The `kinds` property for this layer can take on values of: `aerialway`, `exit`, `ferry`, `highway`, `major_road`, `minor_road`, `path`, `piste`, `racetrack`, or `rail`.
+Look how easy it is to add roads to our map:
 
 [section]
+
+Again, this layer has a `kinds` property that lets you filter how to draw different types of roads. The `kinds` property for this layer can take on values of: `aerialway`, `exit`, `ferry`, `highway`, `major_road`, `minor_road`, `path`, `piste`, `racetrack`, or `rail`.
+
+Let's add a `filter` block to see how this property might be useful for us. In this next example we'll only show `ferry` and `highway` roads:
 
 <div class='alert-message'>
 To improve performance, some road segments are merged at low and mid-zooms. To facilitate this, certain properties are dropped at those zooms. The exact zoom varies per feature class (major roads keep this properties over a wider range, minor roads drop them starting at zoom 14).
 </div>
+
+[section]
+
+But now what if we wanted to color only the highways or only the ferry lines in a certain color? How do we do that in the current syntax? The answer is that you need to declare a sublayer - which is the topic of our next section.
+
+[section]
+
+## Sublayers
+
+Sublayer is a feature that we haven't spoken about in previous sections, but becomes especially useful when using the Mapzen Vector Tile service. Recall that we need at least one layer and some styling rules to create a minimum map. We've been declaring layers like so ('&#95;countryLayer' is our layer name):
+
+<pre><code class="language-yaml">
+layers:
+    &#95;countryLayer:
+        data:
+            source: &#95;mapzen
+            layer: countries
+        # Requirement 3: Styling rules
+        draw:
+            &#95;countryStyle:
+                style: polygons
+                color: darkgreen
+</pre></code>
+
+In reality Tangram allows you to declare any number of sublayers below '&#95;countryLayer'.
+
+layers:
+    &#95;countryLayer:
+        data:
+            source:
+        filter: ...
+        draw: ...
+        sublayer:
+            filter: ...
+            draw: ...
+        sublayer2:
+            filter: ...
+            draw: ...
+            subsublayer:
+                filter: ...
+                draw: ...
 
 [section]
 

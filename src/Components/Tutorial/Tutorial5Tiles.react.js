@@ -57,6 +57,8 @@ export class Tutorial54 extends React.Component {
             <div dangerouslySetInnerHTML={{ __html: sections[8] }} />
             <TangramPlay url={examples.vector6} />
             <div dangerouslySetInnerHTML={{ __html: sections[9] }} />
+            <TangramPlay url={examples.vector7} />
+            <div dangerouslySetInnerHTML={{ __html: sections[10] }} />
         </Row>
         )}
 }

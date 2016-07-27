@@ -33,6 +33,10 @@ Conveniently, we can also filter with three types of boolean filter functions `n
 
 `not` takes a single filter object as its input while `any` and `all` take lists of filter objects.
 
+<div class='alert-message'>
+Notice that we're using the '-' sign when working with `any` and `all`. It is not required for `not` because this filter only takes one object.
+</div>
+
 [section]
 
 Lastly, Tangram provides the ability to write functions in Javascript within filter blocks. This is useful for highly customized or more complex queries. The only detail to remember when writing functions is that Tangram provides a `feature` keyword for accessing properties. So to access the `continentName` property one would write `feature.continentName`.
