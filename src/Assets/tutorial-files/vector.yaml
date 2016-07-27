@@ -11,7 +11,7 @@ layers:
         draw:
             polygons:
                 order: 0
-                color: '#555'
+                color: '#ddeeee'
     _waterLayer:
         data:
             source: _mapzen
@@ -19,4 +19,4 @@ layers:
         draw:
             polygons:
                 order: 1
-                color: '#ddd'
+                color: '#88bbee'

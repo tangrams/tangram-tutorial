@@ -1,13 +1,31 @@
 sources:
     _mapzen:
         type: TopoJSON
-        url: https://vector.mapzen.com/osm/earth/{z}/{x}/{y}.topojson # We are importing just the earth layer
+        url:  https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
 
 layers:
     _earthLayer:
-        data: # Notice we removed 'layer: earth' from this section
+        data:
             source: _mapzen
+            layer: earth
         draw:
             polygons:
                 order: 0
-                color: '#555'
+                color: '#ddeeee'
+
+    _waterLayer:
+        data:
+            source: _mapzen
+            layer: water
+        draw:
+            polygons:
+                order: 1
+                color: '#88bbee'
+    _landuseLayer: # We're adding a 'landuse' layer
+        data:
+            source: _mapzen # The source is the same: Mapzen Vector Tile service
+            layer: landuse # The layer name is 'landuse'
+        draw:
+            polygons: # The geometry of this layer is 'polygons'
+                order: 2
+                color: '#aaffaa'
