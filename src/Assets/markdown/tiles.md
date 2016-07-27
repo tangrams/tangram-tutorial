@@ -77,14 +77,43 @@ If you're curious, here is what a single sample TopoJSON tile looks like: `https
 
 ## Vector Tile Layers
 
-As we've already explored, the Mapzen Vector Tile service conveniently includes data about the world in the form of data layers. In the previous section we built a map with two of these layers: `earth` and `water`. What are the rest? The service includes a total of 9 layers: `boundaries`, `buildings`, `landuse`, `places`, `pois`, `roads`, `transit`, `earth`, and `water`. Let's talk about each of these in more detail.
+As we've already explored, the Mapzen Vector Tile service conveniently includes data about the world in the form of data layers. In the previous section we built a map with two of these layers: `earth` and `water`. What are the rest? The service includes a total of 9 layers: `boundaries`, `buildings`, `landuse`, `places`, `pois`, `roads`, `transit`, `earth`, and `water`. Let's work on building up our previous map example to see how we can use and combine more layers.
 
-### Boundaries and Barriers
+As a reminder this is what our code looked like in the last section, where we were using the `earth` and `water` layers:
 
-This layer includes all of those things you would expect to be boundaries as well as a few other goodies: OpenStreetMap administrative boundaries (national borders, provinces, regions, municipalities, cities), Natural Earth boundaries (such as maritime boundaries), and even a few details at high zoom levels like the fence lines around some petting zoos. They keywords you should remember for this layer are:
+<pre><code class="language-yaml">
+sources:
+    &#95;mapzen:
+        type: TopoJSON
+        url:  https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
 
-* Layer name: `boundaries`
-* Geometry types: `lines`
+layers:
+    &#95;earthLayer:
+        data:
+            source: &#95;mapzen
+            layer: earth
+        draw:
+            polygons:
+                order: 0
+                color: '#ddeeee'
+    &#95;waterLayer:
+        data:
+            source: &#95;mapzen
+            layer: water
+        draw:
+            polygons:
+                order: 1
+                color: '#88bbee'
+</pre></code>
+
+### Landuse layer
+
+Let's try adding a `landuse` layer to our code. This layer is used to describe the primary use of land by humans. In Tangram the layer captures areas like: parks, forests, residential areas, commercial areas, industrial areas, universities, sports centers, hospitals, zoos, among others.
+
+The keywords to remember for this layer are:
+
+* Layer name: `landuse`
+* Geometry types: `point` and `polygon`
 
 <div class='alert-message'>
 For each layer, we will provide a 'layer name' and 'geometry types'. Recall that the layer name is what we have been using as `layer: countries` and `layer: earth` in some of the previous examples. It's the way we tell Tangram what data source to use for a particular drawing style within a `layer` block.
@@ -94,12 +123,21 @@ We've also been using a few different geometry types in previous examples: `line
 
 [section]
 
+If you're curious, in terms of the specific data Tangram is sourcing, the layer includes OpenStreetMap data at higher zoom levels, and Natural Earth data at lower zoom levels.
+
+[section]
+
+### Boundaries and Barriers
+
+This layer includes all of those things you would expect to be boundaries as well as a few other goodies: OpenStreetMap administrative boundaries (national borders, provinces, regions, municipalities, cities), Natural Earth boundaries (such as maritime boundaries), and even a few details at high zoom levels like the fence lines around some petting zoos. They keywords you should remember for this layer are:
+
+* Layer name: `boundaries`
+* Geometry types: `lines`
+
+[section]
+
 -What is included in the vector tiles? How to explain difference with Mapbox?
     * Renamed many things from OSM. Based off of.
     * POI: minutely feed - tile build queue. Hours/Days. Check Rob with most current up to date.
     * Mapbox Vector Tiles - MVT smaller payload. Have to do some more processing on client side. Protocol buffers.
 -Can I she sample of the {x},{y}
--API keys?
-    * Tutorials Key
--what do you think are most important distinctions here?
-https://mapzen.com/documentation/vector-tiles/layers/
