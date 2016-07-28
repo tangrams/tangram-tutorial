@@ -38,6 +38,10 @@ module.exports = {
             {
                 test: /\.md$/,
                 loader: 'html!markdown?gfm=false'
+            },
+            {
+                test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+                loader: 'url-loader'
             }
         ]
     },
