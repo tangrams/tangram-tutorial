@@ -174,3 +174,65 @@ pre {
 	margin-left: 20px;
 	margin-right: 20px;
 }
+
+/* refresh button */
+
+.refresh-button {
+	float: right;
+	top: 73px;
+	right: 4px;
+	outline: none;
+	position: relative;
+	color: #eefafa;
+    background-color: #616469;
+	border-width: 0;
+}
+
+.refresh-button:hover {
+	color: yellow;
+}
+
+.bt-spin {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+button.active {
+    // background-color: var(--ui-active-color);
+    color: yellow;
+}
