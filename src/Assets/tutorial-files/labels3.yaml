@@ -39,7 +39,7 @@ layers:
                     stroke: # You can set a stroke (outline) color and width for the font
                         color: black
                         width: 4px
-                    style: italic # Currently the only style supported is italic. Remove this for normal font
+                    style: italic # Currently the only style supported is 'italic'. Remove this for normal font
                     transform: uppercase # Options for font styles are 'uppercase', 'lowercase', and 'capitalize'(which only sets first letter to uppercase)
                     weight: bold # Can be one of 'lighter', 'normal', 'bold', or 'bolder'. Integers may be any CSS-style font weight from 100-900
                     #weight: 400

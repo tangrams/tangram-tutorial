@@ -50,8 +50,10 @@ layers:
                 order: 4
                 color: '#8374E4'
                 width: 8m
-        # ~~~ TODO ~~~ Try replacing the 'any' filter with a 'not' filter
-        filter: # We're filtering to only show 'ferry' and 'highway' roads
-            any: # Logically equivalent to OR
-                - kind: ferry
-                - kind: highway
+        # ~~~ TODO ~~~ Try uncommenting and commenting the 'any' and 'not' filters ONE AT A TIME
+        filter:
+            not: # Logically equivalent to NOT. We're filtering to not show 'highway' roads
+                kind: highway
+            # any: # Logically equivalent to OR. We're filtering to only show 'ferry' and 'highway' roads
+                # - kind: ferry
+                # - kind: highway

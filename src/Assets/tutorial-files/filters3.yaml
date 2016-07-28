@@ -18,7 +18,8 @@ layers:
                 color: white
                 width: 20000m
                 order: 1
-        filter: # ~~~ TODO ~~~ Uncomment each function filter one at a time
+        filter: # ~~~ TODO ~~~ Uncomment each function filter ONE AT A TIME
+            # NOTE: functions will only work ONE AT A TIME. Uncomment each one individually
             function() { return feature.continentName === 'Europe' } # Matching all countries with a continentName of Europe
             # function() { return feature.continentName === 'Asia' && feature.population >= 100000000 } # Matching all countries with a continentName of Asia and with a population over 100M
             # function() { return feature.languages && feature.languages.indexOf('es') !== -1 } # Matching all countries that have a property called language and for which Spanish, 'es', is one of the languages.

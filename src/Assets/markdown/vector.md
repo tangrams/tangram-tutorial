@@ -6,7 +6,7 @@ Let's go back to the map we've been building in previous sections. We've managed
 
 [section]
 
-With our current GeoJSON file we can't really do that, because the only data it provides is countries (represented as polygons). This is where vector tiles come in. The <a href="https://mapzen.com/projects/vector-tiles/" target="&#95;blank">Mapzen vector tile service</a> provides worldwide basemap coverage sourced from <a href="http://www.openstreetmap.org/" target="&#95;blank">OpenStreetMap</a> and other open data projects, updated daily as a free & shared service. But what is a vector tile to begin with?
+With our current GeoJSON file we can't really do that, because the only data it provides is countries (represented as polygons). This is where vector tiles come in. The <a href="https://mapzen.com/projects/vector-tiles/" target="&#95;blank">Mapzen vector tile service</a> provides worldwide basemap coverage sourced from <a href="http://www.openstreetmap.org/" target="&#95;blank">OpenStreetMap</a> and other open data projects, updated daily as a free and shared service. But what is a vector tile to begin with?
 
 ### What is a vector tile?
 
