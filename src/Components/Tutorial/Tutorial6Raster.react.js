@@ -19,6 +19,8 @@ export class Tutorial61 extends React.Component {
             <TangramPlay url={examples.raster} />
             <div dangerouslySetInnerHTML={{ __html: sections[1] }} />
             <TangramPlay url={examples.raster2} />
+            <div dangerouslySetInnerHTML={{ __html: sections[2] }} />
+            <TangramPlay url={examples.raster3} />
         </Row>
         )}
 }

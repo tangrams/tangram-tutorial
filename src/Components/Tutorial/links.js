@@ -23,15 +23,17 @@ let examples = {
     vector5: baseurl + 'vector5.yaml' + '&lines=34-42' + '#14/40.7180/-74.0020',
     vector6: baseurl + 'vector6.yaml' + '&lines=43-53' + '#14/40.7180/-74.0020',
     vector7: baseurl + 'vector7.yaml' + '&lines=53-57' + '#14/40.7180/-74.0020',
-    vector8: baseurl + 'vector8.yaml' + '&lines=53-54,58' + '#14/40.7180/-74.0020',
+    vector8: baseurl + 'vector8.yaml' + '&lines=53-54,57-58' + '#14/40.7180/-74.0020',
     vector9: baseurl + 'vector9.yaml' + '&lines=14,24,33,42,51' + '#14/40.7180/-74.0020',
+    vectorlabel: baseurl + 'vectorlabel.yaml' + '&lines=51-63',
     url1: baseurl + 'url1.yaml' + '&lines=4,8',
     url2: baseurl + 'url2.yaml' + '&lines=4',
     shorthand: baseurl + 'shorthand.yaml',
     shorthand2: baseurl + 'shorthand2.yaml',
     shorthand3: baseurl + 'shorthand3.yaml',
     raster: baseurl + 'raster.yaml' + '&lines=3-4',
-    raster2: baseurl + 'raster2.yaml' + '&lines=5'
+    raster2: baseurl + 'raster2.yaml' + '&lines=5',
+    raster3: baseurl + 'raster3.yaml' + '&lines=13'
 };
 
 export default examples;
