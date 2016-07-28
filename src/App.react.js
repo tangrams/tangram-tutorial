@@ -9,7 +9,7 @@ import Tutorial1 from './Components/Tutorial/Tutorial1Intro.react';
 import { Tutorial21, Tutorial22 }  from './Components/Tutorial/Tutorial2Min.react';
 import { Tutorial31, Tutorial32, Tutorial33, Tutorial34, Tutorial35 }  from './Components/Tutorial/Tutorial3Styling.react';
 import { Tutorial41, Tutorial42, Tutorial43 } from './Components/Tutorial/Tutorial4Filters.react';
-import { Tutorial51, Tutorial52, Tutorial53, Tutorial54, Tutorial55, Tutorial56, Tutorial57, Tutorial58 } from './Components/Tutorial/Tutorial5Vector.react';
+import { Tutorial51, Tutorial52, Tutorial53, Tutorial54, Tutorial55, Tutorial56, Tutorial57, Tutorial58, Tutorial59 } from './Components/Tutorial/Tutorial5Vector.react';
 import { Tutorial61 } from './Components/Tutorial/Tutorial6Raster.react';
 import TutorialConclusion from './Components/Tutorial/TutorialConclusion.react';
 
@@ -34,7 +34,8 @@ let routes = (
             <Route path="/tiles/sublayers" component={Tutorial55}/>
             <Route path="/tiles/layerorder" component={Tutorial56}/>
             <Route path="/tiles/shorthand" component={Tutorial57}/>
-            <Route path="/tiles/syntax" component={Tutorial58}/>
+            <Route path="/tiles/places" component={Tutorial58}/>
+            <Route path="/tiles/syntax" component={Tutorial59}/>
             <Route path="/tiles/raster" component={Tutorial61}/>
             <Route path="/conclusion" component={TutorialConclusion}/>
         </Route>

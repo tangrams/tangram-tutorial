@@ -54,8 +54,7 @@ layers:
             filter: # We're filtering the layer to only apply to 'highway'
                 kind: highway
             draw:
-                _highwayStyle:
-                    style: lines # ~~~ TODO ~~~ Try changing the color and thickness of the highway lines!
-                    order: 5
+                # We need to call our sublayer style the same as our parent style in order to inherit some of its properties
+                _roadStyle: # We don't need a 'style' and 'order' here because we're inheriting from the '_roadsStyle'
                     color: '#cc6666'
                     width: 12m

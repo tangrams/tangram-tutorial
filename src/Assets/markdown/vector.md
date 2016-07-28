@@ -256,6 +256,33 @@ Compare how much shorter and readable our code looks when we apply both tips:
 
 [section]
 
+## Labels and Places Layer
+
+Let's continue our exploration of a few more layers from the Mapzen Vector Tile service, including ways to display labels and other UI elements about places.
+
+### Places Layer
+
+The places layer includes information about populated places in the work - with information such as the population size, the name of a place, and the type of place it is. Similar to the other layers, this one includes a `kind` property that takes values such as: `country`, `continent`, `capital`, `farm`, `borough`, `neighborhood`, and `state`, to name a few. Keywords to remember are:
+
+* Layer name: `places`
+* Geometry types: `points`
+
+The example below illustrates how to use the pattern we've been using to add place labels to our map. Try zooming in and out to see how the place names change:
+
+[section]
+
+<div class='alert-message'>
+Remember any geometry type of `polygons`, `lines`, or `points` could display a label `text` given the proper styling. In each of these cases, the label will try to find a 'feature.name' property in the data source of the geometry.
+</div>
+
+Notice that for high zoom levels (12+) in metropolitan areas (such as New York City) the map is completely overloaded by labels. Let's apply a bit of filtering to get rid of the clutter.
+
+<div class='alert-message'>
+Places with kind values of `continent` and `country` start at the lowest zoom levels (0-4). `state`, `province`, and `city` are added at zoom 4. `town` appears at zoom 8. A few more labels such as `borough`, `suburb`, `quarter`, `village`, `hamlet`, `locality`, `isolated_dwelling`, and `farm` appear at zooms 13+.
+</div>
+
+[section]
+
 ### URL syntax
 
 Notice that our source URL looks a little different than the GeoJSON and TopoJSON we've been using so far. It's because we're linking directly to the Mapzen Vector Tile service, which provides vector tiles in a variety of formats. The following three sources are equivalent in the data that they provide; what's different is the encoding format of that data.
@@ -292,5 +319,7 @@ One last comment about URLs. We've been using a special app in this tutorial tha
 `https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-xxxxxxx`
 
 <div class='alert-message'>
-If you're curious, here is what a single sample TopoJSON tile looks like: `https://vector.mapzen.com/osm/all/16/19293/24641.topojson?api_key=vector-tiles-xxxxxxx`
+If you're curious, here is what a single sample TopoJSON tile looks like: `https://vector.mapzen.com/osm/all/16/19293/24641.topojson?api_key=vector-tiles-xxxxxxx`.
+<br><br>
+And here is a web map to help you interactively explore the Mapzen Vector Tile data: [http://tangrams.github.io/explorer](http://tangrams.github.io/explorer).
 </div>

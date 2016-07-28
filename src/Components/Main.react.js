@@ -49,6 +49,7 @@ export default class Main extends React.Component {
                              <ListGroupItem><Link to="/tiles/sublayers">Sublayers</Link></ListGroupItem>
                              <ListGroupItem><Link to="/tiles/layerorder">Tip: Layer Order</Link></ListGroupItem>
                              <ListGroupItem><Link to="/tiles/shorthand">Tip: Syntax Shorthands</Link></ListGroupItem>
+                             <ListGroupItem><Link to="/tiles/places">Labels and Places Layer</Link></ListGroupItem>
                              <ListGroupItem><Link to="/tiles/syntax">URL Syntax</Link></ListGroupItem>
                          </Panel>
                          <Panel collapsible defaultExpanded header="Raster Tiles">

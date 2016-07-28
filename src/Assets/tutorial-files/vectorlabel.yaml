@@ -4,50 +4,40 @@ sources:
         url:  https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
 
 layers:
-    _earthLayer:
+    earth:
         data:
             source: _mapzen
-            layer: earth
         draw:
-            _earthStyle:
-                style: polygons
+            polygons:
                 order: function() { return feature.sort_key; }
                 color: '#ddeeee'
 
-    _waterLayer:
+    water:
         data:
             source: _mapzen
-            layer: water
         draw:
-            _waterStyle:
-                style: polygons
+            polygons:
                 order: function() { return feature.sort_key; }
                 color: '#88bbee'
-    _landuseLayer:
+    landuse:
         data:
             source: _mapzen
-            layer: landuse
         draw:
-            _landuseStyle:
-                style: polygons
+            polygons:
                 order: function() { return feature.sort_key; }
                 color: '#aaffaa'
-    _buildingsLayer:
+    buildings:
         data:
             source: _mapzen
-            layer: buildings
         draw:
-            _buildingsStyle:
-                style: polygons
+            polygons:
                 order: function() { return feature.sort_key; }
                 color: '#808080'
-    _roadsLayer:
+    roads:
         data:
             source: _mapzen
-            layer: roads
         draw:
-            _roadsStyle:
-                style: lines
+            lines:
                 order: function() { return feature.sort_key; }
                 color: '#8374E4'
                 width: 8m
@@ -55,6 +45,19 @@ layers:
             filter:
                 kind: highway
             draw:
-                _roadsStyle:
+                lines:
                     color: '#cc6666'
                     width: 12m
+    _placesLayer: # Adding another layer, the 'places' layer (without using our shorthand notation)
+        data:
+            source: _mapzen
+            layer: places
+        draw:
+            _placesStyle:
+                style: text: # Since the geometry type is points, it means the 'name' property will render at the location of the point
+                order: function() { return feature.sort_key; }
+                font: # Like in previous examples, we add a font to display the label
+                    weight: 500
+                    size: 24px
+                    family: Helvetica
+                    fill: black

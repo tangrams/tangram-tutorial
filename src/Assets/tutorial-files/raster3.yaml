@@ -2,7 +2,7 @@ sources:
     _stamen-terrain:
         type: Raster
         url: http://a.tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg
-        max_zoom: 8 # For this particular raster tile source the maximum zoom level is 8
+        max_zoom: 8
 
 layers:
     _terrainLayer:
@@ -10,5 +10,6 @@ layers:
             source: _stamen-terrain
         draw:
             _terainStyle:
+                color: [0.5, 0.5, 0.5] # Adding a color to tint the raster layer
                 style: raster
                 order: 0
