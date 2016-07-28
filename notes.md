@@ -11,24 +11,16 @@ This layer includes all of those things you would expect to be boundaries as wel
 * Renamed many things from OSM. Based off of.
 * POI: minutely feed - tile build queue. Hours/Days. Check Rob with most current up to date.
 
-## To do:
+### To do:
 
 -Add zoom level and coordinates to all examples
 -Why does the geometry masking section not work? https://mapzen.com/documentation/tangram/Raster-Overview/
 -Explain what happens when you add label points to 'places'
 -For places layer clarify if `points` means you can add `text`
+-Make POI lables demo: https://github.com/tangrams/poi-labels-demo
 
 ### Feedback from lily's session
-Throughout
--check spelling of GEOJSON
-
 Intro
--show example YAML file
--Int his tutorial: bullet points as clear points.
--Explain that not everything will make sense but pace yourself
--Explain commenting in a deeper way —> for non coders
--Clarify the requirements for the tutorial: knowing javascript, knowing CSS, knowing how to comment
-
 -Clarify throughout that at the end we build up to something bigger.
 -highlight geojson file text - lines - to show what is relevant
 
@@ -44,10 +36,6 @@ UI:
 BASIC MAP
 
 Minimum map:
--Why do I want to know a minimum map?
--Yellow callout - moving “We'll be using a special app that embeds Tangram code on the right and a Leaflet/Tangram map on the left to instantly view the results of our scene file. Take a look below!”
--Ad note about the divider in the middle you can move it. And about zooming and moving around the map. Explain how tangram works.
-
 -First example, clarify which lines to uncomment!!!!
 -clarify whether sources clash.
 
@@ -66,9 +54,6 @@ styling wth lines
 
 Layer order
 -Clarify that we’ll get into best practices about layer order later in the tutorial!!
-
-Colors
--can you display what shades of red are each color?
 
 Labels
 -CLARIFY: not to focus on country names and labels - just using test file

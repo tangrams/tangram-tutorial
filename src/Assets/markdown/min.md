@@ -1,4 +1,4 @@
-## What is the minimum map I can build?
+## What is the most basic map I can build with Tangram?
 
 Let's get right to it and style the most basic map we can build with Tangram.
 
@@ -9,7 +9,13 @@ To create a map, the scene file requires only:
 * styling rules (how the data should look on the map)
 
 <div class='alert-message'>
-We'll be using a special app that embeds Tangram code on the right and a Leaflet/Tangram map on the left to instantly view the results of our scene file. Take a look below!
+We'll be using a special app that embeds a Leaflet/Tangram map on the left and Tangram code on the right to instantly view the results of our scene file.
+</div>
+
+[section]
+
+<div class='alert-message'>
+Note that some lines are commented with a `#` sign. Text that comes after a `#` sign is not interpreted as code. Take a look below!
 </div>
 
 [section]

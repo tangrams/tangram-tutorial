@@ -27,7 +27,7 @@ export default class Main extends React.Component {
                             <ListGroupItem><Link to="/intro">Introduction</Link></ListGroupItem>
                         </Panel>
                         <Panel collapsible header="A Basic Map">
-                            <ListGroupItem><Link to="/minimum-map/min">A Minimum Map</Link></ListGroupItem>
+                            <ListGroupItem><Link to="/minimum-map/min">A Basic Map</Link></ListGroupItem>
                             <ListGroupItem><Link to="/minimum-map/data">Layers and Data Import</Link></ListGroupItem>
                          </Panel>
                          <Panel collapsible header="Styling">
