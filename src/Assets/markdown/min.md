@@ -23,7 +23,7 @@ Let's talk about the `sources` block first. As the word indicates, this is the p
 <pre><code class="language-yaml">sources:
     &#95;mapzen: # A source name
         type: GeoJSON
-        url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries.geojson
+        url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries.GeoJSON
 </code></pre>
 
 The source name is important because you will need to use it elsewhere in the Tangram scene file. Think of it as a variable name that you can refer to again and again throughout the scene file. The `sources` block can take any number of source names, and each of those can be named anyway you'd like.
@@ -34,7 +34,7 @@ The source name is important because you will need to use it elsewhere in the Ta
         url: http://a.tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg
     &#95;mapzen: # Another source name
         type: GeoJSON
-        url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries.geojson
+        url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries.GeoJSON
 </code></pre>
 
 <div class='alert-message'>For this tutorial, non-required variable names will be prepended with a `_` to avoid confusion with reserved keywords.
@@ -55,13 +55,13 @@ Each source name in turn requires two pieces of information:
 
 ### Layers and Data Import
 
-So how will we be using the data we just imported? Let's start by unpacking what we've written in the `layers` block. Vector tiles typically contain top-level structures which can be thought of as “layers” – inside a GeoJSON file, these would be the FeatureCollection objects. Inside a Tangram scene file, the layers object allows you to split the data by layer, by matching against the layer name.
+How will we be using the data we just imported? Let's start by unpacking what we've written in the `layers` block. Vector tiles typically contain top-level structures which can be thought of as “layers” – inside a GeoJSON file, these would be the FeatureCollection objects. Inside a Tangram scene file, the layers object allows you to split the data by layer, by matching against the layer name.
 
 [section]
 
 Now let's actually take a look at our data source, in this case
-<a href='https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson'
-target='&#95;blank'>https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson</a>. This is just a simple geojson file that represents every country in the world as a polygon or multipolygon. This code shows a small part of the file (note replacements where we've simplified the file with `[...]`):
+<a href='https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.GeoJSON'
+target='&#95;blank'>https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.GeoJSON</a>. This is just a simple GeoJSON file that represents every country in the world as a polygon or multipolygon. This code shows a small part of the file (note replacements where we've simplified the file with `[...]`):
 
 <pre><code class="language-json">{
 	"countries": {
@@ -98,7 +98,7 @@ target='&#95;blank'>https://tangrams.github.io/tangram-tutorial/src/Assets/tutor
 </pre></code>
 
 <div class='alert-message'>
-An explanation of the GeoJSON and TopoJSON standards is beyond the scope of this tutorial. For a good resource check out: [http://www.macwright.org/2015/03/23/geojson-second-bite.html](http://www.macwright.org/2015/03/23/geojson-second-bite.html)
+An explanation of the GeoJSON and TopoJSON standards is beyond the scope of this tutorial. For a good resource check out: [http://www.macwright.org/2015/03/23/GeoJSON-second-bite.html](http://www.macwright.org/2015/03/23/GeoJSON-second-bite.html)
 </div>
 
 Note that we are specifying what layer name to match against on the highlighted line 12 in the next example. Try editing the Tangram scene file yourself on lines 8 and 12.
@@ -106,7 +106,7 @@ Note that we are specifying what layer name to match against on the highlighted 
 <pre><code class="language-yaml">&#95;countryLayer:
         data:
             source: &#95;mapzen
-            layer: countries # matching to the 'countries' layer in the geojson file
+            layer: countries # matching to the 'countries' layer in the GeoJSON file
 </pre></code>
 
 [section]
@@ -119,7 +119,7 @@ What else is going on here? How are we styling the countries layer? We are speci
         color: darkgreen # The color of the layer we are drawing
 </pre></code>
 
-How do we know what style to apply to what data? Well our geojson file contains some clues. Take another look at the file:
+How do we know what style to apply to what data? Well our GeoJSON file contains some clues. Take another look at the file:
 
 <pre><code class="language-json">[...]
 {
@@ -137,7 +137,7 @@ How do we know what style to apply to what data? Well our geojson file contains 
 [...]
 </pre></code>
 
-Each country is composed of a geometry which in this case is of type `MultiPolygon` but following the geojson specs could be a `Point`, `LineString`, `Polygon`, `MultiPoint`, or `MultiLineString`. Since each country is a multipolygon, we're styling the 'countries' layer with a `polygon` style. Try changing the styles in the following scene file to see what happens:
+Each country is composed of a geometry which in this case is of type `MultiPolygon` but following the GeoJSON specs could be a `Point`, `LineString`, `Polygon`, `MultiPoint`, or `MultiLineString`. Since each country is a multipolygon, we're styling the 'countries' layer with a `polygon` style. Try changing the styles in the following scene file to see what happens:
 
 [section]
 

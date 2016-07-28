@@ -29,6 +29,8 @@ Feature properties in our datasource are listed in a JSON member specifically na
 
 [section]
 
+## Boolean Filters
+
 Conveniently, we can also filter with three types of boolean filter functions `not`, `any`, and `all`. They are logically equivalent to logical operators in most programming languages: NOT (!=), OR (||), and AND (&&) respectively.
 
 `not` takes a single filter object as its input while `any` and `all` take lists of filter objects.
@@ -38,6 +40,8 @@ Notice that we're using the '-' sign when working with `any` and `all`. It is no
 </div>
 
 [section]
+
+## Function Filters
 
 Lastly, Tangram provides the ability to write functions in Javascript within filter blocks. This is useful for highly customized or more complex queries. The only detail to remember when writing functions is that Tangram provides a `feature` keyword for accessing properties. So to access the `continentName` property one would write `feature.continentName`.
 

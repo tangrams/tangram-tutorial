@@ -55,6 +55,6 @@ layers:
                 kind: highway
             draw:
                 # We need to call our sublayer style the same as our parent style in order to inherit some of its properties
-                _roadStyle: # We don't need a 'style' and 'order' here because we're inheriting from the '_roadsStyle'
+                _roadsStyle: # We don't need a 'style' and 'order' here because we're inheriting from the '_roadsStyle'
                     color: '#cc6666'
                     width: 12m

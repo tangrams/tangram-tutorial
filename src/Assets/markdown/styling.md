@@ -1,6 +1,6 @@
 ## Styling
 
-Let's talk about styling with `lines` by adding country borders. Since our geojson represents each country as a polygon or multipolygon, we know that there are edges (or lines) in between each vertex (or point). We can use the `lines` style to draw these borders. And since we're using the same layer of data ('&#95;countryStyle'), we can simply declare a new style under the `draw` block.
+Let's talk about styling with `lines` by adding country borders. Since our GeoJSON represents each country as a polygon or multipolygon, we know that there are edges (or lines) in between each vertex (or point). We can use the `lines` style to draw these borders. And since we're using the same layer of data ('&#95;countryStyle'), we can simply declare a new style under the `draw` block.
 
 [section]
 
@@ -16,10 +16,10 @@ Tangram gives you complete control over how you might choose to color a scene. W
 
 ### 1. CSS colors
 
-A variety of CSS color formats are available, as specified in the [W3C’s Cascading Style Sheets specification](http://www.w3schools.com/cssref/css_colors_legal.asp):
+A variety of CSS color formats are available, as specified in the [W3C’s Cascading Style Sheets specification](http://www.w3schools.com/cssref/css_colors_legal.asp). None of this is specific to Tangram, they are color formats available to all CSS stylesheets.
 
 * named colors: `red`, `blue`, `salmon`, `rebeccapurple`
-* hex colors: `"#fff"`, `"#000"`, `"#9CE6E5"`
+* hex colors: `'#fff'`, `'000'`, `'#9CE6E5'`
 * RGB colors: `rgb(255, 190, 0)`
 * RGBA colors: `rgb(255, 190, 0, .5)`
 * HSL colors: `hsl(180, 100%, 100%)`
@@ -66,7 +66,7 @@ Let's try these examples out:
 
 ## Labels
 
-Finally, let's introduce one more styling concept before we jump into data filters. Remember the `text` style that we spoke about in the <a href="/#/minimum-map/min">Layers and Data Import</a> section? Well we can use that style for showing labels! Let's do that for our countries.
+Finally, let's introduce one more styling concept before we jump into data filters. Remember the `text` style that we discussed in the <a href="/#/minimum-map/min">Layers and Data Import</a> section? Well we can use that style for showing labels! Let's do that for our countries.
 
 First, there's one line of magic sauce we need to add to our `sources` block in the form of `generate_label_centroids: true` (on line #5 below). This line tells Tangram to add new points to the data source, each located at the geometrical center (or "centroid") of every polygon in the data. We will use these new points for positioning our labels.
 
@@ -76,7 +76,7 @@ Second, we need to add another layer name with details for how to draw those lab
 * `draw` block: here's where the rest of the labeling magic happens.
     * `style`: recall that we can choose from `points`, `polygons`, `lines`, `text`, and `raster`. Since we want to display a text label, let's choose `text`.
     * `font`: specifies the font for the label.
-    * `text_source`: this parameter defines the source of the label. How do we know what source to use? Let's take another look at our geojson file on line #4.
+    * `text_source`: this parameter defines the source of the label. How do we know what source to use? Let's take another look at our GeoJSON file on line #4.
 
 <pre><code class="language-json">[...]
 {
@@ -99,7 +99,7 @@ Second, we need to add another layer name with details for how to draw those lab
 [...]
 </pre></code>
 
-Essentially anything within the `properties` section can be used as a valid `text_source` as long as it is a string. If we use `text_source: name` as in the example below, Tangram will match the `name` property in the geojson and serve that as a label.
+Essentially anything within the `properties` section can be used as a valid `text_source` as long as it is a string. If we use `text_source: name` as in the example below, Tangram will match the `name` property in the GeoJSON and serve that as a label.
 
 <div class='alert-message'>
 All valid GeoJSON and TopoJSON files have a type member with the name "properties" - it's not something particular to the GeoJSON file we are using in this example. Mapbox Vector Tiles also have a "properties" member.
