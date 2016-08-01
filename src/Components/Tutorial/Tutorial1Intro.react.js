@@ -11,6 +11,7 @@ var sections = intro.split('[section]');
 
 export default class Tutorial1 extends React.Component {
   render () {
+      console.log(this.props.location.pathname);
     return (
             <Section prev={this.props.route.prev} next={this.props.route.next}>
                 <div dangerouslySetInnerHTML={{ __html: sections[0] }} />
