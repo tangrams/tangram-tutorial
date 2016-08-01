@@ -5,6 +5,8 @@ var React = require('react');
 import Row from 'react-bootstrap/lib/Row';
 import Image from 'react-bootstrap/lib/Image';
 import TangramPlay from '../TangramPlay.react';
+import Section from './Section.react';
+
 import examples from './links';
 
 import vector from '../../Assets/markdown/vector.md';
@@ -14,7 +16,7 @@ var sections = vector.split('[section]');
 export class Tutorial51 extends React.Component {
   render () {
     return (
-        <Row className="show-grid">
+        <Section prev={this.props.route.prev} next={this.props.route.next}>
             <div dangerouslySetInnerHTML={{ __html: sections[0] }} />
             <Image width="60%" src={require('../../Assets/images/oceans.png')} responsive />
             <div dangerouslySetInnerHTML={{ __html: sections[1] }} />
@@ -23,100 +25,100 @@ export class Tutorial51 extends React.Component {
             <TangramPlay url={examples.vector} />
             <div dangerouslySetInnerHTML={{ __html: sections[3] }} />
             <TangramPlay url={examples.vector2} />
-        </Row>
+        </Section>
         )}
 }
 
 export class Tutorial52 extends React.Component {
   render () {
     return (
-        <Row className="show-grid">
+        <Section prev={this.props.route.prev} next={this.props.route.next}>
             <div dangerouslySetInnerHTML={{ __html: sections[4] }} />
             <TangramPlay url={examples.vector3} />
             <div dangerouslySetInnerHTML={{ __html: sections[5] }} />
             <TangramPlay url={examples.vector4} />
             <div dangerouslySetInnerHTML={{ __html: sections[6] }} />
-        </Row>
+        </Section>
         )}
 }
 
 export class Tutorial53 extends React.Component {
   render () {
     return (
-        <Row className="show-grid">
+        <Section prev={this.props.route.prev} next={this.props.route.next}>
             <div dangerouslySetInnerHTML={{ __html: sections[7] }} />
             <TangramPlay url={examples.vector5} />
-        </Row>
+        </Section>
         )}
 }
 
 export class Tutorial54 extends React.Component {
   render () {
     return (
-        <Row className="show-grid">
+        <Section prev={this.props.route.prev} next={this.props.route.next}>
             <div dangerouslySetInnerHTML={{ __html: sections[8] }} />
             <TangramPlay url={examples.vector6} />
             <div dangerouslySetInnerHTML={{ __html: sections[9] }} />
             <TangramPlay url={examples.vector7} />
             <div dangerouslySetInnerHTML={{ __html: sections[10] }} />
-        </Row>
+        </Section>
         )}
 }
 
 export class Tutorial55 extends React.Component {
   render () {
     return (
-        <Row className="show-grid">
+        <Section prev={this.props.route.prev} next={this.props.route.next}>
             <div dangerouslySetInnerHTML={{ __html: sections[11] }} />
             <TangramPlay url={examples.vector8} />
-        </Row>
+        </Section>
         )}
 }
 
 export class Tutorial56 extends React.Component {
   render () {
     return (
-        <Row className="show-grid">
+        <Section prev={this.props.route.prev} next={this.props.route.next}>
             <div dangerouslySetInnerHTML={{ __html: sections[12] }} />
             <TangramPlay url={examples.vector9} />
             <div dangerouslySetInnerHTML={{ __html: sections[13] }} />
-        </Row>
+        </Section>
         )}
 }
 
 export class Tutorial57 extends React.Component {
   render () {
     return (
-        <Row className="show-grid">
+        <Section prev={this.props.route.prev} next={this.props.route.next}>
             <div dangerouslySetInnerHTML={{ __html: sections[14] }} />
             <TangramPlay url={examples.shorthand} />
             <div dangerouslySetInnerHTML={{ __html: sections[15] }} />
             <TangramPlay url={examples.shorthand2} />
             <div dangerouslySetInnerHTML={{ __html: sections[16] }} />
             <TangramPlay url={examples.shorthand3} />
-        </Row>
+        </Section>
         )}
 }
 
 export class Tutorial58 extends React.Component {
   render () {
     return (
-        <Row className="show-grid">
+        <Section prev={this.props.route.prev} next={this.props.route.next}>
             <div dangerouslySetInnerHTML={{ __html: sections[17] }} />
             <TangramPlay url={examples.vectorlabel} />
             <div dangerouslySetInnerHTML={{ __html: sections[18] }} />
-        </Row>
+        </Section>
         )}
 }
 
 export class Tutorial59 extends React.Component {
   render () {
     return (
-        <Row className="show-grid">
+        <Section prev={this.props.route.prev} next={this.props.route.next}>
             <div dangerouslySetInnerHTML={{ __html: sections[19] }} />
             <TangramPlay url={examples.url1} />
             <TangramPlay url={examples.url2} />
             <div dangerouslySetInnerHTML={{ __html: sections[20] }} />
-        </Row>
+        </Section>
         )}
 }

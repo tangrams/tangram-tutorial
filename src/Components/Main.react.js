@@ -63,5 +63,3 @@ export default class Main extends React.Component {
 Main.contextTypes = {
   router: React.PropTypes.object.isRequired
 };
-
-// onClick={() => {this.context.router.push('/minimum-map')}
