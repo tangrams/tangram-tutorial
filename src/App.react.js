@@ -78,31 +78,75 @@ let content = [
     }
 ];
 
-export default content;
+// Function to populate our content array with next and previous links
+let populateLinks = function () {
+    for (let i = 0 ; i < content.length; i++) {
+        for (let j = 0 ; j < content[i].sections.length; j++) {
 
-let routes = (
-    <Router onUpdate={() => scrollToTop() } history={appHistory}>
-        <Route path="/" component={Main}>
-            {
-                // Iterating through each main section
-                content.map(function(c) {
-                    // Iterating through each main section
-                    return c.sections.map(function(s, i) {
-                        return <Route key={i} path={s.path} component={s.component} />
-                    })
-                })
+            /* NEXT LINKS */
+            let next;
+
+            // We are at the end of whole content array
+            if (j+1 == content[i].sections.length && i+1 == content.length) {
+                next = '';
+            }
+            // If we are at the end of a section
+            else if (j+1 == content[i].sections.length) {
+                next = content[(i+1)].sections[0].path;
+            }
+            else {
+                next = content[i].sections[(j+1)].path;
             }
 
+            content[i].sections[j].next = next;
 
-        </Route>
-    </Router>
-);
+            /* PREV LINKS */
+            let prev ;
+
+            // Beginning of whole content array
+            if (i == 0 && j == 0) {
+                prev = ''
+            }
+            // Beginning of a section
+            else if (j == 0) {
+                let prevSec = content[(i-1)].sections;
+                prev = prevSec[prevSec.length-1].path;
+            }
+            else {
+                prev = content[i].sections[(j-1)].path;
+            }
+
+            content[i].sections[j].prev = prev;
+        }
+    }
+}
+
+populateLinks();
+
+export default content;
 
 // Scrolls inner content div to top when clicking route link
 let scrollToTop = function () {
     let x = document.getElementsByClassName('content-child')[0];
     x.scrollTop = 0;
 }
+
+let routes = (
+    <Router onUpdate={() => scrollToTop() } history={appHistory}>
+        <Route path="/" component={Main}>
+            {
+                // Iterating through each main section
+                content.map(function(c, i) {
+                    // Iterating through each main section
+                    let subsection = c.sections.map(function(s, j) {
+                        return <Route key={j} path={s.path} component={s.component} next={s.next} prev={s.prev}/>;
+                    });
+                    return subsection;
+                })
+            }
+        </Route>
+    </Router>
+);
 
 ReactDOM.render(
     routes,
