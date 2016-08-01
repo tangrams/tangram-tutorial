@@ -38,7 +38,7 @@ let content = [
             { path: '/styling/lines', component: Tutorial31, name: 'Styling with Lines' },
             { path: '/styling/order', component: Tutorial32, name: 'Layer Order' },
             { path: '/styling/colors', component: Tutorial33, name: 'Colors' },
-            { path: '/styling/labels', component: Tutorial34, name: 'Colors'},
+            { path: '/styling/labels', component: Tutorial34, name: 'Text Labels'},
             { path: '/styling/text', component: Tutorial35, name: 'Customizing Text'}
         ]
     },

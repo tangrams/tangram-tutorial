@@ -28,17 +28,27 @@ export default class Main extends React.Component {
                         {
                             // Iterating through each main section
                             content.map(function(c, i) {
+                                let divStyle = {
+                                      backgroundColor: 'white'
+                                };
+
                                 // Iterating through each sub section
                                 let subsections = c.sections.map(function(s, j) {
-                                    return <ListGroupItem key={j}><Link to={s.path}>{s.name}</Link></ListGroupItem>
-                                })
+                                    return <ListGroupItem key={j} style=
+                                        {(() => {
+                                            if(this.props.location.pathname == s.path) {
+                                                return divStyle
+                                            }
+                                        })()}
+                                    ><Link to={s.path}>{s.name}</Link></ListGroupItem>
+                                }, this)
 
                                 let mainsection = <Panel collapsible key={i} header={c.title} >
                                                     {subsections}
                                                   </Panel>;
 
                                 return mainsection ;
-                            })
+                            }, this)
                         }
                     </ListGroup>
                 </Row>
