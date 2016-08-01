@@ -9,6 +9,8 @@ import ListGroup from 'react-bootstrap/lib/ListGroup';
 import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 import Image from 'react-bootstrap/lib/Image';
 
+import content from '../App.react';
+
 export default class Main extends React.Component {
   render () {
       require('../Assets/css/bootstrap.css');
@@ -23,41 +25,21 @@ export default class Main extends React.Component {
                 </Row>
                 <Row className='sidebar-toc'>
                     <ListGroup fill>
-                        <Panel collapsible defaultExpanded header="Introduction" >
-                            <ListGroupItem><Link to="/intro">Introduction</Link></ListGroupItem>
-                        </Panel>
-                        <Panel collapsible header="A Basic Map">
-                            <ListGroupItem><Link to="/minimum-map/min">A Basic Map</Link></ListGroupItem>
-                            <ListGroupItem><Link to="/minimum-map/data">Layers and Data Import</Link></ListGroupItem>
-                         </Panel>
-                         <Panel collapsible header="Styling">
-                             <ListGroupItem><Link to="/styling/lines">Styling with Lines</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/styling/order">Layer Order</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/styling/colors">Colors</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/styling/labels">Labels</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/styling/text">Customizing Text</Link></ListGroupItem>
-                         </Panel>
-                         <Panel collapsible header="Data Filters">
-                             <ListGroupItem><Link to="/filters/features">Feature Filters</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/filters/booleans">Boolean Filters</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/filters/functions">Function Filters</Link></ListGroupItem>
-                         </Panel>
-                         <Panel collapsible header="Vector Tiles">
-                             <ListGroupItem><Link to="/tiles/vector">What are Vector Tiles?</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/tiles/landuse">Landuse Layer</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/tiles/buildings">Buildings Layer</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/tiles/roads">Roads Layer</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/tiles/sublayers">Sublayers</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/tiles/layerorder">Tip: Layer Order</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/tiles/shorthand">Tip: Syntax Shorthands</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/tiles/places">Labels and Places Layer</Link></ListGroupItem>
-                             <ListGroupItem><Link to="/tiles/syntax">URL Syntax</Link></ListGroupItem>
-                         </Panel>
-                         <Panel collapsible header="Raster Tiles">
-                            <ListGroupItem><Link to="/tiles/raster">Raster Tiles</Link></ListGroupItem>
-                         </Panel>
-                         <Panel collapsible defaultExpanded header="Conclusion" onClick={() => {this.context.router.push('/conclusion')}}>
-                         </Panel>
+                        {
+                            // Iterating through each main section
+                            content.map(function(c, i) {
+                                // Iterating through each sub section
+                                let subsections = c.sections.map(function(s, j) {
+                                    return <ListGroupItem key={j}><Link to={s.path}>{s.name}</Link></ListGroupItem>
+                                })
+
+                                let mainsection = <Panel collapsible key={i} header={c.title} >
+                                                    {subsections}
+                                                  </Panel>;
+
+                                return mainsection ;
+                            })
+                        }
                     </ListGroup>
                 </Row>
             </Col>
