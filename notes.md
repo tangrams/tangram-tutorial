@@ -14,7 +14,6 @@ This layer includes all of those things you would expect to be boundaries as wel
 ### To do:
 
 -Add zoom level and coordinates to all examples
--Why does the geometry masking section not work? https://mapzen.com/documentation/tangram/Raster-Overview/
 -Explain what happens when you add label points to 'places'
 -For places layer clarify if `points` means you can add `text`
 -Make POI lables demo: https://github.com/tangrams/poi-labels-demo
@@ -27,9 +26,7 @@ Intro
 UI:
 -next elements.
 -an intro landing page
--scroll back to top on next page.
 -change yellow?
--RESTART button for each tutorial.
 -Add an indicator to the map UI for where you are.
 -Add excersizes at the end!!!
 

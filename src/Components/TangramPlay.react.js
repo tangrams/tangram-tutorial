@@ -26,5 +26,3 @@ export default class TangramPlay extends React.Component {
 TangramPlay.propTypes = {
     url: React.PropTypes.string,
 };
-
-//<Icon type={this.state.geolocatorButton} />

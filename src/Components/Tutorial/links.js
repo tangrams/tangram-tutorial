@@ -37,5 +37,3 @@ let examples = {
 };
 
 export default examples;
-
-console.log(examples.vector3);
