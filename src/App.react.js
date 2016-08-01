@@ -2,7 +2,8 @@ import 'babel-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, hashHistory } from 'react-router'
+import { Router, Route, browserHistory, hashHistory, useRouterHistory } from 'react-router'
+import { createHashHistory } from 'history';
 
 import Main from './Components/Main.react';
 import Tutorial1 from './Components/Tutorial/Tutorial1Intro.react';
@@ -13,12 +14,15 @@ import { Tutorial51, Tutorial52, Tutorial53, Tutorial54, Tutorial55, Tutorial56,
 import { Tutorial61 } from './Components/Tutorial/Tutorial6Raster.react';
 import TutorialConclusion from './Components/Tutorial/TutorialConclusion.react';
 
+// Gets rid of hash extra symbols
+const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
+
 let routes = (
-    <Router history={hashHistory}>
+    <Router onUpdate={() => scrollToTop() } history={appHistory}>
         <Route path="/" component={Main}>
-            <Route path="/intro" component={Tutorial1}/>
-            <Route path="/minimum-map/min" component={Tutorial21}/>
-            <Route path="/minimum-map/data" component={Tutorial22}/>
+            <Route path="/intro" component={Tutorial1} />
+            <Route path="/minimum-map/min" component={Tutorial21} />
+            <Route path="/minimum-map/data" component={Tutorial22} />
             <Route path="/styling/lines" component={Tutorial31}/>
             <Route path="/styling/order" component={Tutorial32}/>
             <Route path="/styling/colors" component={Tutorial33}/>
@@ -41,6 +45,12 @@ let routes = (
         </Route>
     </Router>
 );
+
+// Scrolls inner content div to top when clicking route link
+let scrollToTop = function () {
+    let x = document.getElementsByClassName('content-child')[0];
+    x.scrollTop = 0;
+}
 
 ReactDOM.render(
     routes,
