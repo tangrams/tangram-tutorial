@@ -24,10 +24,7 @@ Intro
 -highlight geojson file text - lines - to show what is relevant
 
 UI:
--next elements.
--an intro landing page
 -change yellow?
--Add an indicator to the map UI for where you are.
 -Add excersizes at the end!!!
 
 BASIC MAP
