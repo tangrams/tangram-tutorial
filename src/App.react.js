@@ -116,6 +116,11 @@ let populateLinks = function () {
                 prev = content[i].sections[(j-1)].path;
             }
 
+            if (i == 5) {
+                console.log(prev);
+                console.log(next);
+            }
+
             content[i].sections[j].prev = prev;
         }
     }

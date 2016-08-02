@@ -29,7 +29,7 @@ A scene file like this is all it takes to build a map using Tangram. In the next
 
 ### Prior knowledge required for this tutorial:
 
-You certainly don't have to be a programmer or cartography expert to follow this tutorial. Nevertheless, familiarity with JSON, CSS and basic programming concepts will help. Familiarity with GeoJSON and Javascript will help even more. 
+You certainly don't have to be a programmer or cartography expert to follow this tutorial. Nevertheless, familiarity with JSON, CSS and basic programming concepts will help. Familiarity with GeoJSON and Javascript will help even more.
 
 ### Goals for this tutorial:
 In this tutorial, you will become familiar with the syntax, rules, and capabilities of the Tangram rendering engine, meaning you'll be able to write valid YAML documents that contain the rules required to style 2D and 3D maps.
