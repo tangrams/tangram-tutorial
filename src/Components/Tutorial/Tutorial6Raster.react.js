@@ -15,8 +15,6 @@ var sections = raster.split('[section]');
 
 export class Tutorial61 extends React.Component {
   render () {
-      console.log(this.props.route.prev);
-      console.log(this.props.route.next);
     return (
         <Section prev={this.props.route.prev} next={this.props.route.next}>
             <div dangerouslySetInnerHTML={{ __html: sections[0] }} />

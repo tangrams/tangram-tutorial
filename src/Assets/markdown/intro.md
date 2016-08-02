@@ -9,7 +9,6 @@ Why YAML? Well, YAML is a data format similar in many ways to JSON, but it has s
     &#95;mapzen:
         type: GeoJSON
         url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson
-
 layers:
     &#95;countryLayer:
         data:
