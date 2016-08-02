@@ -54,7 +54,7 @@ layers:
             layer: places
         draw:
             _placesStyle:
-                style: text: # Since the geometry type is points, it means the 'name' property will render at the location of the point
+                style: text # Since the geometry type is points, it means the 'name' property will render at the location of the point
                 order: function() { return feature.sort_key; }
                 font: # Like in previous examples, we add a font to display the label
                     weight: 500
