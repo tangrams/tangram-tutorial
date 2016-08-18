@@ -24,7 +24,6 @@ export default class Main extends React.Component {
     }
 
     handleSelect(activeKey) {
-        console.log("being selected");
        this.setState({ activeKey });
      }
 
