@@ -2,7 +2,7 @@ import 'babel-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, hashHistory, useRouterHistory } from 'react-router'
+import { Router, Route, RouteHandler, browserHistory, hashHistory, useRouterHistory, IndexRoute } from 'react-router'
 import { createHashHistory } from 'history';
 
 import Main from './Components/Main.react';
@@ -132,7 +132,6 @@ let scrollToTop = function () {
 }
 
 let routes = (
-    <Router onUpdate={() => scrollToTop() } history={appHistory}>
         <Route path="/" component={Main}>
             {
                 // Iterating through each main section
@@ -145,10 +144,14 @@ let routes = (
                 })
             }
         </Route>
-    </Router>
 );
 
+// Router.run(routes, function(Handler) {
+//     ReactDOM.render(<Handler/>, document.getElementById('app'));
+// });
+//onUpdate={scrollToTop}
+
 ReactDOM.render(
-    routes,
+    <Router history={appHistory}>{routes}</Router>,
     document.getElementById('app')
 );
