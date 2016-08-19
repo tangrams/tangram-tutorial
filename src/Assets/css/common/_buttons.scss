@@ -1,0 +1,87 @@
+
+/* button styles */
+
+.btn {
+  border-radius: 0;
+  border-width: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 16px;
+}
+
+// Red button
+.btn-mapzen {
+  border-color: $mz-red;
+  background-color: $mz-red;
+  color: #fff;
+  text-shadow: none;
+  text-transform: uppercase;
+  font-weight:400;
+
+  &:hover,
+  &:focus {
+    border-color: $mz-darkred;
+    background-color: $mz-darkred;
+    color: #fff;
+  }
+}
+
+// Blue button
+.btn-mapzen-alt {
+  border-color: $mz-blue;
+  background-color: $mz-blue;
+  color: #fff;
+  text-shadow: none;
+  text-transform: uppercase;
+  font-weight:400;
+
+  &:hover,
+  &:focus {
+    border-color: $mz-darkblue;
+    background-color: $mz-darkblue;
+    color: #fff;
+  }
+}
+
+// Transparent button
+// Sometimes on white, sometimes on light gray
+.btn-transparent {
+  background: transparent;
+  border: 1px solid $mz-darkgray;
+  color: $mz-darkgray;
+
+  &:hover,
+  &:focus {
+    background-color: #e5e5e5;
+    border-color: $mz-darkgray;
+    color: $mz-darkgray;
+  }
+}
+
+
+// tag links for blog posts
+.tag-list {
+  text-align: center;
+  padding: 0;
+  a {
+    li {
+      display: inline-block;
+      color: $mz-mediumgray;
+      background-color: $mz-lightgray;
+      padding: .35em .8em;
+      margin: 0 .4em;
+    }
+  }
+}
+
+// Button groups
+// Giving margin-right to the buttons
+.btn-group .btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+// Undo the overall bottom margin
+.btn-group {
+  margin-bottom: -10px;
+}
