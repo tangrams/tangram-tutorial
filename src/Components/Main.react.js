@@ -12,6 +12,8 @@ import Image from 'react-bootstrap/lib/Image';
 
 import content from '../App.react';
 
+// Implement active classname here http://stackoverflow.com/questions/34418254/is-there-a-way-using-react-router-to-set-an-active-class-on-the-wrapper-to-the-l
+
 export default class Main extends React.Component {
     constructor (props) {
         super(props);
@@ -26,7 +28,6 @@ export default class Main extends React.Component {
     handleSelect(activeKey) {
        this.setState({ activeKey });
      }
-
 
   render () {
       require('../Assets/css/bootstrap.css');
@@ -44,11 +45,16 @@ export default class Main extends React.Component {
                         {
                             // Iterating through each main section
                             content.map(function(c, i) {
+
                                 // Iterating through each sub section
                                 let subsections = c.sections.map((s, j) => {
-                                    return <ListGroupItem key={j}>
-                                                <Link to={{ pathname: s.path }}>{s.name}</Link>
-                                           </ListGroupItem>})
+                                    let isActive = this.context.router.isActive(s.path);
+                                    let className = isActive ? 'background' : '';
+
+                                    return <ListGroupItem key={j*i} className={className}>
+                                                <Link to={{ pathname: s.path }} >{s.name}</Link>
+                                           </ListGroupItem>
+                                });
 
                                 let mainsection = <Panel collapsible key={i} eventKey={i.toString()} header={c.title} >
                                                     {subsections}
@@ -78,5 +84,5 @@ export default class Main extends React.Component {
 }
 
 Main.contextTypes = {
-  router: React.PropTypes.object.isRequired
-};
+   router: React.PropTypes.object.isRequired
+}

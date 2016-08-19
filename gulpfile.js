@@ -61,7 +61,9 @@ gulp.task('webpack-dev-server', function(callback) {
         noInfo: false,
         publicPath: '/',
         stats: { colors: true },
-        historyApiFallback: true,
+        devServer: {
+            historyApiFallback: true
+        },
         hot: true,
         inline: true
     });
