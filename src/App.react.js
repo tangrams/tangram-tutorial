@@ -2,7 +2,7 @@ import 'babel-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, RouteHandler, browserHistory, hashHistory, useRouterHistory, IndexRoute } from 'react-router'
+import { Router, Route, RouteHandler, browserHistory, hashHistory, useRouterHistory, IndexRoute, createMemoryHistory } from 'react-router'
 import { createHashHistory } from 'history';
 
 import Main from './Components/Main.react';
@@ -134,18 +134,20 @@ let scrollToTop = function () {
 }
 
 let routes = (
-        <Route path="/" component={Main}>
-            {
-                // Iterating through each main section
-                content.map(function(c, i) {
+        <Router history={appHistory} onUpdate={() => scrollToTop() }>
+            <Route path="/" component={Main}>
+                {
                     // Iterating through each main section
-                    let subsection = c.sections.map(function(s, j) {
-                        return <Route key={j} path={s.path} component={s.component} next={s.next} prev={s.prev}/>;
-                    });
-                    return subsection;
-                })
-            }
-        </Route>
+                    content.map(function(c, i) {
+                        // Iterating through each main section
+                        let subsection = c.sections.map(function(s, j) {
+                            return <Route key={i} path={s.path} component={s.component} next={s.next} prev={s.prev}/>;
+                        });
+                        return subsection;
+                    })
+                }
+            </Route>
+        </Router>
 );
 
 // Router.run(routes, function(Handler) {
@@ -154,6 +156,6 @@ let routes = (
 //onUpdate={scrollToTop}
 
 ReactDOM.render(
-    <Router history={appHistory}>{routes}</Router>,
+    routes,
     document.getElementById('app')
 );
