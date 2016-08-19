@@ -47,7 +47,7 @@ export default class Main extends React.Component {
                                 // Iterating through each sub section
                                 let subsections = c.sections.map((s, j) => {
                                     return <ListGroupItem key={j}>
-                                                <Link to={s.path}>{s.name}</Link>
+                                                <Link to={{ pathname: s.path }}>{s.name}</Link>
                                            </ListGroupItem>})
 
                                 let mainsection = <Panel collapsible key={i} eventKey={i.toString()} header={c.title} >

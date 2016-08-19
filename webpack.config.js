@@ -9,12 +9,16 @@ module.exports = {
     devtool: 'source-map',
     context: path.join(__dirname, 'src'),
     entry: {
-        app: ["./App.react.js"]
+        javascript: ['./App.react.js'],
+        html: './index.html'
     },
     output: {
         path: path.join(__dirname, 'dist'),
-        publicPath: '/dist/',
+        publicPath: '/',
         filename: 'app.bundle.js'
+    },
+    devServer: {
+        historyApiFallback: true
     },
     module: {
         loaders: [
@@ -38,6 +42,10 @@ module.exports = {
             {
                 test: /\.md$/,
                 loader: 'html!markdown?gfm=false'
+            },
+            {
+                test: /\.html$/,
+                loader: 'file?name=[name].[ext]'
             },
             {
                 test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,

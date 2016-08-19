@@ -51,20 +51,24 @@ gulp.task('webpack-dev-server', function(callback) {
 
     // The next two lines are for hot loading
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
-    webpackConfig.entry.app.unshift('webpack-dev-server/client?http://localhost:8080', 'webpack/hot/dev-server');
+    webpackConfig.entry.javascript.unshift('webpack-dev-server/client?http://localhost:8080', 'webpack/hot/dev-server');
 
     var compiler = webpack(webpackConfig);
 
     var server = new WebpackDevServer(compiler, {
-        contentBase: path.join(__dirname, 'www'),
+        // contentBase: path.join(__dirname, 'src'),
         quiet: false,
         noInfo: false,
-        publicPath: '/dist/',
+        publicPath: '/',
         stats: { colors: true },
         historyApiFallback: true,
         hot: true,
         inline: true
     });
+
+    // server.use('/', function(req, res) {
+    //     res.sendFile(path.join(__dirname+'/index.html'));
+    // });
 
     server.listen(8080, '0.0.0.0', function(err) {
         if (err) {
