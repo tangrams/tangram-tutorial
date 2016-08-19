@@ -31,6 +31,7 @@ export default class Main extends React.Component {
 
   render () {
       require('../Assets/css/bootstrap.css');
+      require('../Assets/css/styleguide.scss');
       require('../Assets/css/style.scss');
 
      return (
