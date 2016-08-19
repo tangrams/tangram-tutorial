@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "fertrig@gmail.com",
+  "author": "ire.alvarado@gmail.com",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.10.4",
