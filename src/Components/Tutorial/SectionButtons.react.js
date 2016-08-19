@@ -12,7 +12,10 @@ export default class SectionButtons extends React.Component {
           prev = null;
       }
       else {
-          prev = <Button bsSize="small"><Link to={this.props.prev}>Previous section</Link></Button>;
+          prev = <Link to={this.props.prev} className='pagination-link pagination-previous'>
+                      <i class="fa fa-fw fa-angle-left"></i>
+                      <span class="pagination-link-text">Previous section</span>
+                 </Link>;
       }
 
       let next ;
@@ -20,12 +23,15 @@ export default class SectionButtons extends React.Component {
           next = null;
       }
       else {
-          next = <Button bsSize="small" className='button-next'><Link to={this.props.next}>Next section</Link></Button>;
+          next = <Link to={this.props.next} className='pagination-link pagination-next'>
+                      <i class="fa fa-fw fa-angle-right"></i>
+                      <span class="pagination-link-text">Next section</span>
+                  </Link>;
       }
 
 
     return (
-            <Row>
+            <Row className='pagination pagination-alt hidden-print'>
                 {prev}
                 {next}
             </Row>
