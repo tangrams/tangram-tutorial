@@ -15,7 +15,9 @@ import { Tutorial61 } from './Components/Tutorial/Tutorial6Raster.react';
 import TutorialConclusion from './Components/Tutorial/TutorialConclusion.react';
 
 // Gets rid of hash extra symbols
-const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
+const appHistory = useRouterHistory(createHashHistory)({
+    queryKey: false
+});
 
 //As long as this array is in order, the next and before buttons will populate correctly
 let content = [
