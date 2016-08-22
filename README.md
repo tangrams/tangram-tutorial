@@ -16,4 +16,6 @@ Hot loading is enabled, meaning that any changes made in the code will appear on
 
 `gulp build`
 
-This will place the proper assets in the `/dist` and `/www` folders.
+This will place the proper assets in the `/dist` folder.
+
+Once you add the new build and deploy to `gh-pages` branch on github, the tutorial should be availbe at the following url: [https://tangrams.github.io/tangram-tutorial/www/#/](https://tangrams.github.io/tangram-tutorial/www/#/)

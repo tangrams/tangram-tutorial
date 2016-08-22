@@ -8,13 +8,13 @@ To create a map, the scene file requires only:
 * data interpretation rules (filters)
 * styling rules (how the data should look on the map)
 
-<div class='alert-message'>
+<div class='alert alert-info'>
 We'll be using a special app that embeds a Leaflet/Tangram map on the left and Tangram code on the right to instantly view the results of our scene file.
 </div>
 
 [section]
 
-<div class='alert-message'>
+<div class='alert alert-info'>
 Note that some lines are commented with a `#` sign. Text that comes after a `#` sign is not interpreted as code. Take a look below!
 </div>
 
@@ -43,7 +43,7 @@ The source name is important because you will need to use it elsewhere in the Ta
         url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries.GeoJSON
 </code></pre>
 
-<div class='alert-message'>For this tutorial, non-required variable names will be prepended with a `_` to avoid confusion with reserved keywords.
+<div class='alert alert-warning'>For this tutorial, non-required variable names will be prepended with a `_` to avoid confusion with reserved keywords.
 In the example above `_stamen` and `_mapzen` can be thought of as variable names. Instead, `sources` and `layers` are reserved keywords.</div>
 
 Each source name in turn requires two pieces of information:
@@ -103,7 +103,7 @@ target='&#95;blank'>https://tangrams.github.io/tangram-tutorial/src/Assets/tutor
 }
 </pre></code>
 
-<div class='alert-message'>
+<div class='alert alert-info'>
 An explanation of the GeoJSON and TopoJSON standards is beyond the scope of this tutorial. For a good resource check out: [http://www.macwright.org/2015/03/23/GeoJSON-second-bite.html](http://www.macwright.org/2015/03/23/GeoJSON-second-bite.html)
 </div>
 
@@ -149,6 +149,6 @@ Each country is composed of a geometry which in this case is of type `MultiPolyg
 
 Tangram did not interpret the data correctly when using a `text` or `raster` style because the data is not encoded as any of these. As a consequence, the map renders nothing at all. For `lines` we need to add an extra element we'll go into in a bit. On the other hand when we use `points` Tangram is rendering the vertices (or points) of each polygon in our 'country' layer.
 
-<div class='alert-message'>
+<div class='alert alert-info'>
 The TopoJSON and MVT (Mapbox Vector Tiles) are structured in a similar way to GeoJSON files, so these geometric properties still apply. Raster files are different and we will cover them later on in the tutorial.
 </div>

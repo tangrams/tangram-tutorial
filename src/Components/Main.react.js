@@ -12,8 +12,6 @@ import Image from 'react-bootstrap/lib/Image';
 
 import content from '../App.react';
 
-// Implement active classname here http://stackoverflow.com/questions/34418254/is-there-a-way-using-react-router-to-set-an-active-class-on-the-wrapper-to-the-l
-
 export default class Main extends React.Component {
     constructor (props) {
         super(props);
@@ -39,14 +37,15 @@ export default class Main extends React.Component {
         <Row>
             <Col sm={2} md={2} className='sidebar'>
                 <Row className='sidebar-title'>
-                    <Image className='sidebar-title-logo' src={require('../Assets/images/logo.png')} responsive />
+                    <div className='sidebar-image-container'>
+                        <Image className='sidebar-title-logo' src={require('../Assets/images/logo.png')} responsive/>
+                    </div>
                 </Row>
                 <Row className='sidebar-toc'>
                     <PanelGroup activeKey={this.state.activeKey} onSelect={this.handleSelect} accordion>
                         {
                             // Iterating through each main section
                             content.map(function(c, i) {
-
                                 // Iterating through each sub section
                                 let subsections = c.sections.map((s, j) => {
                                     let isActive = this.context.router.isActive(s.path);
@@ -57,7 +56,8 @@ export default class Main extends React.Component {
                                            </ListGroupItem>
                                 });
 
-                                let mainsection = <Panel collapsible key={i} eventKey={i.toString()} header={c.title} >
+                                let classNamePanel = (this.state.activeKey === i.toString()) ? 'background-panel' : '';
+                                let mainsection = <Panel collapsible key={i} eventKey={i.toString()} header={c.title} className={classNamePanel}>
                                                     {subsections}
                                                   </Panel>;
 
@@ -69,9 +69,9 @@ export default class Main extends React.Component {
             </Col>
             <Col sm={10} md={10} className='content'>
                 <Row className='menu-bar'>
-                    <div className='title'>Tangram Tutorial</div>
+                    <h1 className='title'>Tangram Tutorial</h1>
                 </Row>
-                <Row className='content-child'>
+                <Row className='content-child documentation-content'>
                     <Col md={12}>
                         <Grid>
                             {this.props.children}

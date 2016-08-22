@@ -35,7 +35,7 @@ Conveniently, we can also filter with three types of boolean filter functions `n
 
 `not` takes a single filter object as its input while `any` and `all` take lists of filter objects.
 
-<div class='alert-message'>
+<div class='alert alert-warning'>
 Notice that we're using the '-' sign when working with `any` and `all`. It is not required for `not` because this filter only takes one object.
 </div>
 
