@@ -20,7 +20,7 @@ export class Tutorial21 extends React.Component {
             <Image width="100%" src={require('../../Assets/images/playcomment.png')} responsive />
             <div dangerouslySetInnerHTML={{ __html: sections[1] }}/ >
             <TangramPlay url={examples.min} />
-            <div dangerouslySetInnerHTML={{ __html: sections[1] }} />
+            <div dangerouslySetInnerHTML={{ __html: sections[2] }} />
         </Section>
         )}
 }
@@ -29,13 +29,13 @@ export class Tutorial22 extends React.Component {
   render () {
     return (
         <Section prev={this.props.route.prev} next={this.props.route.next}>
-            <div dangerouslySetInnerHTML={{ __html: sections[2] }} />
-            <TangramPlay url={examples.layers} />
             <div dangerouslySetInnerHTML={{ __html: sections[3] }} />
-            <TangramPlay url={examples.layers2} />
+            <TangramPlay url={examples.layers} />
             <div dangerouslySetInnerHTML={{ __html: sections[4] }} />
-            <TangramPlay url={examples.layers3} />
+            <TangramPlay url={examples.layers2} />
             <div dangerouslySetInnerHTML={{ __html: sections[5] }} />
+            <TangramPlay url={examples.layers3} />
+            <div dangerouslySetInnerHTML={{ __html: sections[6] }} />
         </Section>
         )}
 }

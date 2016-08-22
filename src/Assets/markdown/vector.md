@@ -24,7 +24,7 @@ With that in mind let's take a look at a simple map we can build with the Mapzen
 
 How did we get the earth and water layer? They're conveniently included in the Mapzen Vector Tile service, which pulls in data from OpenStreetMap and many more open data projects. The tile service provides map data organized into several thematic layers, each of which is name, for example: `buildings`, `landuse`, and `water`. We'll go into all the available layers in the next section of this tutorial.
 
-<div class='alert-message'>
+<div class='alert alert-info'>
 For a full listing of the data sources in the Mapzen Vector Tile service check out [data sources](https://mapzen.com/documentation/vector-tiles/data-sources/).
 </div>
 
@@ -74,7 +74,7 @@ The keywords to remember for this layer are:
 * Layer name: `landuse`
 * Geometry types: `points` and `polygons`
 
-<div class='alert-message'>
+<div class='alert alert-warning'>
 For each layer, we will provide a 'layer name' and 'geometry types'. Recall that the layer name is what we have been using as `layer: countries` and `layer: earth` in some of the previous examples. It's the way we tell Tangram what data source to use for a particular drawing style within a `layer` block.
 <br><br>
 We've also been using a few different geometry types in previous examples: `lines`, `polygons`, and `text`. Remember when we styled the <a href="/#/minimum-map/data">countries</a> we used `style: polygons`, when we styled our country <a href="/#/styling/lines">border</a> we used `style: lines` and for <a href="/#/styling/labels">labels</a> we used `style: text`.
@@ -88,7 +88,7 @@ In this map we're coloring in light green all the polygons captured in the `land
 
 The `landuse` layer comes with a property called `kind` that let's us specify different types of `landuse` values. Take a look at this next example to see how you can use a `filter` block to filter by kind. For a full list of `kind` values check out: [https://mapzen.com/documentation/vector-tiles/layers/#landuse](https://mapzen.com/documentation/vector-tiles/layers/#landuse).
 
-<div class='alert-message'>
+<div class='alert alert-warning'>
 Each layer has specific properties like `kind` that are useful for different purposes. We'll be mentioning a few properties for each layer in this tutorial, but a full list of properties per layer are avilable on the mapzen docs: [https://mapzen.com/documentation/vector-tiles/layers/](https://mapzen.com/documentation/vector-tiles/layers/).
 </div>
 
@@ -98,7 +98,7 @@ We've used the `draw: polygons` geometry because we're drawing the actual areas 
 
 One last point about the `landuse` layer: notice that if you zoom out at some point the green polygons become unnoticeable. Tangram is doing some work behind the scenes to decide what appropriate features to display at different zoom levels.
 
-<div class='alert-message'>
+<div class='alert alert-info'>
 In terms of the specific data Tangram is sourcing, the `landuse` layer includes OpenStreetMap data at higher zoom levels, and Natural Earth data at lower zoom levels.
 </div>
 
@@ -136,7 +136,7 @@ Let's add a `filter` block to see how this property might be useful for us. In t
 
 [section]
 
-<div class='alert-message'>
+<div class='alert alert-info'>
 To improve performance, some road segments are merged at low and mid-zooms. To facilitate this, certain properties are dropped at those zooms. The exact zoom varies per feature class (major roads keep this properties over a wider range, minor roads drop them starting at zoom 14).
 </div>
 
@@ -196,7 +196,7 @@ The way we use `sort_key` is via a function on the `order` parameter like so:
 <pre><code class="language-yaml">order: function() { return feature.sort_key; }
 </pre></code>
 
-<div class='alert-message'>
+<div class='alert alert-warning'>
 Do you recall the <a href="/#/filters/functions">function filters</a> section where we discussed the keyword `feature`? Tangram provides a `feature` keyword for accessing properties of layers. The Tangram Vector Tile service includes a `sort_key` property that we are accessing by using this particular keyword in the function.
 </div>
 
@@ -271,13 +271,13 @@ The example below illustrates how to use the pattern we've been using to add pla
 
 [section]
 
-<div class='alert-message'>
+<div class='alert alert-warning'>
 Remember any geometry type of `polygons`, `lines`, or `points` could display a label `text` given the proper styling. In each of these cases, the label will try to find a 'feature.name' property in the data source of the geometry.
 </div>
 
 Notice that for high zoom levels (12+) in metropolitan areas (such as New York City) the map is completely overloaded by labels. Let's apply a bit of filtering to get rid of the clutter.
 
-<div class='alert-message'>
+<div class='alert alert-info'>
 Places with kind values of `continent` and `country` start at the lowest zoom levels (0-4). `state`, `province`, and `city` are added at zoom 4. `town` appears at zoom 8. A few more labels such as `borough`, `suburb`, `quarter`, `village`, `hamlet`, `locality`, `isolated_dwelling`, and `farm` appear at zooms 13+.
 </div>
 
@@ -293,7 +293,7 @@ Notice that our source URL looks a little different than the GeoJSON and TopoJSO
 
 `http://vector.mapzen.com/osm/all/{z}/{x}/{y}.mvt` Mapbox Vector Tiles format
 
-<div class='alert-message'>
+<div class='alert alert-info'>
 We recommend TopoJSON format for desktop web development, and MVT format for native mobile development. The Mapzen server gzips tiles automatically, so the TopoJSON file format is comparable in file size to MVT over the wire, and it’s much friendlier to debug.
 </div>
 
@@ -318,7 +318,7 @@ One last comment about URLs. We've been using a special app in this tutorial tha
 
 `https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-xxxxxxx`
 
-<div class='alert-message'>
+<div class='alert alert-info'>
 If you're curious, here is what a single sample TopoJSON tile looks like: `https://vector.mapzen.com/osm/all/16/19293/24641.topojson?api_key=vector-tiles-xxxxxxx`.
 <br><br>
 And here is a web map to help you interactively explore the Mapzen Vector Tile data: [http://tangrams.github.io/explorer](http://tangrams.github.io/explorer).

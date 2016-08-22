@@ -1,18 +1,33 @@
-// @import url('//fonts.googleapis.com/css?family=Roboto');
-
 * {
 	box-sizing: border-box;
 }
 
 html, body {
 	width: 100%;
-	// font-family: "Open Sans", sans-serif;
+	background-color: #fafbfc;
+	font-family: "Open Sans", sans-serif;
     // font-weight: 400;
     // font-size: 16px;
     // line-height: 1.5;
     // color: #444;
 	margin-top: 0;
 }
+
+h1 {
+	font-family: "Playfair Display", serif;
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: 300;
+	color: #d4645c;
+}
+
+// h2 {
+// 	font-family: "Playfair Display", serif;
+// 	line-height: inherit;
+// 	font-weight: 600;
+// 	font-size: 32px;
+// 	color: #666666;
+// }
 
 .center {
 	text-align: center;
@@ -54,11 +69,11 @@ iframe {
 
 .sidebar {
 	// top: 70px;
-	background-color: #2e3d49;
+	// background-color: #2e3d49;
 	height: 100vh;
-	color: white;
-	text-decoration: none;
-	padding-right: 0;
+	// color: white;
+	// text-decoration: none;
+	// padding-right: 0;
 
 	a:hover {
 		text-decoration: none;
@@ -82,12 +97,20 @@ iframe {
 
 .sidebar-title-logo {
 	vertical-align: middle;
+	max-width: 140px;
+	// margin: auto;
+}
+
+.sidebar-image-container {
+	justify-content: center;
+    text-align: center;
 	margin: auto;
 }
 
 .sidebar-toc {
 	height: calc(100% - 70px);
 	overflow-y: hidden;
+	background-color: #f8f8f8;
 	// width: 100%;
 	// top: 70px;
 }
@@ -111,16 +134,17 @@ pre {
 /* Sidebar panel */
 
 .panel {
-	border-top: 1px solid #32383f;
-    background-color: #24323e;
-    line-height: 20px;
-	font-size: 14px;
-	padding-top: 20px;
+	// border-top: 1px solid #32383f;
+    // background-color: #24323e;
+    // line-height: 20px;
+	// font-size: 14px;
+	// padding-top: 20px;
 	// padding-bottom: 20px;
 
 	.panel-heading {
 		padding-left: 40px;
 		padding-bottom: 20px;
+		padding-top: 20px;
 	}
 
 	.panel-body span {
@@ -139,13 +163,29 @@ pre {
 .list-group-item {
 	line-height: 14px;
 	padding: 18px;
-	background-color: #2e3d49;
+	font-weight: 400;
+	// background-color: #2e3d49;
 
 	a {
 		color: #a19c9b;
 		font-size: 14px;
 	}
 }
+
+.list-group-item.background {
+	background-color: #eee;
+}
+
+.background-panel .panel-heading {
+	color: white;
+	background-color: #385d5c;
+}
+
+.background-panel .panel-heading a:hover {
+	color: white;
+}
+
+
 
 /* Content */
 .content-child img {
@@ -238,11 +278,35 @@ button.active {
     color: yellow;
 }
 
-.list-group-item.background {
-	background-color: white;
-}
 /* PREV NEXT BUTTONS */
 .button-next {
 	float: right;
 	outline: none;
+}
+
+.pagination {
+	display: flex;
+}
+
+.pagination-left {
+	float: left;
+}
+
+.pagination-right {
+	float: right;
+}
+
+/* Media stuff */
+
+// Using 768 px as media limit as bootstrap does
+
+@media (max-width: 768px) {
+	.sidebar {
+		height: 100%;
+    	// // height: calc(100% - 70px);
+    	// // overflow-y: hidden;
+    	// background-color: #f8f8f8;
+    	// // width: 100%;
+    	// // top: 70px;
+    }
 }
