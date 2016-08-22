@@ -3,7 +3,7 @@ import 'babel-polyfill';
 var React = require('react');
 
 import Row from 'react-bootstrap/lib/Row';
-import TangramPlay from '../TangramPlay.react';
+import TangramPlay from '../UI/TangramPlay.react';
 import Section from './Section.react';
 
 import examples from './links';
