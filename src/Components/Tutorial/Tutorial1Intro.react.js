@@ -6,15 +6,20 @@ import Section from '../UI/Section.react';
 
 import intro from '../../Assets/markdown/intro.md';
 
+var test = require('../../Assets/images/playcomment.png');
+
 var sections = intro.split('[section]');
 
+import parseJSX from './helper';
+let jsx = parseJSX(intro);
+
+
 export class Tutorial1 extends React.Component {
-  render () {
-    return (
+    render () {
+        return (
             <Section prev={this.props.route.prev} next={this.props.route.next}>
-                <div dangerouslySetInnerHTML={{ __html: sections[0] }} />
-                <Image width="60%" src={require('../../Assets/images/min.png')} responsive />
-                <div dangerouslySetInnerHTML={{ __html: sections[1] }} />
+                {jsx}
             </Section>
-        )}
+        );
+    }
 }

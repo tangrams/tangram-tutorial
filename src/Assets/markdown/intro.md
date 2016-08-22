@@ -23,6 +23,8 @@ layers:
 And produces a map like this:
 
 [section]
+{ "type": "image", "width": "60%", "src": "min.png" }
+[section]
 
 A scene file like this is all it takes to build a map using Tangram. In the next section we'll explore what each of these lines do and how to customize the map it renders.
 

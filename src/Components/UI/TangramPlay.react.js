@@ -13,7 +13,7 @@ export default class TangramPlay extends React.Component {
     render () {
         return (
             <div>
-                <iframe width="100%" height="700px" frameborder="0" src={this.props.url}>
+                <iframe width='100%' height='700px' src={this.props.url}>
                 </iframe>
             </div>
         );
@@ -21,8 +21,8 @@ export default class TangramPlay extends React.Component {
 }
 
 /**
- * Prop validation required by React
+ * Prop validation required by our linter
  */
 TangramPlay.propTypes = {
-    url: React.PropTypes.string,
+    url: React.PropTypes.string
 };

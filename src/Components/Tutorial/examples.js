@@ -1,5 +1,5 @@
 let tangramplayurl = 'https://precog.mapzen.com/tangrams/tangram-play/tangram-tutorial/?scene=';
-let tutorialurl = 'https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/'
+let tutorialurl = 'https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/';
 let baseurl = tangramplayurl + tutorialurl;
 
 let examples = {

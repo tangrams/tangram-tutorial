@@ -16,7 +16,7 @@ Hot loading is enabled, meaning that any changes made in the code will appear on
 
 ## To create a build version
 
-To create a build version run: `npm build`
+To create a build version run: `npm run build`
 
 This will place the proper assets in the `/dist` folder.
 

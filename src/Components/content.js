@@ -1,12 +1,12 @@
 import { Tutorial1 } from './Tutorial/Tutorial1Intro.react';
-import { Tutorial21, Tutorial22 }  from './Tutorial/Tutorial2Min.react';
-import { Tutorial31, Tutorial32, Tutorial33, Tutorial34, Tutorial35 }  from './Tutorial/Tutorial3Styling.react';
+import { Tutorial21, Tutorial22 } from './Tutorial/Tutorial2Min.react';
+import { Tutorial31, Tutorial32, Tutorial33, Tutorial34, Tutorial35 } from './Tutorial/Tutorial3Styling.react';
 import { Tutorial41, Tutorial42, Tutorial43 } from './Tutorial/Tutorial4Filters.react';
 import { Tutorial51, Tutorial52, Tutorial53, Tutorial54, Tutorial55, Tutorial56, Tutorial57, Tutorial58, Tutorial59 } from './Tutorial/Tutorial5Vector.react';
 import { Tutorial61 } from './Tutorial/Tutorial6Raster.react';
 import { TutorialConclusion } from './Tutorial/TutorialConclusion.react';
 
-//As long as this array is in order, the next and before buttons will populate correctly
+// As long as this array is in order, the next and before buttons will populate correctly
 let content = [
     {
         title: 'Introduction',
@@ -69,46 +69,45 @@ let content = [
 
 // Function to populate our content array with next and previous links
 let populateLinks = function () {
-    for (let i = 0 ; i < content.length; i++) {
-        for (let j = 0 ; j < content[i].sections.length; j++) {
-
+    for (let i = 0; i < content.length; i++) {
+        for (let j = 0; j < content[i].sections.length; j++) {
             /* NEXT LINKS */
             let next;
 
             // We are at the end of whole content array
-            if (j+1 == content[i].sections.length && i+1 == content.length) {
+            if ((j + 1) === content[i].sections.length && (i + 1) === content.length) {
                 next = '';
             }
             // If we are at the end of a section
-            else if (j+1 == content[i].sections.length) {
-                next = content[(i+1)].sections[0].path;
+            else if ((j + 1) === content[i].sections.length) {
+                next = content[(i + 1)].sections[0].path;
             }
             else {
-                next = content[i].sections[(j+1)].path;
+                next = content[i].sections[(j + 1)].path;
             }
 
             content[i].sections[j].next = next;
 
             /* PREV LINKS */
-            let prev ;
+            let prev;
 
             // Beginning of whole content array
-            if (i == 0 && j == 0) {
-                prev = ''
+            if (i === 0 && j === 0) {
+                prev = '';
             }
             // Beginning of a section
-            else if (j == 0) {
-                let prevSec = content[(i-1)].sections;
-                prev = prevSec[prevSec.length-1].path;
+            else if (j === 0) {
+                let prevSec = content[(i - 1)].sections;
+                prev = prevSec[prevSec.length - 1].path;
             }
             else {
-                prev = content[i].sections[(j-1)].path;
+                prev = content[i].sections[(j - 1)].path;
             }
 
             content[i].sections[j].prev = prev;
         }
     }
-}
+};
 
 populateLinks();
 
