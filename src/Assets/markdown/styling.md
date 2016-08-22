@@ -56,7 +56,7 @@ For example:
         color: function() { return [$zoom, .5, .5]; }
 </pre></code>
 
-<div class='alert-message'>
+<div class='alert alert-warning'>
 The keyword $zoom is built into Tangram and matches the current zoom level of the map.
 </div>
 
@@ -101,7 +101,7 @@ Second, we need to add another layer name with details for how to draw those lab
 
 Essentially anything within the `properties` section can be used as a valid `text_source` as long as it is a string. If we use `text_source: name` as in the example below, Tangram will match the `name` property in the GeoJSON and serve that as a label.
 
-<div class='alert-message'>
+<div class='alert alert-info'>
 All valid GeoJSON and TopoJSON files have a type member with the name "properties" - it's not something particular to the GeoJSON file we are using in this example. Mapbox Vector Tiles also have a "properties" member.
 </div>
 
@@ -111,7 +111,7 @@ Oh no! Take a close look at the map - what's going on with all the repeated labe
 
 For each point that Tangram has generated at the centroid of each polygon, it has also created a `{"label_placement" : "yes"}` property. This is how we'll filter for just those points within our `_labelStyle` style. To do so we need something called a `filter` block - which we'll go into later. For now, just note the additional lines 33-34 that filter just the points at the centroid of each polygon.
 
-<div class='alert-message'>
+<div class='alert alert-warning'>
 If the feature in question is a multipolygon, the centroid point will be added to the largest polygon in the group.
 </div>
 

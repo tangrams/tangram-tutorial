@@ -9,8 +9,8 @@
 .static-content {
   // “Owl selector” provides a 1em margin between each child element in our content
   > * + * {
-    margin-top: 1.2em;
-    margin-bottom: 1.2em;
+    // margin-top: 1.2em;
+    // margin-bottom: 1.2em;
   }
 
   p {

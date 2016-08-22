@@ -35,6 +35,10 @@ In this tutorial, you will become familiar with the syntax, rules, and capabilit
 
 Don't worry too much about understanding every aspect of every example. We'll build your knowledge of Tangram slowly, so as you move through the sections more parts of the syntax will become familiar and understandable.
 
-<div class='alert-message'>
-Yellow call-outs like this are meant to draw your attention to an important idea or distinction you should keep in mind.
+<div class='alert alert-info'>
+Blue call-outs like this contain information about the tutorial itself or mapping tidbits.
+</div>
+
+<div class='alert alert-warning'>
+Yellow call-outs like this are meant to draw your attention to an important idea or distinction you should keep in mind while writing Tangram code.
 </div>
