@@ -1,6 +1,5 @@
 import 'babel-polyfill';
-var React = require('react');
-
+import React from 'react';
 import Row from 'react-bootstrap/lib/Row';
 import SectionButtons from './SectionButtons.react';
 

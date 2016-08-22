@@ -1,12 +1,10 @@
 import 'babel-polyfill';
-
-var React = require('react');
-
+import React from 'react';
 import Row from 'react-bootstrap/lib/Row';
 import TangramPlay from '../UI/TangramPlay.react';
-import Section from './Section.react';
+import Section from '../UI/Section.react';
 
-import examples from './links';
+import examples from './examples';
 
 import styling from '../../Assets/markdown/styling.md';
 var sections = styling.split('[section]');

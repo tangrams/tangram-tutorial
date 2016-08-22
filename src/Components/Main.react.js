@@ -10,7 +10,7 @@ import ListGroup from 'react-bootstrap/lib/ListGroup';
 import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 import Image from 'react-bootstrap/lib/Image';
 
-import content from '../App.react';
+import content from './content';
 
 export default class Main extends React.Component {
     constructor (props) {

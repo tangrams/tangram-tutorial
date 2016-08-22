@@ -6,7 +6,7 @@ To view online go to: [Tangram Tutorial](https://tangrams.github.io/tangram-tuto
 
 ## To run the repo locally
 
-To start a local server on port 1080 run: `gulp dev-server`
+To start a local server on port 1080 run: `npm start`
 
 Open the following url on your browser: `http://localhost:8080/#/`
 
@@ -16,8 +16,12 @@ Hot loading is enabled, meaning that any changes made in the code will appear on
 
 ## To create a build version
 
-To create a build version run: `gulp build`
+To create a build version run: `npm build`
 
 This will place the proper assets in the `/dist` folder.
 
 Once you add the new build and deploy to `gh-pages` branch on github, the tutorial should be availbe at the following url: [https://tangrams.github.io/tangram-tutorial/dist/#/](https://tangrams.github.io/tangram-tutorial/dist/#/)
+
+## To test linter rules
+
+`npm test`

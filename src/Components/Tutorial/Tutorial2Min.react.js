@@ -1,12 +1,10 @@
 import 'babel-polyfill';
-
-var React = require('react');
-
+import React from 'react';
 import Row from 'react-bootstrap/lib/Row';
 import TangramPlay from '../UI/TangramPlay.react';
 import Image from 'react-bootstrap/lib/Image';
-import Section from './Section.react';
-import examples from './links';
+import Section from '../UI/Section.react';
+import examples from './examples';
 
 import min from '../../Assets/markdown/min.md';
 

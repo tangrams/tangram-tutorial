@@ -8,10 +8,14 @@
     "url": "https://github.com/tangrams/tangram-tutorial"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp dev-server",
+    "build": "gulp build",
+    "test": "npm run lint --silent",
+    "lint": "npm run lint-js --silent",
+    "lint-js": "eslint *.js src/ --ext .js,.jsx"
   },
   "author": "ire.alvarado@gmail.com",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
@@ -22,6 +26,8 @@
     "compression-webpack-plugin": "^0.3.1",
     "css-loader": "^0.23.1",
     "del": "^2.2.0",
+    "eslint": "^3.3.1",
+    "eslint-plugin-react": "^6.1.2",
     "file-loader": "^0.9.0",
     "flux": "^2.1.1",
     "gulp": "^3.9.1",
