@@ -11,8 +11,8 @@ var test = require('../../Assets/images/playcomment.png');
 var sections = intro.split('[section]');
 
 import parseJSX from './helper';
+console.log("what is going on");
 let jsx = parseJSX(intro);
-
 
 export class Tutorial1 extends React.Component {
     render () {
