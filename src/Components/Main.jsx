@@ -21,7 +21,7 @@ export default class Main extends React.Component {
         };
 
         this.handleSelect = this.handleSelect.bind(this);
-        this.onPanelEnter = this.onPanelEnter.bind(this);
+        this.onClickPanel = this.onClickPanel.bind(this);
     }
 
     handleSelect (activeKey) {
@@ -43,11 +43,15 @@ export default class Main extends React.Component {
         }
     }
 
-    onPanelEnter (i, e) {
+    onClickPanel (i, e) {
         let c = content[i];
         let page = c.sections[0].path; // Get the first page of a section
         page = '#' + page;
         window.location = page;
+    }
+
+    onClickNextPage (i) {
+        console.log(i);
     }
 
     render () {
@@ -58,7 +62,7 @@ export default class Main extends React.Component {
         let activeSection = this.findSectionBasedOnPath(this.props.location.pathname); // This is a number
         let activeKey = this.state.activeKey; // This is a string
 
-        // console.log(activeSection, activeKey);
+        console.log(activeSection, activeKey);
 
         if (activeSection !== activeKey) {
             activeKey = activeSection;
@@ -91,7 +95,7 @@ export default class Main extends React.Component {
                                     });
 
                                     let classNamePanel = (this.state.activeKey === i.toString()) ? 'background-panel' : '';
-                                    let mainsection = <Panel collapsible key={i} eventKey={i.toString()} header={c.title} className={classNamePanel} onEntering={this.onPanelEnter.bind(this, i)}>
+                                    let mainsection = <Panel collapsible key={i} eventKey={i.toString()} header={c.title} className={classNamePanel} onEntering={this.onClickPanel.bind(this, i)}>
                                                             {subsections}
                                                       </Panel>;
 

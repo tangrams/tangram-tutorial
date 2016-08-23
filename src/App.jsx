@@ -28,6 +28,7 @@ let routes = (
                     // Iterating through each main section
                     let subsection = c.sections.map(function (s, j) {
                         return <Route key={i} path={s.path} component={() => <Tutorial markdown={s.markdown} next={s.next} prev={s.prev} />} />;
+                        // return <Route key={i} path={s.path} component={Tutorial} markdown={s.markdown} next={s.next} prev={s.prev}/>;
                     });
                     return subsection;
                 })
