@@ -1,5 +1,6 @@
 import 'babel-polyfill';
 import React from 'react';
+import {browserHistory} from 'react-router';
 import { Link } from 'react-router';
 import Grid from 'react-bootstrap/lib/Grid';
 import Col from 'react-bootstrap/lib/Col';
@@ -20,16 +21,48 @@ export default class Main extends React.Component {
         };
 
         this.handleSelect = this.handleSelect.bind(this);
+        this.onPanelEnter = this.onPanelEnter.bind(this);
     }
 
     handleSelect (activeKey) {
         this.setState({ activeKey });
     }
 
+    findSectionBasedOnPath (path) {
+        let i = 0;
+
+        for (let c of content) {
+            let sections = c.sections;
+
+            for (let s of sections) {
+                if (s.path === path) {
+                    return i.toString(); // Have to convert to a string in order to compare to the active panel key activeKey
+                }
+            }
+            i = i + 1;
+        }
+    }
+
+    onPanelEnter (i, e) {
+        let c = content[i];
+        let page = c.sections[0].path; // Get the first page of a section
+        page = '#' + page;
+        window.location = page;
+    }
+
     render () {
         require('../Assets/css/bootstrap.css');
         require('../Assets/css/mapzen/styleguide.scss');
         require('../Assets/css/style.scss');
+
+        let activeSection = this.findSectionBasedOnPath(this.props.location.pathname); // This is a number
+        let activeKey = this.state.activeKey; // This is a string
+
+        // console.log(activeSection, activeKey);
+
+        if (activeSection !== activeKey) {
+            activeKey = activeSection;
+        }
 
         return (
             <Grid className='grid-container'>
@@ -58,8 +91,8 @@ export default class Main extends React.Component {
                                     });
 
                                     let classNamePanel = (this.state.activeKey === i.toString()) ? 'background-panel' : '';
-                                    let mainsection = <Panel collapsible key={i} eventKey={i.toString()} header={c.title} className={classNamePanel}>
-                                                        {subsections}
+                                    let mainsection = <Panel collapsible key={i} eventKey={i.toString()} header={c.title} className={classNamePanel} onEntering={this.onPanelEnter.bind(this, i)}>
+                                                            {subsections}
                                                       </Panel>;
 
                                     return mainsection;
