@@ -43,30 +43,32 @@ export default class Main extends React.Component {
         }
     }
 
-    onClickPanel (i, e) {
-        let c = content[i];
-        let page = c.sections[0].path; // Get the first page of a section
-        page = '#' + page;
-        window.location = page;
+    // If user clicks on 'Next section' and navigates to another major section, we need to open the panel manually by setting a key to indicate it is active
+    componentWillReceiveProps (nextProps) {
+        let activeSection = this.findSectionBasedOnPath(nextProps.location.pathname); // Returns a string because this.state.activeKey is a string
+        let activeKey = this.state.activeKey;
+
+        if (activeSection !== activeKey) {
+            this.setState({ activeKey: activeSection });
+        }
     }
 
-    onClickNextPage (i) {
-        console.log(i);
+    onClickPanel (i, e) {
+        let activeSection = this.findSectionBasedOnPath(this.props.location.pathname);
+        let activeKey = i;
+
+        if (activeSection !== activeKey.toString()) {
+            let c = content[i];
+            let page = c.sections[0].path; // Get the first page of a section
+            page = '#' + page;
+            window.location = page;
+        }
     }
 
     render () {
         require('../Assets/css/bootstrap.css');
         require('../Assets/css/mapzen/styleguide.scss');
         require('../Assets/css/style.scss');
-
-        let activeSection = this.findSectionBasedOnPath(this.props.location.pathname); // This is a number
-        let activeKey = this.state.activeKey; // This is a string
-
-        console.log(activeSection, activeKey);
-
-        if (activeSection !== activeKey) {
-            activeKey = activeSection;
-        }
 
         return (
             <Grid className='grid-container'>
@@ -95,7 +97,7 @@ export default class Main extends React.Component {
                                     });
 
                                     let classNamePanel = (this.state.activeKey === i.toString()) ? 'background-panel' : '';
-                                    let mainsection = <Panel collapsible key={i} eventKey={i.toString()} header={c.title} className={classNamePanel} onEntering={this.onClickPanel.bind(this, i)}>
+                                    let mainsection = <Panel collapsible key={i} eventKey={i.toString()} header={c.title} className={classNamePanel} onClick={this.onClickPanel.bind(this, i)}>
                                                             {subsections}
                                                       </Panel>;
 

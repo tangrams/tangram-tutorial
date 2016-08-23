@@ -23,13 +23,10 @@ function getJSX (file) {
 export default class Tutorial extends React.Component {
     constructor (props) {
         super(props);
-        // console.log(this.props);
 
-        // let mdPath = './' + this.props.route.markdown;
         let mdPath = './' + this.props.markdown;
         this.markdownFile = getMarkdown(mdPath);
         this.jsx = getJSX(this.markdownFile);
-        console.log(this.jsx);
     }
 
     render () {
