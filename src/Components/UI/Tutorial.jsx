@@ -7,7 +7,7 @@ let req = require.context('../../Assets/markdown/', true, /\.md$/);
 
 function getMarkdown (markdownFile) {
     let file;
-    req.keys().forEach(function(key){
+    req.keys().forEach(function (key) {
         if (key === markdownFile) {
             file = req(key);
         }
@@ -37,3 +37,12 @@ export default class Tutorial extends React.Component {
         );
     }
 }
+
+/**
+ * Prop validation required by our linter
+ */
+Tutorial.propTypes = {
+    prev: React.PropTypes.string,
+    next: React.PropTypes.string,
+    markdown: React.PropTypes.string
+};

@@ -12,7 +12,7 @@ function _split (markdown) {
 
         // If the section is an image or a tangram play object
         if (section.startsWith('{')) {
-            let special = section.replace(/&quot;/g, '\"');
+            let special = section.replace(/&quot;/g, '"');
             special = JSON.parse(special);
 
             annotatedSections.push(special);
@@ -20,8 +20,8 @@ function _split (markdown) {
         // Else if the section is just text
         else {
             annotatedSections.push({
-                "type": "text",
-                "text": section
+                type: 'text',
+                text: section
             });
         }
     }
@@ -61,8 +61,8 @@ let req = require.context('../../Assets/images/', true, /\.(png|gif)$/);
 function _imageJSX (section, i) {
     let src = './' + section.src;
 
-    let imageFile ;
-    req.keys().forEach(function(key){
+    let imageFile;
+    req.keys().forEach(function (key) {
         if (key === src) {
             imageFile = req(key);
         }
@@ -85,7 +85,7 @@ function _tangramJSX (section, i) {
         url = url + '#' + section.location;
     }
 
-    let tangramJSX = <TangramPlay key={i} url={url} />
+    let tangramJSX = <TangramPlay key={i} url={url} />;
     return tangramJSX;
 }
 

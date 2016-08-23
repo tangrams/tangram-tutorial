@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/lib/Col';
 import Row from 'react-bootstrap/lib/Row';
 import Panel from 'react-bootstrap/lib/Panel';
 import PanelGroup from 'react-bootstrap/lib/PanelGroup';
-import ListGroup from 'react-bootstrap/lib/ListGroup';
 import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 import Image from 'react-bootstrap/lib/Image';
 
@@ -23,9 +22,9 @@ export default class Main extends React.Component {
         this.handleSelect = this.handleSelect.bind(this);
     }
 
-    handleSelect(activeKey) {
-       this.setState({ activeKey });
-     }
+    handleSelect (activeKey) {
+        this.setState({ activeKey });
+    }
 
     render () {
         require('../Assets/css/bootstrap.css');
@@ -45,15 +44,17 @@ export default class Main extends React.Component {
                         <PanelGroup activeKey={this.state.activeKey} onSelect={this.handleSelect} accordion>
                             {
                                 // Iterating through each main section
-                                content.map(function(c, i) {
+                                content.map(function (c, i) {
                                     // Iterating through each sub section
                                     let subsections = c.sections.map((s, j) => {
                                         let isActive = this.context.router.isActive(s.path);
                                         let className = isActive ? 'background' : '';
 
-                                        return <ListGroupItem key={j*i} className={className}>
-                                                    <Link to={{ pathname: s.path }} >{s.name}</Link>
-                                               </ListGroupItem>
+                                        return (
+                                            <ListGroupItem key={j * i} className={className}>
+                                                <Link to={{ pathname: s.path }} >{s.name}</Link>
+                                            </ListGroupItem>
+                                        );
                                     });
 
                                     let classNamePanel = (this.state.activeKey === i.toString()) ? 'background-panel' : '';
@@ -61,7 +62,7 @@ export default class Main extends React.Component {
                                                         {subsections}
                                                       </Panel>;
 
-                                    return mainsection ;
+                                    return mainsection;
                                 }, this)
                             }
                         </PanelGroup>
@@ -81,10 +82,17 @@ export default class Main extends React.Component {
                 </Col>
             </Row>
             </Grid>
-        )
+        );
     }
 }
 
 Main.contextTypes = {
     router: React.PropTypes.object.isRequired
-}
+};
+
+/**
+ * Prop validation required by our linter
+ */
+Main.propTypes = {
+    children: React.PropTypes.object
+};
