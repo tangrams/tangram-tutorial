@@ -9,7 +9,7 @@ module.exports = {
     devtool: 'source-map',
     context: path.join(__dirname, 'src'),
     entry: {
-        javascript: ['./App.react.js'],
+        javascript: ['./App.jsx'],
         html: './index.html'
     },
     output: {
@@ -20,12 +20,15 @@ module.exports = {
     devServer: {
         historyApiFallback: true
     },
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
     module: {
         loaders: [
             {
-                test: /src(\/|\\).*\.js$/,
+                test: /src(\/|\\).*\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loaders: ['react-hot', 'babel']
+                loaders: ['react-hot', 'babel' ]
             },
             {
                 test: /src(\/|\\).*\.css$/,

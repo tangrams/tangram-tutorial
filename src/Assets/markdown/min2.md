@@ -1,68 +1,9 @@
-## What is the most basic map I can build with Tangram?
-
-Let's get right to it and style the most basic map we can build with Tangram.
-
-To create a map, the scene file requires only:
-
-* a data source (vector tiles)
-* data interpretation rules (filters)
-* styling rules (how the data should look on the map)
-
-<div class='alert alert-info'>
-We'll be using a special app that embeds a Leaflet/Tangram map on the left and Tangram code on the right to instantly view the results of our scene file.
-</div>
-
-[section]
-
-<div class='alert alert-info'>
-Note that some lines are commented with a `#` sign. Text that comes after a `#` sign is not interpreted as code. Take a look below!
-</div>
-
-[section]
-
-Let's unpack this example. First of all, note that our `sources` and `layers` blocks are required elements for all valid Tangram scene files. Try commenting them out with `#` to see what happens. You should see the map on the left go black.
-
-### Data sources
-
-Let's talk about the `sources` block first. As the word indicates, this is the place where we define our data sources and tell the Tangram engine where to get its vector tiles from. The block takes only one type of parameter, a <strong>source name</strong>.
-
-<pre><code class="language-yaml">sources:
-    &#95;mapzen: # A source name
-        type: GeoJSON
-        url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries.GeoJSON
-</code></pre>
-
-The source name is important because you will need to use it elsewhere in the Tangram scene file. Think of it as a variable name that you can refer to again and again throughout the scene file. The `sources` block can take any number of source names, and each of those can be named anyway you'd like.
-
-<pre><code class="language-yaml">sources:
-    &#95;stamen: # A source name
-        type: Raster
-        url: http://a.tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg
-    &#95;mapzen: # Another source name
-        type: GeoJSON
-        url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries.GeoJSON
-</code></pre>
-
-<div class='alert alert-warning'>For this tutorial, non-required variable names will be prepended with a `_` to avoid confusion with reserved keywords.
-In the example above `_stamen` and `_mapzen` can be thought of as variable names. Instead, `sources` and `layers` are reserved keywords.</div>
-
-Each source name in turn requires two pieces of information:
-
-* a `type`: the type of the datasource. It can be any one of four options:
-    * `TopoJSON`
-    * `GeoJSON`
-    * `MVT` (Mapbox Vector Tiles)
-    * `Raster`
-* a `url`: the data source's url
-
-<br>
-
-[section]
-
 ### Layers and Data Import
 
 How will we be using the data we just imported? Let's start by unpacking what we've written in the `layers` block. Vector tiles typically contain top-level structures which can be thought of as “layers” – inside a GeoJSON file, these would be the FeatureCollection objects. Inside a Tangram scene file, the layers object allows you to split the data by layer, by matching against the layer name.
 
+[section]
+{ "type": "tangram", "src": "layers.yaml", "lines": "2,9" }
 [section]
 
 Now let's actually take a look at our data source, in this case
@@ -116,6 +57,8 @@ Note that we are specifying what layer name to match against on the highlighted 
 </pre></code>
 
 [section]
+{ "type": "tangram", "src": "layers2.yaml", "lines": "8,12" }
+[section]
 
 What else is going on here? How are we styling the countries layer? We are specifying how to display the countries layer within the `draw` element.
 
@@ -145,6 +88,8 @@ How do we know what style to apply to what data? Well our GeoJSON file contains 
 
 Each country is composed of a geometry which in this case is of type `MultiPolygon` but following the GeoJSON specs could be a `Point`, `LineString`, `Polygon`, `MultiPoint`, or `MultiLineString`. Since each country is a multipolygon, we're styling the 'countries' layer with a `polygon` style. Try changing the styles in the following scene file to see what happens:
 
+[section]
+{ "type": "tangram", "src": "layers3.yaml", "lines": "13" }
 [section]
 
 Tangram did not interpret the data correctly when using a `text` or `raster` style because the data is not encoded as any of these. As a consequence, the map renders nothing at all. For `lines` we need to add an extra element we'll go into in a bit. On the other hand when we use `points` Tangram is rendering the vertices (or points) of each polygon in our 'country' layer.

@@ -9,6 +9,12 @@ Tangram is available in two delicious flavors: [Tangram JS](https://github.com/t
 The syntax and parameters for the two libraries are (mostly) the same so everything you've learned in this tutorial apply to both platforms.
 
 [section]
+{ "type": "image", "width": "60%", "src": "js.png" }
+[section]
+
+[section]
+{ "type": "image", "width": "60%", "src": "es.png" }
+[section]
 
 We've built two tutorials specifically geared towards helping you deploy a map on each platform:
 
@@ -26,3 +32,7 @@ If you'd like to learn more, we suggest you get started with these additional ex
 ### Tangram Play
 
 To access the embedded Tangram app that we've been using in this tutorial head over to: [Tangram Play](https://mapzen.com/tangram/play/).
+
+[section]
+{ "type": "image", "width": "70%", "src": "tangramplay.png" }
+[section]

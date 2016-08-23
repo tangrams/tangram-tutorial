@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import React from 'react';
 import Row from 'react-bootstrap/lib/Row';
-import SectionButtons from './SectionButtons.react';
+import SectionButtons from './SectionButtons';
 
 export default class Section extends React.Component {
     render () {

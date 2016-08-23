@@ -1,69 +1,3 @@
-## Styling
-
-Let's talk about styling with `lines` by adding country borders. Since our GeoJSON represents each country as a polygon or multipolygon, we know that there are edges (or lines) in between each vertex (or point). We can use the `lines` style to draw these borders. And since we're using the same layer of data ('&#95;countryStyle'), we can simply declare a new style under the `draw` block.
-
-[section]
-
-## Layer Order
-
-Let's talk about ordering our layers for styling. `order` is a parameter that sets the drawing order of the draw style. It is meant to be used in cases where layers cover the same pixel space, meaning that one layer will take precedence over another when they get drawn. You can use the `order` parameter to specify which higher-ordered layers should be drawn over lower-ordered layers. Try the exercise below:
-
-[section]
-
-## Colors
-
-Tangram gives you complete control over how you might choose to color a scene. With that in mind, we support a variety of color formats such as:
-
-### 1. CSS colors
-
-A variety of CSS color formats are available, as specified in the [W3C’s Cascading Style Sheets specification](http://www.w3schools.com/cssref/css_colors_legal.asp). None of this is specific to Tangram, they are color formats available to all CSS stylesheets.
-
-* named colors: `red`, `blue`, `salmon`, `rebeccapurple`
-* hex colors: `'#fff'`, `'000'`, `'#9CE6E5'`
-* RGB colors: `rgb(255, 190, 0)`
-* RGBA colors: `rgb(255, 190, 0, .5)`
-* HSL colors: `hsl(180, 100%, 100%)`
-* HSLA colors: `hsla(180, 100%, 100%, 50%)`
-
-For example:
-<pre class="no-margin"><code class="language-yaml">draw:
-    polygons:
-        color: '#ff00ff'
-</pre></code>
-<pre class="no-margin"><code class="language-yaml">draw:
-    polygons:
-        color: hsl(180, 100%, 100%)
-</pre></code>
-
-### 2. Vector format
-
-In this format RGB/RGBA values range from  0-1.
-
-* Representing RGB: `[0.7, 0.7, 0.7]`
-* Representing RGBA: `[1.0, 0.2, 0.3, 0.5]` 0.5 here represents 50% alpha
-
-For example:
-<pre class="no-margin"><code class="language-yaml">draw:
-    polygons:
-        color: [1.0, 0.2, 0.3, 0.5]
-</pre></code>
-
-### 3. As a function
-
-For example:
-<pre class="no-margin"><code class="language-yaml">draw:
-    polygons:
-        color: function() { return [$zoom, .5, .5]; }
-</pre></code>
-
-<div class='alert alert-warning'>
-The keyword $zoom is built into Tangram and matches the current zoom level of the map.
-</div>
-
-Let's try these examples out:
-
-[section]
-
 ## Labels
 
 Finally, let's introduce one more styling concept before we jump into data filters. Remember the `text` style that we discussed in the <a href="/#/minimum-map/min">Layers and Data Import</a> section? Well we can use that style for showing labels! Let's do that for our countries.
@@ -106,6 +40,8 @@ All valid GeoJSON and TopoJSON files have a type member with the name "propertie
 </div>
 
 [section]
+{ "type": "tangram", "src": "labels.yaml", "lines": "5,28-35" }
+[section]
 
 Oh no! Take a close look at the map - what's going on with all the repeated labels (zoom in closer if you can't see them)? This is where we go back to the magic sauce `generate_label_centroids: true` on line 5.
 
@@ -116,7 +52,5 @@ If the feature in question is a multipolygon, the centroid point will be added t
 </div>
 
 [section]
-
-## Customizing Text
-
-Tangram is powerful because it let's you customize the drawing style of your layers to suit your needs. There are many more parameters you can use to customize your labels. Take a look at a few below:
+{ "type": "tangram", "src": "labels2.yaml", "lines": "33-34" }
+[section]
