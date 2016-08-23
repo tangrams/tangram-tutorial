@@ -1,6 +1,5 @@
 import 'babel-polyfill';
 import React from 'react';
-import {browserHistory} from 'react-router';
 import { Link } from 'react-router';
 import Grid from 'react-bootstrap/lib/Grid';
 import Col from 'react-bootstrap/lib/Col';
@@ -109,14 +108,14 @@ export default class Main extends React.Component {
                 </Col>
                 <Col sm={10} md={10} className='content'>
                     <Row className='menu-bar'>
-                        <h1 className='title'>Tangram Tutorial</h1>
+                        <Col xs={10} xsOffset={1}>
+                            <h1 className='title'>Tangram Tutorial</h1>
+                        </Col>
                     </Row>
                     <Row className='content-child documentation-content'>
-                        <Col md={12}>
-                            <Grid>
-                                {this.props.children}
-                            </Grid>
-                        </Col>
+                        <Grid>
+                            {this.props.children}
+                        </Grid>
                     </Row>
                 </Col>
             </Row>
@@ -133,5 +132,6 @@ Main.contextTypes = {
  * Prop validation required by our linter
  */
 Main.propTypes = {
-    children: React.PropTypes.object
+    children: React.PropTypes.object,
+    location: React.PropTypes.object
 };

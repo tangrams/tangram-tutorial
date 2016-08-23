@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, useRouterHistory, browserHistory, hashHistory } from 'react-router';
+import { Router, Route, useRouterHistory } from 'react-router';
 import { createHashHistory } from 'history';
 
 import Main from './Components/Main';

@@ -1,14 +1,17 @@
 import 'babel-polyfill';
 import React from 'react';
 import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
 import SectionButtons from './SectionButtons';
 
 export default class Section extends React.Component {
     render () {
         return (
             <Row className='show-grid'>
-                {this.props.children}
-                <SectionButtons prev={this.props.prev} next={this.props.next} />
+                <Col xs={10} xsOffset={1}>
+                    {this.props.children}
+                    <SectionButtons prev={this.props.prev} next={this.props.next} />
+                </Col>
             </Row>
         );
     }
