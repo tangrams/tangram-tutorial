@@ -75,7 +75,9 @@ export default class Main extends React.Component {
                 <Col sm={2} md={2} className='sidebar'>
                     <Row className='sidebar-title'>
                         <div className='sidebar-image-container'>
-                            <Image className='sidebar-title-logo' src={require('../Assets/images/logo.png')} responsive/>
+                            <Link to='/' >
+                                <Image className='sidebar-title-logo' src={require('../Assets/images/logo.png')} responsive/>
+                            </Link>
                         </div>
                     </Row>
                     <Row className='sidebar-toc'>
