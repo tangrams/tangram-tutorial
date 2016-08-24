@@ -77,9 +77,9 @@ Internal links should be added using `a` tags: `<a href="/#/minimum-map/min">Lay
 
 Use plain html for code blocks:
 
-```
-<pre><code class="language-yaml">sources:
-    mapzen:
+```html
+<pre><code class="language-yaml">sources: 
+	mapzen
         type: GeoJSON
         url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson
 </pre></code>
@@ -89,14 +89,12 @@ Use plain html for code blocks:
 
 Use plain html for callouts:
 
-```
-<div class='alert alert-info'>
+```<div class='alert alert-info'>
 Blue call-outs like this contain information about the tutorial itself or mapping tidbits.
 </div>
 ```
 
-```
-<div class='alert alert-warning'>
+```<div class='alert alert-warning'>
 Yellow call-outs like this are meant to draw your attention to an important idea or distinction you should keep in mind while writing Tangram code.
 </div>
 ```
