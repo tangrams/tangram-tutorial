@@ -110,6 +110,8 @@ Within html blocks, remember that some symbols like `_` have to be written as `&
 
 First install all the required packages `npm install`.
 
+Then install gulp locally `npm install gulp`.
+
 To start a local server on port 1080 run: `npm start`
 
 Open the following url on your browser: `http://localhost:8080/#/`
