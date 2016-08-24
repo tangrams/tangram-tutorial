@@ -1,4 +1,4 @@
-### Buildings layer
+## Buildings layer
 
 Let's keep adding layers! The next one we'll talk about is the `buildings` layer and here are the keywords to remember are:
 

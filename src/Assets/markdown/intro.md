@@ -1,7 +1,7 @@
 ## How do we style a map?
 
 ### Tangram scene files
-Tangram maps are styled using a custom styling syntax inside of a <strong>scene file</strong>. The scene file is a YAML document which organizes all of the elements Tangram uses to draw a map. This file describes a hierarchy of objects which control every aspect of your map, including data sources, feature layers, lights, cameras, textures, and more.
+Tangram maps are styled using a custom styling syntax inside of a <strong>scene file</strong>. The scene file is a [YAML](https://en.wikipedia.org/wiki/YAML) document which organizes all of the elements Tangram uses to draw a map. This file describes a hierarchy of objects which control every aspect of your map, including data sources, feature layers, lights, cameras, textures, and more.
 
 Why YAML? Well, YAML is a data format similar in many ways to JSON, but it has some unique features which we thought made it more friendly and easy to use for our purposes. A Tangram YAML scene file looks something like this (don't worry about understanding the contents of this file right now):
 

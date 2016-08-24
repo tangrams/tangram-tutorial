@@ -32,7 +32,7 @@ let content = [
         ]
     },
     {
-        title: 'Vector Tiles',
+        title: 'Layer Data & Vector Tiles',
         sections: [
             { path: '/tiles/vector', markdown: 'vector1.md', name: 'What are Vector Tiles?' },
             { path: '/tiles/landuse', markdown: 'vector2.md', name: 'Landuse Layer'},

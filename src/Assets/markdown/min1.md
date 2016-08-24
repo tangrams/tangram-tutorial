@@ -4,7 +4,7 @@ Let's get right to it and style the most basic map we can build with Tangram.
 
 To create a map, the scene file requires only:
 
-* a data source (vector tiles)
+* a data source (<a href="/#/tiles/vector">vector tiles</a>)
 * data interpretation rules (filters)
 * styling rules (how the data should look on the map)
 

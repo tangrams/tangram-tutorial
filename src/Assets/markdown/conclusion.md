@@ -1,4 +1,4 @@
-## Concluding Thoughts
+## Concluding thoughts
 
 We hope you've enjoyed learning some Tangram basics and feel empowered to read through our [docs](https://mapzen.com/documentation/tangram/) for more advanced capabilities.
 
