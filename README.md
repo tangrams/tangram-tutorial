@@ -43,7 +43,7 @@ All of the content in the tutorial is being generated from markdown. To do so, w
 
 #### Images
 
-Images can be added using the following convention:
+Images can be added using the following convention (note there are no line breaks, its important!):
 
 ```
 [section]
@@ -55,7 +55,7 @@ Images can be added using the following convention:
 
 #### Embedding Tangram Play
 
-Tangram Play iframes can be added using the following convention:
+Tangram Play iframes can be added using the following convention (note there are no line breaks, its important!):
 
 ```
 [section]
