@@ -4,15 +4,38 @@ This tutorial exposes a complete beginner to the basics of Tangram using an embe
 
 To view online go to: [Tangram Tutorial](https://tangrams.github.io/tangram-tutorial/dist/#/)
 
-## To run the repo locally
+## Adding tutorial sections
 
-To start a local server on port 1080 run: `npm start`
+### Steps
 
-Open the following url on your browser: `http://localhost:8080/#/`
+1. Create a markdown file with the section content and place it in `src/Assets/markdown/`, following writing rules as specified in the 'markdown specifications' section of this readme.
 
-Hot loading is enabled, meaning that any changes made in the code will appear on the page by just saving the file. No re-building necessary.
+2. Place any yaml scene files you wish to use for an embedded Tangra Play within `src/Assets/tutorial-files/`.
 
-## To add a section to the tutorial
+3. Go to `src/Components/content.js` and add the section details to the `content` variable. The order of the array represents the order in which the tutorial pages will render. For example:
+
+```
+let content = [
+    {
+        title: 'Introduction',
+        sections: [
+            { path: '/intro', markdown: 'intro.md', name: 'Introduction' }
+        ]
+    },
+    {
+        title: 'A Basic Map',
+        sections: [
+            { path: '/minimum-map/min', markdown: 'min1.md', name: 'A Basic Map'},
+            { path: '/minimum-map/data', markdown: 'min2.md', name: 'Layers and Data Import'}
+        ]
+    },
+    ...
+]
+```
+
+`title` will be the main title for the section sidebar. Each entry within `sections` corresponds to an individual page for which `path` is the url for the page, `markdown` represents the markdown file containing the section content, and `name` will be the name for the section on the sidebar.
+
+That's it!
 
 ### Markdown specifications
 
@@ -82,6 +105,16 @@ Yellow call-outs like this are meant to draw your attention to an important idea
 
 Within html blocks, remember that some symbols like `_` have to be written as `&#95;`.
 
+## To run the repo locally
+
+First install all the required packages `npm install`.
+
+To start a local server on port 1080 run: `npm start`
+
+Open the following url on your browser: `http://localhost:8080/#/`
+
+Hot loading is enabled, meaning that any changes made in the code will appear on the page by just saving the file. No re-building necessary.
+
 ## To create a build version
 
 To create a build version run: `npm run build`
@@ -90,6 +123,6 @@ This will place the proper assets in the `/dist` folder.
 
 Once you add the new build and deploy to `gh-pages` branch on github, the tutorial should be availbe at the following url: [https://tangrams.github.io/tangram-tutorial/dist/#/](https://tangrams.github.io/tangram-tutorial/dist/#/)
 
-## To test linter rules
+## To test js and css linter rules
 
 `npm test`
