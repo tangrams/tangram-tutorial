@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+/* Main section */
+
 html,
 body {
     width: 100%;
@@ -22,9 +24,8 @@ h1 {
     text-align: center;
 }
 
-iframe {
-    margin-top: 40px;
-    margin-bottom: 40px;
+.grid-container {
+    overflow: hidden;
 }
 
 .content {
@@ -33,20 +34,6 @@ iframe {
     padding-right: 0;
     overflow-y: scroll;
     overflow-x: hidden;
-}
-
-.grid-container {
-    overflow: hidden;
-}
-
-.menu-bar {
-    height: 70px;
-    border-bottom: 1px solid #dbe2e8;
-    box-shadow: inset 0 0 0 0 #dbe2e8, 0 2px 1px 0 rgba(47, 61, 73, 0.05);
-    font-size: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .content-child {
@@ -58,6 +45,25 @@ iframe {
     margin-left: 0;
     margin-right: 0;
 }
+
+.no-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Top Menu */
+
+.menu-bar {
+    height: 70px;
+    border-bottom: 1px solid #dbe2e8;
+    box-shadow: inset 0 0 0 0 #dbe2e8, 0 2px 1px 0 rgba(47, 61, 73, 0.05);
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Sidebar */
 
 .sidebar {
     height: 100vh;
@@ -111,24 +117,7 @@ iframe {
     display: none;
 }
 
-/* Code blocks */
-
-.alert-message {
-    color: #8a6d3b;
-    background-color: #fcf8e3;
-    padding: 15px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border: 1px solid #faebcc;
-    border-radius: 4px;
-}
-
-pre {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-/* Sidebar panel */
+/* Sidebar sections */
 
 .panel {
     .panel-heading {
@@ -175,7 +164,31 @@ pre {
     color: white;
 }
 
-/* Content */
+/* Embedded Play */
+
+iframe {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Code blocks */
+
+.alert-message {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    padding: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid #faebcc;
+    border-radius: 4px;
+}
+
+pre {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Images */
 
 .content-child img {
     display: block;
@@ -183,11 +196,6 @@ pre {
     margin-right: auto;
     padding-top: 20px;
     padding-bottom: 20px;
-}
-
-.no-margin {
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 .image-row {
@@ -205,7 +213,7 @@ pre {
     margin-right: 20px;
 }
 
-/* PREV NEXT BUTTONS */
+/* Pagination Buttons */
 
 .pagination {
     display: flex;
@@ -215,7 +223,7 @@ pre {
     width: 50%;
 }
 
-/* Media stuff */
+/* Media, smaller devices */
 
 // Using 768 px as media limit as bootstrap does
 @media (max-width: 768px) {
