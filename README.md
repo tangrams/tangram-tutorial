@@ -51,7 +51,7 @@ Images can be added using the following convention:
 [section]
 ```
 
-`type`, `width`, and `src` are all required properties. The `src` property should just point to an image within the `/src/Assets/images/` folder. In the background, some JSX will eventually be generated for images.
+`type`, `width`, and `src` are all required properties. The `src` property should just point to an image within the `src/Assets/images/` folder. In the background, some JSX will eventually be generated for images.
 
 #### Embedding Tangram Play
 
@@ -63,7 +63,7 @@ Tangram Play iframes can be added using the following convention:
 [section]
 ```
 
-`type` and `src` are required properties. `lines` and `location` (zoom/lat/lng) are optional. The `src` property should just point to a yaml file within the `/src/Assets/tutorial-files/` folder. In the background, some JSX will eventually be generated for these iframes.
+`type` and `src` are required properties. `lines` and `location` (zoom/lat/lng) are optional. The `src` property should just point to a yaml file within the `src/Assets/tutorial-files/` folder. In the background, some JSX will eventually be generated for these iframes.
 
 #### Links
 
@@ -78,7 +78,7 @@ Internal links should be added using `a` tags: `<a href="/#/minimum-map/min">Lay
 Use plain html for code blocks:
 
 ```html
-<pre><code class="language-yaml">sources: 
+<pre><code class="language-yaml">sources:
 	mapzen
         type: GeoJSON
         url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson
@@ -89,12 +89,14 @@ Use plain html for code blocks:
 
 Use plain html for callouts:
 
-```<div class='alert alert-info'>
+```html
+<div class='alert alert-info'>
 Blue call-outs like this contain information about the tutorial itself or mapping tidbits.
 </div>
 ```
 
-```<div class='alert alert-warning'>
+```html
+<div class='alert alert-warning'>
 Yellow call-outs like this are meant to draw your attention to an important idea or distinction you should keep in mind while writing Tangram code.
 </div>
 ```
