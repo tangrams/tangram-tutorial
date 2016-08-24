@@ -14,11 +14,11 @@ A variety of CSS color formats are available, as specified in the [W3C’s Casca
 * HSLA colors: `hsla(180, 100%, 100%, 50%)`
 
 For example:
-<pre class="no-margin"><code class="language-yaml">draw:
+<pre><code class="language-yaml">draw:
     polygons:
         color: '#ff00ff'
 </pre></code>
-<pre class="no-margin"><code class="language-yaml">draw:
+<pre><code class="language-yaml">draw:
     polygons:
         color: hsl(180, 100%, 100%)
 </pre></code>
@@ -31,7 +31,7 @@ In this format RGB/RGBA values range from  0-1.
 * Representing RGBA: `[1.0, 0.2, 0.3, 0.5]` 0.5 here represents 50% alpha
 
 For example:
-<pre class="no-margin"><code class="language-yaml">draw:
+<pre><code class="language-yaml">draw:
     polygons:
         color: [1.0, 0.2, 0.3, 0.5]
 </pre></code>
@@ -39,7 +39,7 @@ For example:
 ### 3. As a function
 
 For example:
-<pre class="no-margin"><code class="language-yaml">draw:
+<pre><code class="language-yaml">draw:
     polygons:
         color: function() { return [$zoom, .5, .5]; }
 </pre></code>
