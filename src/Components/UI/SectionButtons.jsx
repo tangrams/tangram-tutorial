@@ -7,7 +7,7 @@ export default class SectionButtons extends React.Component {
     render () {
         let prev;
         if (this.props.prev === '') {
-            prev = null;
+            prev = <div className='pagination-empty'></div>;
         }
         else {
             prev =

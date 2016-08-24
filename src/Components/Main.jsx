@@ -16,7 +16,7 @@ export default class Main extends React.Component {
         super(props);
 
         this.state = {
-            activeKey: '0'
+            activeKey: ''
         };
 
         this.handleSelect = this.handleSelect.bind(this);

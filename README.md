@@ -78,7 +78,8 @@ Internal links should be added using `a` tags: `<a href="/#/minimum-map/min">Lay
 Use plain html for code blocks:
 
 ```html
-<pre><code class="language-yaml">sources:
+<pre><code class="language-yaml">
+sources:
 	mapzen
         type: GeoJSON
         url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson

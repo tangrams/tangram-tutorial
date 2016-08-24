@@ -52,9 +52,9 @@ let content = [
         ]
     },
     {
-        title: 'Conclusion',
+        title: 'Publishing a Map',
         sections: [
-            { path: '/conclusion', markdown: 'conclusion.md', name: 'Conclusion'}
+            { path: '/conclusion', markdown: 'conclusion.md', name: 'Publishing a Map'}
         ]
     }
 ];
