@@ -10,10 +10,10 @@ We'll start by exploring how to build a very basic map, something like the follo
 { "type": "image", "width": "60%", "src": "min.png" }
 [section]
 
-But we'll build up to more complex maps (by the way, the map below was generated with just 60 lines of code):
+And we'll build up to more complex maps, including the use of vector tiles to render updated, geographic data from around the world. By the way, the map below was generated with just 60 lines of code:
 
 [section]
 { "type": "image", "width": "60%", "src": "complex.png" }
 [section]
 
-Neat right? We hope you find this tutorial useful and please post any comments or feedback on our [github page](https://github.com/tangrams/tangram-tutorial).
+Neat right? We hope you find this tutorial useful. Please post any comments or feedback on our [github page](https://github.com/tangrams/tangram-tutorial).

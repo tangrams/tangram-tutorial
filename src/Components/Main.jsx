@@ -11,6 +11,7 @@ import Image from 'react-bootstrap/lib/Image';
 
 import content from './content';
 
+// React class that contains our main page elements, a sidebar and main tutorial content
 export default class Main extends React.Component {
     constructor (props) {
         super(props);
@@ -27,6 +28,7 @@ export default class Main extends React.Component {
         this.setState({ activeKey });
     }
 
+    // Helper function to find a section mame based on the path of the page
     findSectionBasedOnPath (path) {
         let i = 0;
 
@@ -52,6 +54,7 @@ export default class Main extends React.Component {
         }
     }
 
+    // Every time we click on a main panel name, we'd like to render the first page in the section by default
     onClickPanel (i, e) {
         let activeSection = this.findSectionBasedOnPath(this.props.location.pathname);
         let activeKey = i;
@@ -72,7 +75,9 @@ export default class Main extends React.Component {
         return (
             <Grid className='grid-container'>
             <Row>
+                {/* Sidebar is set to take up 2 bootstrap rows */}
                 <Col sm={2} md={2} className='sidebar'>
+                    {/* Sidebar logo */}
                     <Row className='sidebar-title'>
                         <div className='sidebar-image-container'>
                             <Link to='/' >
@@ -80,6 +85,7 @@ export default class Main extends React.Component {
                             </Link>
                         </div>
                     </Row>
+                    {/* Sidebar table of contents */}
                     <Row className='sidebar-toc'>
                         <PanelGroup activeKey={this.state.activeKey} onSelect={this.handleSelect} accordion>
                             {
@@ -108,12 +114,15 @@ export default class Main extends React.Component {
                         </PanelGroup>
                     </Row>
                 </Col>
+                {/* Tutorial content section is set to take up 10 bootstrap columns */}
                 <Col sm={10} md={10} className='content'>
+                    {/* Main title */}
                     <Row className='menu-bar'>
                         <Col xs={10} xsOffset={1}>
                             <h1 className='title'>Tangram Tutorial</h1>
                         </Col>
                     </Row>
+                    {/* Tutorial content */}
                     <Row className='content-child documentation-content'>
                         <Grid>
                             {this.props.children}
@@ -126,6 +135,7 @@ export default class Main extends React.Component {
     }
 }
 
+// Router allows us to query whether a particular path is active through this.context.router.isActive(s.path);
 Main.contextTypes = {
     router: React.PropTypes.object.isRequired
 };

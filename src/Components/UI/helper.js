@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'react-bootstrap/lib/Image';
 import TangramPlay from './TangramPlay';
 
+// Split the contents of a markdown file according to [split] keywords
 function _split (markdown) {
     var sections = markdown.split('[section]');
     let annotatedSections = [];
@@ -29,17 +30,21 @@ function _split (markdown) {
     return annotatedSections;
 }
 
+// Go through the split sections of a markdown file and create the approrpiate JSX for each type of content
 function _goThroughSections (annotatedSections) {
     let jsx = [];
     let i = 0; // React requires keys for each of the sections we are going to return as an array
 
     for (let section of annotatedSections) {
+        // Create JSX for text
         if (section.type === 'text') {
             jsx.push(_textJSX(section, i));
         }
+        // Create JSX for image
         else if (section.type === 'image') {
             jsx.push(_imageJSX(section, i));
         }
+        // Create JSX for an embedded tangram play object
         else if (section.type === 'tangram') {
             jsx.push(_tangramJSX(section, i));
         }
@@ -50,6 +55,7 @@ function _goThroughSections (annotatedSections) {
 }
 
 /* Functions to render JSX properly */
+/* More of these functions can be added to support all kinds of keywords within markdown */
 
 function _textJSX (section, i) {
     let textJSX = <div key={i} dangerouslySetInnerHTML={{ __html: section.text }} />;
@@ -89,7 +95,7 @@ function _tangramJSX (section, i) {
     return tangramJSX;
 }
 
-// Will return something like the following which goes within each <Section></Section> component
+// Will return something like the following which goes within each <Section></Section> of Tutorial.jsx
 /* <div dangerouslySetInnerHTML={{ __html: sections[0] }} />
  * <Image width="60%" src={require('../../Assets/images/min.png')} responsive />
  * <div dangerouslySetInnerHTML={{ __html: sections[1] }} />

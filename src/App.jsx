@@ -19,6 +19,8 @@ let scrollToTop = function () {
     x.scrollTop = 0;
 };
 
+// This variable is storing our routes, in react lingo that means our valid paths.
+// For each path or Route we declar what component we would like to render and pass it in as a prop component={}
 let routes = (
     <Router history={appHistory} onUpdate={() => scrollToTop() }>
         <Route path='/' component={Main}>
@@ -37,4 +39,5 @@ let routes = (
     </Router>
 );
 
+// Rendering the whole app from here
 ReactDOM.render(routes, document.getElementById('app'));

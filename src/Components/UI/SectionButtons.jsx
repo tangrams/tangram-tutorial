@@ -3,6 +3,7 @@ import React from 'react';
 import Row from 'react-bootstrap/lib/Row';
 import { Link } from 'react-router';
 
+// Represents previous and next buttons at the end of each tutorial section
 export default class SectionButtons extends React.Component {
     render () {
         let prev;
