@@ -10,7 +10,7 @@ To view online go to: [Tangram Tutorial](https://tangrams.github.io/tangram-tuto
 
 1. Create a markdown file with the section content and place it in `src/Assets/markdown/`, following writing rules as specified in the 'markdown specifications' section of this readme.
 
-2. Place any yaml scene files you wish to use for an embedded Tangra Play within `src/Assets/tutorial-files/`.
+2. Place any yaml scene files you wish to use for an embedded Tangram Play within `src/Assets/tutorial-files/`.
 
 3. Go to `src/Components/content.js` and add the section details to the `content` variable. The order of the array represents the order in which the tutorial pages will render. For example:
 

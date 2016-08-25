@@ -72,7 +72,7 @@ function _imageJSX (section, i) {
     return imageJSX;
 }
 
-let tangramplayurl = 'https://precog.mapzen.com/tangrams/tangram-play/tangram-tutorial/?scene=';
+let tangramplayurl = 'https://mapzen.com/tangram/play/embed/?scene=';
 let tutorialurl = 'https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/';
 let baseurl = tangramplayurl + tutorialurl;
 
