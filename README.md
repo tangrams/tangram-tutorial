@@ -129,3 +129,8 @@ Once you add the new build and deploy to `gh-pages` branch on github, the tutori
 ## To test js and css linter rules
 
 `npm test`
+
+## Ideas to improve the tutorial
+
+* Add a section on POIs
+* Add exercises using the embedded version of Play

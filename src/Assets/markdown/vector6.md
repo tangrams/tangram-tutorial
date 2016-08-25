@@ -16,8 +16,12 @@ Do you recall the <a href="/#/filters/functions">function filters</a> section wh
 Check out how we can apply `sort_key` to the previous example to get the same expected results:
 
 [section]
-{ "type": "tangram", "src": "vector9.yaml", "lines": "14,24,33,42,51", "location": "14/40.7180/-74.0020" }
+{ "type": "tangram", "src": "vector9.yaml", "lines": "14,24,33,42,51,60", "location": "14/40.7180/-74.0020" }
 [section]
+
+<div class='alert alert-warning'>
+Note what's going on in line #60. We're using the `function() { return feature.sort_key + 1; }` function to set the order of the `_highwaySubLayer` but we have to add a `+ 1` to render the sublayer correctly. Why is that? Well, the highway layer should be one layer above the rest of the roads. Try removing the `+ 1` to see how the highways disappear. They're being rendered on the same level as the rest of the roads.
+</div>
 
 In addition, to facilitate data visualization overlays and underlays, the following order ranges are suggested for your own scene files:
 

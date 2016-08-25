@@ -46,6 +46,6 @@ layers:
                 kind: highway
             draw:
                 lines:
-                    order: function() { return feature.sort_key; }
+                    order: function() { return feature.sort_key + 1; }
                     color: '#cc6666'
                     width: 12m
