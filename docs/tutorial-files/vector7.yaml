@@ -1,0 +1,59 @@
+sources:
+    _mapzen:
+        type: TopoJSON
+        url:  https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+
+layers:
+    _earthLayer:
+        data:
+            source: _mapzen
+            layer: earth
+        draw:
+            _earthStyle:
+                style: polygons
+                order: 0
+                color: '#ddeeee'
+    _waterLayer:
+        data:
+            source: _mapzen
+            layer: water
+        draw:
+            _waterStyle:
+                style: polygons
+                order: 1
+                color: '#88bbee'
+    _landuseLayer:
+        data:
+            source: _mapzen
+            layer: landuse
+        draw:
+            _landuseStyle:
+                style: polygons
+                order: 2
+                color: '#aaffaa'
+    _buildingsLayer:
+        data:
+            source: _mapzen
+            layer: buildings
+        draw:
+            _buildingsStyle:
+                style: polygons
+                order: 3
+                color: '#808080'
+    _roadsLayer:
+        data:
+            source: _mapzen
+            layer: roads
+        draw:
+            _roadsStyle:
+                style: lines
+                order: 4
+                color: '#8374E4'
+                width: 8m
+        # ~~~ TODO ~~~ Try uncommenting and commenting the 'any' and 'not' filters ONE AT A TIME
+        filter:
+            not: # Logically equivalent to NOT. We're filtering to not show 'highway' roads
+                kind: highway
+            # any: # Logically equivalent to OR. We're filtering to only show 'ferry' and 'highway' roads
+                # - kind: ferry
+                # - kind: highway

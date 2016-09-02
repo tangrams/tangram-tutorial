@@ -1,0 +1,47 @@
+sources:
+    _mapzen:
+        type: GeoJSON
+        url: https://tangrams.github.io/tangram-tutorial/tutorial-files/countries-data.geojson
+        generate_label_centroids: true
+
+layers:
+    _countryLayer:
+        data:
+            source: _mapzen
+            layer: countries
+        draw:
+            _countryStyle:
+                style: polygons
+                color: darkgreen
+                order: 0
+            _bordersStyle:
+                style: lines
+                color: white
+                width: 20000m
+                order: 1
+
+    _textLayer:
+        data:
+            source: _mapzen
+            layer: countries
+        draw:
+            _labelStyle:
+                style: text
+                text_source: name
+                align: center # Zoom out and see what happens when you set 'left', 'center' or 'right'
+                offset: [0px, 10px] # Moves the point 10 pixels down in screen-space. Try [0px, -10px] to move up. And [40px, 0px] to move right.
+                text_wrap: 10 # Sets a maximum line length of 10 characters.
+                collide: true # Tangram does the hard work of calculating when labels should disappear if the map becomes too cluttered. Default is true, but try setting this to false and zoom out.
+                font:
+                    family: Georgia # Family can be any typeface available to the operating system. Meaning, you can import font families in your CSS and Tangram will be able to use them.
+                    size: 16px
+                    fill: palegreen # The label color can be set with a 'fill' parameter. Change the color!
+                    stroke: # You can set a stroke (outline) color and width for the font
+                        color: black
+                        width: 4px
+                    style: italic # Currently the only style supported is 'italic'. Remove this for normal font
+                    transform: uppercase # Options for font styles are 'uppercase', 'lowercase', and 'capitalize'(which only sets first letter to uppercase)
+                    weight: bold # Can be one of 'lighter', 'normal', 'bold', or 'bolder'. Integers may be any CSS-style font weight from 100-900
+                    #weight: 400
+        filter:
+            label_placement: yes

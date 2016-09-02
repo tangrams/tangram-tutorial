@@ -1,0 +1,25 @@
+sources:
+    _mapzen:
+        type: TopoJSON
+        url:  https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+
+layers:
+    earth: # When no 'layer:' parameter is indicated in the 'data' block the layer name is matched against the layer in the source file
+    # _otherName: # ~~TODO~~ Try changing the layer name to _otherName. It won't work! The layer name has to be a valid layer within the data source, in this case the Mapzen Vector Tile service
+        data:
+            source: _mapzen
+            # Notice that we don't have to declare a 'layer: earth' parameter here anymore
+        draw:
+            _earthStyle:
+                style: polygons
+                order: 0
+                color: '#ddeeee'
+    water:
+        data:
+            source: _mapzen
+            # Notice that we don't have to declare a 'layer: water' parameter here anymore
+        draw:
+            _waterStyle:
+                style: polygons
+                order: 1
+                color: '#88bbee'

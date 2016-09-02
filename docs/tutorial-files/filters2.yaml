@@ -1,0 +1,29 @@
+sources:
+    _mapzen:
+        type: GeoJSON
+        url: https://tangrams.github.io/tangram-tutorial/tutorial-files/countries-data.geojson
+
+layers:
+    _countryLayer:
+        data:
+            source: _mapzen
+            layer: countries
+        draw:
+            _countryStyle:
+                style: polygons
+                color: darkgreen
+                order: 0
+            _bordersStyle:
+                style: lines
+                color: white
+                width: 20000m
+                order: 1
+        filter: # ~~~ TODO ~~~ Uncomment the not, any, and all filters one at a time
+            not:
+                continentName: [South America, North America] # Matches logical operand NOT
+            # any: # Matches logical operand OR.
+                # - name: China
+                # - name: Argentina
+            # all: # Matches the logical operand AND.
+                # - continentName: Africa
+                # - languages: fr

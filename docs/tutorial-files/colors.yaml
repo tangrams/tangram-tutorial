@@ -1,0 +1,19 @@
+sources:
+    _mapzen:
+        type: GeoJSON
+        url: https://tangrams.github.io/tangram-tutorial/tutorial-files/countries-data.geojson
+
+layers:
+    _countryLayer:
+        data:
+            source: _mapzen
+            layer: countries
+        draw:
+            _countryStyle:
+                style: polygons
+                # ~~~ TODO ~~~ Uncomment each color format one at a time
+                color: darkgreen # A CSS color
+                # color: '#ff00ff' # A CSS color
+                # color: hsl(180, 100%, 100%) # A CSS color
+                # color: [1.0, 0.2, 0.3, 0.5] # A Vector color
+                # color: function() { return [($zoom/10) , 0.5, 0.5]; } # In this function our red channel is being determined by the current map's zoom level divided by 10

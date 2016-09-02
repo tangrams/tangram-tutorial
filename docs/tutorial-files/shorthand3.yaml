@@ -1,0 +1,51 @@
+sources:
+    _mapzen:
+        type: TopoJSON
+        url:  https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+
+layers:
+    earth:
+        data:
+            source: _mapzen
+        draw:
+            polygons:
+                order: function() { return feature.sort_key; }
+                color: '#ddeeee'
+
+    water:
+        data:
+            source: _mapzen
+        draw:
+            polygons:
+                order: function() { return feature.sort_key; }
+                color: '#88bbee'
+    landuse:
+        data:
+            source: _mapzen
+        draw:
+            polygons:
+                order: function() { return feature.sort_key; }
+                color: '#aaffaa'
+    buildings:
+        data:
+            source: _mapzen
+        draw:
+            polygons:
+                order: function() { return feature.sort_key; }
+                color: '#808080'
+    roads:
+        data:
+            source: _mapzen
+        draw:
+            lines:
+                order: function() { return feature.sort_key; }
+                color: '#8374E4'
+                width: 8m
+        _highwaySubLayer:
+            filter:
+                kind: highway
+            draw:
+                lines:
+                    order: function() { return feature.sort_key + 1; }
+                    color: '#cc6666'
+                    width: 12m

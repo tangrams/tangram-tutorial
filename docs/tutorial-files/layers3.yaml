@@ -1,0 +1,14 @@
+sources:
+    _mapzen:
+        type: GeoJSON
+        url: https://tangrams.github.io/tangram-tutorial/tutorial-files/countries-data.geojson
+
+layers:
+    _countryLayer:
+        data:
+            source: _mapzen
+            layer: countries
+        draw:
+            _countryStyle:
+                style: polygons # ~~TODO~~ Try changing to 'lines', 'polygons', 'points', 'text', 'raster' (hint: not all of these will work)
+                color: darkgreen

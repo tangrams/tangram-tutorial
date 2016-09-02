@@ -1,0 +1,39 @@
+sources:
+    _mapzen:
+        type: TopoJSON
+        url:  https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+
+layers:
+    _earthLayer:
+        data:
+            source: _mapzen
+            layer: earth
+        draw:
+            _earthStyle:
+                style: polygons
+                order: 0
+                color: '#ddeeee'
+    _waterLayer:
+        data:
+            source: _mapzen
+            layer: water
+        draw:
+            _waterStyle:
+                style: polygons
+                order: 1
+                color: '#88bbee'
+    _landuseLayer:
+        data:
+            source: _mapzen
+            layer: landuse
+        draw:
+            _landuseStyle:
+                style: polygons
+                order: 2
+                color: '#aaffaa'
+        # A filter block let's us filter what kind of landuse values to display
+        filter: # ~~TODO~~ Try uncommenting each kind filter one at a time
+            kind: park # If you zoom to New York City, for example, you'll just see parks!
+            # kind: [zoo, hospital, industrial, park] # As a list we can display many more landuse values
+            # not: # With boolean filters we can make more complex queries
+                # kind: [park, garden, land, library]

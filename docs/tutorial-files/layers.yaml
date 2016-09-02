@@ -1,0 +1,14 @@
+sources:
+    _mapzen: # We're using this source on line 9. If we change the source name, we have to change it on line 9
+        type: GeoJSON
+        url: https://tangrams.github.io/tangram-tutorial/tutorial-files/countries-data.geojson
+
+layers:
+    _countryLayer: # REQUIRED layer name
+        data: # REQUIRED parameter where we specify our data source for the layer
+            source: _mapzen # We're specifying which source contains the data for this layer. Has to match a source we declare in the sources block
+            layer: countries
+        draw: # REQUIRED parameter where we specify styling rules for this layer
+            _countryStyle:
+                style: polygons
+                color: darkgreen

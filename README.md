@@ -82,7 +82,7 @@ Use plain html for code blocks:
 sources:
 	mapzen
         type: GeoJSON
-        url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson
+        url: https://tangrams.github.io/tangram-tutorial/tutorial-files/countries-data.geojson
 </pre></code>
 ```
 

@@ -1,7 +1,7 @@
 sources:
     _mapzen:
         type: GeoJSON
-        url: https://tangrams.github.io/tangram-tutorial/src/Assets/tutorial-files/countries-data.geojson
+        url: https://tangrams.github.io/tangram-tutorial/tutorial-files/countries-data.geojson
         generate_label_centroids: true # Creates labels at the centroids of all the polygons in the data source
 
 layers:

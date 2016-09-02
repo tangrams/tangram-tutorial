@@ -1,0 +1,35 @@
+sources:
+    _mapzen:
+        type: GeoJSON
+        url: https://tangrams.github.io/tangram-tutorial/tutorial-files/countries-data.geojson
+        generate_label_centroids: true # Creates labels at the centroids of all the polygons in the data source
+
+layers:
+    _countryLayer:
+        data:
+            source: _mapzen
+            layer: countries
+        draw:
+            _countryStyle:
+                style: polygons
+                color: darkgreen
+                order: 0
+            _bordersStyle:
+                style: lines
+                color: white
+                width: 20000m
+                order: 1
+
+    _textLayer: # A new layer name. We'll use this layer to style country labels
+        data:
+            source: _mapzen
+            layer: countries
+        draw:
+            _labelStyle:
+                style: text # The style has to be 'text' in order to render a label
+                text_source: name # ~~~ TODO ~~~ Uncomment each 'text_source' one at a time to experiment with different labels
+                # text_source: capital
+                # text_source: continentName
+                font:
+                    size: 16px # ~~~ TODO ~~~ Try out different font sizes
+                    # size: 40px

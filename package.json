@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "gulp dev-server",
-    "build": "gulp build",
+    "build": "gulp build; cp -r src/Assets/tutorial-files docs",
     "test": "npm run lint --silent && npm run lint-css --silent",
     "lint": "npm run lint-js --silent",
     "lint-js": "eslint *.js src/ --ext .js,.jsx",

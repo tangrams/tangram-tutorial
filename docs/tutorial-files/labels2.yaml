@@ -1,0 +1,34 @@
+sources:
+    _mapzen:
+        type: GeoJSON
+        url: https://tangrams.github.io/tangram-tutorial/tutorial-files/countries-data.geojson
+        generate_label_centroids: true
+
+layers:
+    _countryLayer:
+        data:
+            source: _mapzen
+            layer: countries
+        draw:
+            _countryStyle:
+                style: polygons
+                color: darkgreen
+                order: 0
+            _bordersStyle:
+                style: lines
+                color: white
+                width: 20000m
+                order: 1
+
+    _textLayer:
+        data:
+            source: _mapzen
+            layer: countries
+        draw:
+            _labelStyle:
+                style: text
+                text_source: name
+                font:
+                    size: 16px
+        filter:
+            label_placement: yes # We need this filter in order to display only one label at the center of each country polygon

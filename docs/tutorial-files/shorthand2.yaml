@@ -1,0 +1,20 @@
+sources:
+    _mapzen:
+        type: TopoJSON
+        url:  https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+
+layers:
+    earth:
+        data:
+            source: _mapzen
+        draw:
+            polygons: # Instead of a 'style:' parameter we just have a geometry type
+                order: 0
+                color: '#ddeeee'
+    water:
+        data:
+            source: _mapzen
+        draw:
+            polygons: # Instead of a 'style:' parameter we just have a geometry type
+                order: 1
+                color: '#88bbee'
