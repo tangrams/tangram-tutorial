@@ -14,7 +14,7 @@ gulp.task('build', ['clean', 'webpack:build']);
 
 gulp.task('clean', function (callback) {
     del([
-        'dist/**'
+        'docs/**'
     ], callback);
 });
 

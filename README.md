@@ -2,7 +2,7 @@
 
 This tutorial exposes a complete beginner to the basics of Tangram using an embedded version of Tangram Play.
 
-To view online go to: [Tangram Tutorial](https://tangrams.github.io/tangram-tutorial/dist/#/)
+To view online go to: [Tangram Tutorial](https://tangrams.github.io/tangram-tutorial/)
 
 ## Adding tutorial sections
 
@@ -114,7 +114,7 @@ Then install gulp locally `npm install gulp`.
 
 To start a local server on port 1080 run: `npm start`
 
-Open the following url on your browser: `http://localhost:8080/#/`
+Open the following url on your browser: `http://localhost:8080/`
 
 Hot loading is enabled, meaning that any changes made in the code will appear on the page by just saving the file. No re-building necessary.
 
@@ -122,9 +122,9 @@ Hot loading is enabled, meaning that any changes made in the code will appear on
 
 To create a build version run: `npm run build`
 
-This will place the proper assets in the `/dist` folder.
+This will place the proper assets in the `/docs` folder. This is where GitHub pages will read from.
 
-Once you add the new build and deploy to `gh-pages` branch on github, the tutorial should be availbe at the following url: [https://tangrams.github.io/tangram-tutorial/dist/#/](https://tangrams.github.io/tangram-tutorial/dist/#/)
+Once you add the new build and push to the `master` branch on GitHub, the tutorial should be availble at the following url: [https://tangrams.github.io/tangram-tutorial/](https://tangrams.github.io/tangram-tutorial/)
 
 ## To test js and css linter rules
 
