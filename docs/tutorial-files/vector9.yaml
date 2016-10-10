@@ -1,7 +1,7 @@
 sources:
     _mapzen:
         type: TopoJSON
-        url:  https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+        url:  https://tile.dev.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
 
 layers:
     _earthLayer:
@@ -11,7 +11,7 @@ layers:
         draw:
             _earthStyle:
                 style: polygons
-                order: function() { return feature.sort_key; }
+                order: function() { return feature.sort_rank; }
                 color: '#ddeeee'
 
     _waterLayer:
@@ -21,7 +21,7 @@ layers:
         draw:
             _waterStyle:
                 style: polygons
-                order: function() { return feature.sort_key; }
+                order: function() { return feature.sort_rank; }
                 color: '#88bbee'
     _landuseLayer:
         data:
@@ -30,7 +30,7 @@ layers:
         draw:
             _landuseStyle:
                 style: polygons
-                order: function() { return feature.sort_key; }
+                order: function() { return feature.sort_rank; }
                 color: '#aaffaa'
     _buildingsLayer:
         data:
@@ -39,7 +39,7 @@ layers:
         draw:
             _buildingsStyle:
                 style: polygons
-                order: function() { return feature.sort_key; }
+                order: function() { return feature.sort_rank; }
                 color: '#808080'
     _roadsLayer:
         data:
@@ -48,7 +48,7 @@ layers:
         draw:
             _roadsStyle:
                 style: lines
-                order: function() { return feature.sort_key; }
+                order: function() { return feature.sort_rank; }
                 color: '#8374E4'
                 width: 8m
         _highwaySubLayer:
@@ -57,6 +57,6 @@ layers:
             draw:
                 _highwayStyle:
                     style: lines
-                    order: function() { return feature.sort_key + 1; }
+                    order: function() { return feature.sort_rank + 1; }
                     color: '#cc6666'
                     width: 12m

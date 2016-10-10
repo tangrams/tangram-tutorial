@@ -1,7 +1,7 @@
 sources:
     _mapzen:
         type: TopoJSON
-        url: https://vector.mapzen.com/osm/earth,water/{z}/{x}/{y}.topojson # We are importing just two layers
+        url: https://tile.dev.mapzen.com/mapzen/vector/v1/earth,water/{z}/{x}/{y}.topojson # We are importing just two layers
 
 layers:
     _earthLayer:

@@ -6877,7 +6877,7 @@
         "clipped": true,
         "properties": {
           "kind": "path",
-          "sort_key": -9.000000,
+          "sort_rank": -9.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -6920,7 +6920,7 @@
         "properties": {
           "kind": "path",
           "name": "Battery Park City Greenway",
-          "sort_key": -9.000000,
+          "sort_rank": -9.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -6946,7 +6946,7 @@
         "clipped": true,
         "properties": {
           "kind": "path",
-          "sort_key": -9.000000,
+          "sort_rank": -9.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -6976,7 +6976,7 @@
         "clipped": true,
         "properties": {
           "kind": "minor_road",
-          "sort_key": -7.000000,
+          "sort_rank": -7.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7002,7 +7002,7 @@
         "clipped": true,
         "properties": {
           "kind": "path",
-          "sort_key": -9.000000,
+          "sort_rank": -9.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7032,7 +7032,7 @@
         "clipped": true,
         "properties": {
           "kind": "path",
-          "sort_key": -9.000000,
+          "sort_rank": -9.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7063,7 +7063,7 @@
         "properties": {
           "kind": "minor_road",
           "name": "South End Avenue",
-          "sort_key": -6.000000,
+          "sort_rank": -6.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7090,7 +7090,7 @@
         "properties": {
           "kind": "major_road",
           "name": "West Street",
-          "sort_key": -1.000000,
+          "sort_rank": -1.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7129,7 +7129,7 @@
         "properties": {
           "kind": "path",
           "name": "North Cove",
-          "sort_key": -9.000000,
+          "sort_rank": -9.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7204,7 +7204,7 @@
         "properties": {
           "kind": "minor_road",
           "name": "Albany Street",
-          "sort_key": -6.000000,
+          "sort_rank": -6.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7239,7 +7239,7 @@
         "properties": {
           "kind": "minor_road",
           "name": "Albany Street",
-          "sort_key": -6.000000,
+          "sort_rank": -6.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7266,7 +7266,7 @@
         "properties": {
           "kind": "path",
           "name": "Hudson River Greenway",
-          "sort_key": -9.000000,
+          "sort_rank": -9.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7297,7 +7297,7 @@
         "properties": {
           "kind": "path",
           "name": "North Cove",
-          "sort_key": -9.000000,
+          "sort_rank": -9.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7324,7 +7324,7 @@
         "properties": {
           "kind": "minor_road",
           "name": "South End Avenue",
-          "sort_key": -6.000000,
+          "sort_rank": -6.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7350,7 +7350,7 @@
         "clipped": true,
         "properties": {
           "kind": "path",
-          "sort_key": 2091.000000,
+          "sort_rank": 2091.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "yes",
@@ -7376,7 +7376,7 @@
         "clipped": true,
         "properties": {
           "kind": "highway",
-          "sort_key": -5.000000,
+          "sort_rank": -5.000000,
           "is_link": "yes",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7407,7 +7407,7 @@
         "properties": {
           "kind": "minor_road",
           "name": "Albany Street",
-          "sort_key": -6.000000,
+          "sort_rank": -6.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7434,7 +7434,7 @@
         "properties": {
           "kind": "major_road",
           "name": "West Street",
-          "sort_key": -1.000000,
+          "sort_rank": -1.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7461,7 +7461,7 @@
         "properties": {
           "kind": "minor_road",
           "name": "Liberty Street",
-          "sort_key": -6.000000,
+          "sort_rank": -6.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7500,7 +7500,7 @@
         "properties": {
           "kind": "path",
           "name": "Battery Park City Greenway",
-          "sort_key": -9.000000,
+          "sort_rank": -9.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7526,7 +7526,7 @@
         "clipped": true,
         "properties": {
           "kind": "path",
-          "sort_key": -9.000000,
+          "sort_rank": -9.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
@@ -7620,7 +7620,7 @@
         "clipped": true,
         "properties": {
           "kind": "minor_road",
-          "sort_key": -7.000000,
+          "sort_rank": -7.000000,
           "is_link": "no",
           "is_tunnel": "no",
           "is_bridge": "no",
