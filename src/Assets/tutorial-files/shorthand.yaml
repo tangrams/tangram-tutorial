@@ -1,7 +1,7 @@
 sources:
     _mapzen:
         type: TopoJSON
-        url:  https://tile.dev.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
+        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson?api_key=mapzen-QF1osLn
 
 layers:
     earth: # When no 'layer:' parameter is indicated in the 'data' block the layer name is matched against the layer in the source file
