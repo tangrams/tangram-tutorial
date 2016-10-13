@@ -1,7 +1,7 @@
 sources:
     _mapzen:
         type: TopoJSON
-        url:  https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson?api_key=mapzen-QF1osLn
 
 layers:
     earth:
@@ -9,7 +9,7 @@ layers:
             source: _mapzen
         draw:
             polygons:
-                order: function() { return feature.sort_key; }
+                order: function() { return feature.sort_rank; }
                 color: '#ddeeee'
 
     water:
@@ -17,28 +17,28 @@ layers:
             source: _mapzen
         draw:
             polygons:
-                order: function() { return feature.sort_key; }
+                order: function() { return feature.sort_rank; }
                 color: '#88bbee'
     landuse:
         data:
             source: _mapzen
         draw:
             polygons:
-                order: function() { return feature.sort_key; }
+                order: function() { return feature.sort_rank; }
                 color: '#aaffaa'
     buildings:
         data:
             source: _mapzen
         draw:
             polygons:
-                order: function() { return feature.sort_key; }
+                order: function() { return feature.sort_rank; }
                 color: '#808080'
     roads:
         data:
             source: _mapzen
         draw:
             lines:
-                order: function() { return feature.sort_key; }
+                order: function() { return feature.sort_rank; }
                 color: '#8374E4'
                 width: 8m
         _highwaySubLayer:
@@ -46,6 +46,6 @@ layers:
                 kind: highway
             draw:
                 lines:
-                    order: function() { return feature.sort_key + 1; }
+                    order: function() { return feature.sort_rank + 1; }
                     color: '#cc6666'
                     width: 12m
