@@ -112,7 +112,7 @@ First install all the required packages `npm install`.
 
 Then install gulp locally `npm install gulp`.
 
-To start a local server on port 1080 run: `npm start`
+To start a local server on port 8080 run: `npm start`
 
 Open the following url on your browser: `http://localhost:8080/`
 
