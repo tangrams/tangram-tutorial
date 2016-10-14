@@ -16,4 +16,4 @@ And we'll build up to more complex maps, including the use of vector tiles to re
 { "type": "image", "width": "60%", "src": "complex.png" }
 [section]
 
-Neat right? We hope you find this tutorial useful. Please post any comments or feedback on our [github page](https://github.com/tangrams/tangram-tutorial).
+Neat right? We hope you find this tutorial useful. Please post any comments or feedback on our [GitHub page](https://github.com/tangrams/tangram-tutorial).
