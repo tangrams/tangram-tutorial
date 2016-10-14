@@ -128,12 +128,6 @@ h1 {
         border-radius: 0;
         cursor: pointer;
     }
-
-    .panel-body span {
-        padding-left: 40px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
 }
 
 .list-group {
@@ -144,10 +138,14 @@ h1 {
 
 .list-group-item {
     line-height: 14px;
-    padding: 18px;
     font-weight: 400;
 
     a {
+        display: block;
+        width: 100%;
+        padding-left: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         color: #a19c9b;
         font-size: 14px;
     }
