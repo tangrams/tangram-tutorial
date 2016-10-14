@@ -2,7 +2,7 @@
 
 Wow! At this point we've used five layers from the Mapzen Vector Tile service: `earth`, `water`, `landuse`, `buildings`, and `roads`. Hopefully you've been getting the hang of how the layers work and how much useful data they provide. At this point, it's useful to introduce a handy feature that Tangram provides to help you get the layer order right.
 
-Ordering of features - which ones draw “on top of” other features - can be an important feature of display maps. To help out with this, we export a `sort_rank` property on some features which suggests in what order the features should appear. Lower numbers mean that features should appear “towards the back” and higher numbers mean “towards the front”. These numbers are consistent across layers. The layers which include `sort_rank` on their features are: `boundaries`, `buildings`, `earth`, `landuse`, `roads`, `transit` and `water`.
+Ordering of features&mdash;which ones draw “on top of” other features&mdash;can be an important feature of display maps. To help out with this, we export a `sort_rank` property on some features which suggests in what order the features should appear. Lower numbers mean that features should appear “towards the back” and higher numbers mean “towards the front.” These numbers are consistent across layers. The layers which include `sort_rank` on their features are: `boundaries`, `buildings`, `earth`, `landuse`, `roads`, `transit` and `water`.
 
 The way we use `sort_rank` is via a function on the `order` parameter like so:
 
@@ -27,5 +27,5 @@ In addition, to facilitate data visualization overlays and underlays, the follow
 
 * `0-9`: Under everything. Tip: disable `earth` layer.
 * `190-199`: Under `water`. Above `earth` and most `landuse`.
-* `290-299`: Under `roads`. Above `borders`, `water`, `landuse`, and `earth`. Your classic “underlay”.
+* `290-299`: Under `roads`. Above `borders`, `water`, `landuse`, and `earth`. Your classic “underlay.”
 * `490-499`: Over all lines and polygons features. Under map labels (icons and text), under UI elements (like routeline and search result pins). Your classic raster map overlay.
