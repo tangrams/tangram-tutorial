@@ -10,7 +10,7 @@ To view online go to: [Tangram Tutorial](https://tangrams.github.io/tangram-tuto
 
 1. Create a markdown file with the section content and place it in `src/Assets/markdown/`, following writing rules as specified in the 'markdown specifications' section of this readme.
 
-2. Place any yaml scene files you wish to use for an embedded Tangram Play within `src/Assets/tutorial-files/`.
+2. Place any YAML scene files you wish to use for an embedded Tangram Play within `src/Assets/tutorial-files/`.
 
 3. Go to `src/Components/content.js` and add the section details to the `content` variable. The order of the array represents the order in which the tutorial pages will render. For example:
 
@@ -55,7 +55,7 @@ Images can be added using the following convention (note there are no line break
 
 #### Embedding Tangram Play
 
-Tangram Play iframes can be added using the following convention (note there are no line breaks, its important!):
+A Tangram Play `<iframe>` can be added using the following convention (note there are no line breaks, its important!):
 
 ```
 [section]
@@ -63,7 +63,7 @@ Tangram Play iframes can be added using the following convention (note there are
 [section]
 ```
 
-`type` and `src` are required properties. `lines` and `location` (zoom/lat/lng) are optional. The `src` property should just point to a yaml file within the `src/Assets/tutorial-files/` folder. In the background, some JSX will eventually be generated for these iframes.
+`type` and `src` are required properties. `lines` and `location` (zoom/lat/lng) are optional. The `src` property should just point to a YAML file within the `src/Assets/tutorial-files/` folder. In the background, some JSX will eventually be generated for each `<iframe>`.
 
 #### Links
 
@@ -124,9 +124,9 @@ To create a build version run: `npm run build`
 
 This will place the proper assets in the `/docs` folder. This is where GitHub pages will read from.
 
-Once you add the new build and push to the `master` branch on GitHub, the tutorial should be availble at the following url: [https://tangrams.github.io/tangram-tutorial/](https://tangrams.github.io/tangram-tutorial/)
+Once you add the new build and push to the `master` branch on GitHub, the tutorial should be available at the following url: [https://tangrams.github.io/tangram-tutorial/](https://tangrams.github.io/tangram-tutorial/)
 
-## To test js and css linter rules
+## To lint JavaScript and CSS
 
 `npm test`
 
