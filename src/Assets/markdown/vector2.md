@@ -8,7 +8,7 @@ As a reminder this is what our code looked like in the last section, where we we
 sources:
     &#95;mapzen:
         type: TopoJSON
-        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
 
 layers:
     &#95;earthLayer:
