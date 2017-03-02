@@ -1,7 +1,7 @@
 sources:
     _mapzen:
         type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson?api_key=mapzen-QF1osLn # We are importing just the earth layer
+        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson?api_key=mapzen-AvWa8DQ # We are importing just the earth layer
 
 layers:
     _earthLayer:
