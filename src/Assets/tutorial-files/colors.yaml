@@ -11,6 +11,7 @@ layers:
         draw:
             _countryStyle:
                 style: polygons
+                order: 0
                 # ~~~ TODO ~~~ Uncomment each color format one at a time
                 color: darkgreen # A CSS color
                 # color: '#ff00ff' # A CSS color

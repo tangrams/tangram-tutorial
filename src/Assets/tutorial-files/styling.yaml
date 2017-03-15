@@ -15,5 +15,6 @@ layers:
             _bordersStyle: # A new style name for our borders
                 style: lines
                 color: white
+                order: 0
                 width: 20000m # REQUIRED We need to declare a width for the lines, which can be in meters or pixel units
                 # width: 2px # ~~TODO~~ Try commenting the meters width (line 18) and uncommenting the pixels width (this line)

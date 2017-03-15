@@ -11,4 +11,5 @@ layers:
         draw:
             _countryStyle:
                 style: polygons # ~~TODO~~ Try changing to 'lines', 'polygons', 'points', 'text', 'raster' (hint: not all of these will work)
+                order: 0
                 color: darkgreen

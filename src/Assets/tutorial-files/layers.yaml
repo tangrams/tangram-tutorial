@@ -11,4 +11,5 @@ layers:
         draw: # REQUIRED parameter where we specify styling rules for this layer
             _countryStyle:
                 style: polygons
+                order: 0
                 color: darkgreen
