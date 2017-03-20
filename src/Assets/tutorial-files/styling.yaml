@@ -11,9 +11,11 @@ layers:
         draw:
             _countryStyle:
                 style: polygons
+                order: 0
                 color: darkgreen
             _bordersStyle: # A new style name for our borders
                 style: lines
+                order: 1
                 color: white
                 order: 0
                 width: 20000m # REQUIRED We need to declare a width for the lines, which can be in meters or pixel units
