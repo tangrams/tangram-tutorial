@@ -19,4 +19,5 @@ layers:
         draw:
             _countryStyle:
                 style: polygons
+                order: 0
                 color: darkgreen
